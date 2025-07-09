@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>المنتجات - المتجر الإلكتروني</title>
+
+    <!-- Bootstrap 5 RTL -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&family=Roboto:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="sticky-top">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand fw-bold" href="index.html">
+                    <i class="fas fa-store me-2"></i>
+                    المتجر الإلكتروني
+                </a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav me-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">الرئيسية</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="products.html">المنتجات</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html#categories">التصنيفات</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html#contact">اتصل بنا</a>
+                        </li>
+                    </ul>
+
+                    <div class="d-flex align-items-center">
+                        <div class="position-relative me-3">
+                            <input type="text" class="form-control search-input" placeholder="البحث عن المنتجات..."
+                                id="searchInput">
+                            <button class="btn btn-outline-light btn-search" type="button">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </div>
+                        <button class="btn btn-outline-light position-relative" id="cartBtn">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span class="cart-count badge bg-warning text-dark position-absolute"
+                                id="cartCount">0</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Products Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 mb-4">
+                    <h1 class="h2 fw-bold">جميع المنتجات</h1>
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="index.html">الرئيسية</a></li>
+                            <li class="breadcrumb-item active">المنتجات</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+
+            <div class="row">
+                <!-- Filters Sidebar -->
+                <div class="col-lg-3 col-md-4 mb-4">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="card-title mb-0">فلاتر البحث</h5>
+                        </div>
+                        <div class="card-body">
+                            <!-- Category Filter -->
+                            <div class="mb-4">
+                                <h6 class="fw-bold mb-3">التصنيف</h6>
+                                <div id="categoryFilter">
+                                    <!-- Categories will be loaded here -->
+                                </div>
+                            </div>
+
+                            <!-- Price Filter -->
+                            <div class="mb-4">
+                                <h6 class="fw-bold mb-3">السعر</h6>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <input type="number" class="form-control" placeholder="من" id="minPrice">
+                                    </div>
+                                    <div class="col-6">
+                                        <input type="number" class="form-control" placeholder="إلى" id="maxPrice">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Rating Filter -->
+                            <div class="mb-4">
+                                <h6 class="fw-bold mb-3">التقييم</h6>
+                                <div id="ratingFilter">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="rating" id="rating5"
+                                            value="5">
+                                        <label class="form-check-label" for="rating5">
+                                            <span class="text-warning">★★★★★</span> وأعلى
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="rating" id="rating4"
+                                            value="4">
+                                        <label class="form-check-label" for="rating4">
+                                            <span class="text-warning">★★★★</span> وأعلى
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="rating" id="rating3"
+                                            value="3">
+                                        <label class="form-check-label" for="rating3">
+                                            <span class="text-warning">★★★</span> وأعلى
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Filter Actions -->
+                            <div class="d-grid gap-2">
+                                <button class="btn btn-primary" id="applyFilters">تطبيق الفلاتر</button>
+                                <button class="btn btn-outline-secondary" id="resetFilters">إعادة تعيين</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Products Grid -->
+                <div class="col-lg-9 col-md-8">
+                    <!-- Sort Options -->
+                    <div class="d-flex justify-content-between align-items-center mb-4">
+                        <div>
+                            <span class="text-muted">عرض <span id="productsCount">0</span> منتج</span>
+                        </div>
+                        <div class="d-flex align-items-center">
+                            <label class="me-2">ترتيب حسب:</label>
+                            <select class="form-select" id="sortSelect" style="width: auto;">
+                                <option value="default">الافتراضي</option>
+                                <option value="price-low">السعر: من الأقل للأعلى</option>
+                                <option value="price-high">السعر: من الأعلى للأقل</option>
+                                <option value="rating">التقييم</option>
+                                <option value="newest">الأحدث</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Products Grid -->
+                    <div class="row g-4" id="productsContainer">
+                        <!-- Products will be loaded here -->
+                    </div>
+
+                    <!-- Pagination -->
+                    <div class="d-flex justify-content-center mt-5">
+                        <nav aria-label="صفحات المنتجات">
+                            <ul class="pagination" id="pagination">
+                                <!-- Pagination will be generated here -->
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5 class="fw-bold mb-3">المتجر الإلكتروني</h5>
+                    <p>نوفر أفضل المنتجات بأسعار تنافسية مع ضمان الجودة وسرعة التوصيل.</p>
+                </div>
+                <div class="col-md-4">
+                    <h5 class="fw-bold mb-3">روابط مفيدة</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html" class="text-white-50">الرئيسية</a></li>
+                        <li><a href="products.html" class="text-white-50">المنتجات</a></li>
+                        <li><a href="#" class="text-white-50">سياسة الخصوصية</a></li>
+                        <li><a href="#" class="text-white-50">شروط الاستخدام</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4" id="contact">
+                    <h5 class="fw-bold mb-3">اتصل بنا</h5>
+                    <p><i class="fas fa-phone me-2"></i> +212666666666</p>
+                    <p><i class="fas fa-envelope me-2"></i> our@store.com</p>
+                    <p><i class="fas fa-map-marker-alt me-2"></i>الدار البيضاء، المملكة المغربية</p>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <p>&copy; 2025 المتجر الإلكتروني. جميع الحقوق محفوظة.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cart Modal -->
+    <div class="modal fade" id="cartModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">سلة المشتريات</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body" id="cartModalBody">
+                    <!-- Cart items will be displayed here -->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">إغلاق</button>
+                    <a href="checkout.html" class="btn btn-primary">إتمام الطلب</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom JS -->
+    <script src="js/data.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/products.js"></script>
+</body>
+
+</html>

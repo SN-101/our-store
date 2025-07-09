@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>إتمام الطلب - المتجر الإلكتروني</title>
+
+    <!-- Bootstrap 5 RTL -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&family=Roboto:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="sticky-top">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand fw-bold" href="index.html">
+                    <i class="fas fa-store me-2"></i>
+                    المتجر الإلكتروني
+                </a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav me-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">الرئيسية</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="products.html">المنتجات</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html#categories">التصنيفات</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html#contact">اتصل بنا</a>
+                        </li>
+                    </ul>
+
+                    <div class="d-flex align-items-center">
+                        <button class="btn btn-outline-light position-relative" id="cartBtn">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span class="cart-count badge bg-warning text-dark position-absolute"
+                                id="cartCount">0</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Checkout Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 mb-4">
+                    <h1 class="h2 fw-bold">إتمام الطلب</h1>
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="index.html">الرئيسية</a></li>
+                            <li class="breadcrumb-item active">إتمام الطلب</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+
+            <div class="row">
+                <!-- Customer Information -->
+                <div class="col-lg-7 col-md-8 mb-4">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="card-title mb-0">معلومات التوصيل</h5>
+                        </div>
+                        <div class="card-body">
+                            <form id="checkoutForm">
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <label for="firstName" class="form-label">الاسم الأول *</label>
+                                        <input type="text" class="form-control" id="firstName" required>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label for="lastName" class="form-label">الاسم الأخير *</label>
+                                        <input type="text" class="form-control" id="lastName" required>
+                                    </div>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="phone" class="form-label">رقم الهاتف *</label>
+                                    <input type="tel" class="form-control" id="phone" placeholder="06xxxxxxxx" required>
+                                    <div class="form-text">سيتم التواصل معك عبر هذا الرقم لتأكيد الطلب</div>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="email" class="form-label">البريد الإلكتروني *</label>
+                                    <input type="email" class="form-control" id="email" placeholder="example@email.com" required>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="city" class="form-label">المدينة *</label>
+                                    <select class="form-select" id="city" required>
+                                        <option value="">اختر المدينة</option>
+                                        <option value="riyadh">الرياض</option>
+                                        <option value="jeddah">جدة</option>
+                                        <option value="dammam">الدمام</option>
+                                        <option value="mecca">مكة المكرمة</option>
+                                        <option value="medina">المدينة المنورة</option>
+                                        <option value="taif">الطائف</option>
+                                        <option value="khobar">الخبر</option>
+                                        <option value="other">أخرى</option>
+                                    </select>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="address" class="form-label">العنوان التفصيلي *</label>
+                                    <textarea class="form-control" id="address" rows="3"
+                                        placeholder="اكتب العنوان التفصيلي (الحي، الشارع، رقم المبنى)"
+                                        required></textarea>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="notes" class="form-label">ملاحظات إضافية</label>
+                                    <textarea class="form-control" id="notes" rows="2"
+                                        placeholder="أي ملاحظات خاصة للتوصيل (اختياري)"></textarea>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <!-- Payment Method -->
+                    <div class="card mt-4">
+                        <div class="card-header">
+                            <h5 class="card-title mb-0">طريقة الدفع</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="alert alert-info">
+                                <i class="fas fa-info-circle me-2"></i>
+                                <strong>الدفع عند الاستلام:</strong> ستقوم بدفع قيمة الطلب نقداً عند استلام المنتجات
+                            </div>
+
+                            <div class="d-flex align-items-center p-3 border rounded">
+                                <i class="fas fa-money-bill-wave text-success me-3 fa-2x"></i>
+                                <div>
+                                    <h6 class="mb-1">الدفع عند الاستلام</h6>
+                                    <p class="text-muted mb-0">ادفع نقداً عند استلام طلبك</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Order Summary -->
+                <div class="col-lg-5 col-md-4">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="card-title mb-0">ملخص الطلب</h5>
+                        </div>
+                        <div class="card-body">
+                            <div id="orderSummary">
+                                <!-- Order items will be loaded here -->
+                            </div>
+
+                            <hr>
+
+                            <div class="d-flex justify-content-between mb-2">
+                                <span>المجموع الفرعي:</span>
+                                <span id="subtotal">0 ريال</span>
+                            </div>
+
+                            <div class="d-flex justify-content-between mb-2">
+                                <span>رسوم التوصيل:</span>
+                                <span id="shippingCost">مجاني</span>
+                            </div>
+
+                            <hr>
+
+                            <div class="d-flex justify-content-between fw-bold fs-5">
+                                <span>المجموع الكلي:</span>
+                                <span id="totalAmount">0 ريال</span>
+                            </div>
+
+                            <button class="btn btn-primary w-100 mt-3" id="confirmOrder">
+                                <i class="fas fa-check me-2"></i>
+                                تأكيد الطلب
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5 class="fw-bold mb-3">المتجر الإلكتروني</h5>
+                    <p>نوفر أفضل المنتجات بأسعار تنافسية مع ضمان الجودة وسرعة التوصيل.</p>
+                </div>
+                <div class="col-md-4">
+                    <h5 class="fw-bold mb-3">روابط مفيدة</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html" class="text-white-50">الرئيسية</a></li>
+                        <li><a href="products.html" class="text-white-50">المنتجات</a></li>
+                        <li><a href="#" class="text-white-50">سياسة الخصوصية</a></li>
+                        <li><a href="#" class="text-white-50">شروط الاستخدام</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4" id="contact">
+                    <h5 class="fw-bold mb-3">اتصل بنا</h5>
+                    <p><i class="fas fa-phone me-2"></i> +212666666666</p>
+                    <p><i class="fas fa-envelope me-2"></i> our@store.com</p>
+                    <p><i class="fas fa-map-marker-alt me-2"></i>الدار البيضاء، المملكة المغربية</p>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <p>&copy; 2025 المتجر الإلكتروني. جميع الحقوق محفوظة.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Order Confirmation Modal -->
+    <div class="modal fade" id="confirmationModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header bg-success text-white">
+                    <h5 class="modal-title">
+                        <i class="fas fa-check-circle me-2"></i>
+                        تم تأكيد الطلب بنجاح
+                    </h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="text-center mb-4">
+                        <i class="fas fa-check-circle text-success fa-3x mb-3"></i>
+                        <h4>شكراً لك!</h4>
+                        <p class="text-muted">تم استلام طلبك وسيتم التواصل معك قريباً لتأكيد التفاصيل</p>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-body">
+                            <h6 class="card-title">تفاصيل الطلب:</h6>
+                            <div id="orderDetails">
+                                <!-- Order details will be shown here -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="alert alert-info mt-3">
+                        <i class="fas fa-info-circle me-2"></i>
+                        سيتم الاتصال بك خلال 24 ساعة لتأكيد الطلب وترتيب موعد التوصيل
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <a href="index.html" class="btn btn-primary">العودة للصفحة الرئيسية</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom JS -->
+    <script src="js/data.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/checkout.js"></script>
+</body>
+
+</html>
