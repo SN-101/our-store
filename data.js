@@ -1,48 +1,9 @@
-// Sample data for the e-commerce site
-const categories = [
-    {
-        id: 'electronics',
-        name: 'إلكترونيات',
-        icon: 'fas fa-laptop',
-        count: 25,
-        image: 'https://images.pexels.com/photos/404280/pexels-photo-404280.jpeg?auto=compress&cs=tinysrgb&w=400'
-    },
-    {
-        id: 'fashion',
-        name: 'أزياء',
-        icon: 'fas fa-tshirt',
-        count: 40,
-        image: 'https://images.pexels.com/photos/1162983/pexels-photo-1162983.jpeg?auto=compress&cs=tinysrgb&w=400'
-    },
-    {
-        id: 'home',
-        name: 'منزل ومطبخ',
-        icon: 'fas fa-home',
-        count: 30,
-        image: 'https://images.pexels.com/photos/4226881/pexels-photo-4226881.jpeg?auto=compress&cs=tinysrgb&w=400'
-    },
-    {
-        id: 'books',
-        name: 'كتب',
-        icon: 'fas fa-book',
-        count: 50,
-        image: 'https://images.pexels.com/photos/159866/books-book-pages-read-159866.jpeg?auto=compress&cs=tinysrgb&w=400'
-    },
-    {
-        id: 'sports',
-        name: 'رياضة',
-        icon: 'fas fa-dumbbell',
-        count: 20,
-        image: 'https://images.pexels.com/photos/1478442/pexels-photo-1478442.jpeg?auto=compress&cs=tinysrgb&w=400'
-    },
-    {
-        id: 'beauty',
-        name: 'تجميل',
-        icon: 'fas fa-heart',
-        count: 35,
-        image: 'https://images.pexels.com/photos/3373736/pexels-photo-3373736.jpeg?auto=compress&cs=tinysrgb&w=400'
-    }
-];
+let sports = 0
+let books = 0
+let home = 0
+let electronics = 0
+let beauty = 0
+let fashion = 0
 
 const products = [
     {
@@ -347,8 +308,78 @@ const products = [
         rating: 4.5,
         reviews: 88,
         inStock: true,
-        featured: false,
-        discount: 25
+        featured: false
+    }
+];
+
+products.forEach(product => {
+    switch (product.category) {
+        case "sports":
+            sports++;
+            break;
+        case "books":
+            books++;
+            break;
+        case "home":
+            home++;
+            break;
+        case "electronics":
+            electronics++;
+            break;
+        case "beauty":
+            beauty++;
+            break;
+        case "fashion":
+            fashion++;
+            break;
+        default:
+            console.log("New category");
+    }
+});
+
+// Sample data for the e-commerce site
+const categories = [
+    {
+        id: 'electronics',
+        name: 'إلكترونيات',
+        icon: 'fas fa-laptop',
+        count: electronics,
+        image: 'https://images.pexels.com/photos/404280/pexels-photo-404280.jpeg?auto=compress&cs=tinysrgb&w=400'
+    },
+    {
+        id: 'fashion',
+        name: 'أزياء',
+        icon: 'fas fa-tshirt',
+        count: fashion,
+        image: 'https://images.pexels.com/photos/1162983/pexels-photo-1162983.jpeg?auto=compress&cs=tinysrgb&w=400'
+    },
+    {
+        id: 'home',
+        name: 'منزل ومطبخ',
+        icon: 'fas fa-home',
+        count: home,
+        image: 'https://images.pexels.com/photos/4226881/pexels-photo-4226881.jpeg?auto=compress&cs=tinysrgb&w=400'
+    },
+    {
+        id: 'books',
+        name: 'كتب',
+        icon: 'fas fa-book',
+        count: books,
+        image: 'https://images.pexels.com/photos/159866/books-book-pages-read-159866.jpeg?auto=compress&cs=tinysrgb&w=400'
+    },
+    {
+        id: 'sports',
+        name: 'رياضة',
+        icon: 'fas fa-dumbbell',
+        count: sports,
+        image: 'https://images.pexels.com/photos/1478442/pexels-photo-1478442.jpeg?auto=compress&cs=tinysrgb&w=400'
+    },
+    {
+        id: 'beauty',
+        name: 'تجميل',
+        icon: 'fas fa-heart',
+        count: beauty,
+        image: 'https://images.pexels.com/photos/3373736/pexels-photo-3373736.jpeg?auto=compress&cs=tinysrgb&w=400'
     }
 ];
 
@@ -471,7 +502,7 @@ function generateStarRating(rating) {
 function formatPrice(price) {
     return new Intl.NumberFormat('ar-MA', {
         style: 'currency',
-        currency: 'MAR',
+        currency: 'MAD',
         minimumFractionDigits: 0,
         maximumFractionDigits: 0
     }).format(price);
@@ -479,5 +510,5 @@ function formatPrice(price) {
 
 // Function to format number to Arabic
 function formatNumberToArabic(number) {
-    return new Intl.NumberFormat('ar-SA').format(number);
+    return new Intl.NumberFormat('ar-MA').format(number);
 }
