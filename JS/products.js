@@ -141,7 +141,7 @@ function createProductCard(product) {
     return `
         <div class="col-lg-4 col-md-6 col-sm-6 col-12 mb-4">
             <div class="card product-card h-100">
-                <div class="position-relative">
+                <div class="position-relative" onclick="goToProduct('${product.id}')">
                     <img src="${product.image}" class="card-img-top product-image" alt="${product.name}" loading="lazy">
                     ${discountBadge}
                 </div>

@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>اتصل بنا - المتجر الإلكتروني</title>
+
+    <!-- Bootstrap 5 RTL -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&family=Roboto:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="sticky-top">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand fw-bold" href="index.html">
+                    <i class="fas fa-store me-2"></i>
+                    المتجر الإلكتروني
+                </a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav me-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">الرئيسية</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="products.html">المنتجات</a>
+                        </li>
+                        <!-- <li class="nav-item">
+                            <a class="nav-link" href="index.html#categories">التصنيفات</a>
+                        </li> -->
+                        <li class="nav-item">
+                            <a class="nav-link active" href="contact.html">اتصل بنا</a>
+                        </li>
+                    </ul>
+
+                    <div class="d-flex align-items-center">
+                        <div class="position-relative me-3">
+                            <input type="text" class="form-control search-input" placeholder="البحث عن المنتجات..." id="searchInput">
+                            <button class="btn btn-outline-darck btn-search" type="button">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </div>
+                        <button class="btn btn-outline-light position-relative" id="cartBtn">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span class="cart-count badge bg-warning text-dark position-absolute" id="cartCount">0</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Contact Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 mb-4">
+                    <h1 class="h2 fw-bold">اتصل بنا</h1>
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="index.html">الرئيسية</a></li>
+                            <li class="breadcrumb-item active">اتصل بنا</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+
+            <div class="row">
+                <!-- Contact Information -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card h-100">
+                        <div class="card-header bg-primary text-white">
+                            <h5 class="card-title mb-0">
+                                <i class="fas fa-info-circle me-2"></i>
+                                معلومات التواصل
+                            </h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="contact-info">
+                                <div class="contact-item mb-4">
+                                    <div class="d-flex align-items-center mb-2">
+                                        <i class="fas fa-map-marker-alt text-primary me-3 fa-lg"></i>
+                                        <h6 class="mb-0">العنوان</h6>
+                                    </div>
+                                    <p class="text-muted ms-4">الدار البيضاء، المملكة المغربية<br>حي الملك فهد، شارع
+                                        الملك عبدالعزيز</p>
+                                </div>
+
+                                <div class="contact-item mb-4">
+                                    <div class="d-flex align-items-center mb-2">
+                                        <i class="fas fa-phone text-primary me-3 fa-lg"></i>
+                                        <h6 class="mb-0">الهاتف</h6>
+                                    </div>
+                                    <p class="text-muted ms-4">
+                                        <a href="tel:+966501234567" class="text-decoration-none">+212 612 345678</a><br>
+                                        <a href="tel:+966112345678" class="text-decoration-none">+212 612 345678</a>
+                                    </p>
+                                </div>
+
+                                <div class="contact-item mb-4">
+                                    <div class="d-flex align-items-center mb-2">
+                                        <i class="fas fa-envelope text-primary me-3 fa-lg"></i>
+                                        <h6 class="mb-0">البريد الإلكتروني</h6>
+                                    </div>
+                                    <p class="text-muted ms-4">
+                                        <a href="mailto:info@store.com"
+                                            class="text-decoration-none">info@store.com</a><br>
+                                        <a href="mailto:support@store.com"
+                                            class="text-decoration-none">support@store.com</a>
+                                    </p>
+                                </div>
+
+                                <div class="contact-item mb-4">
+                                    <div class="d-flex align-items-center mb-2">
+                                        <i class="fas fa-clock text-primary me-3 fa-lg"></i>
+                                        <h6 class="mb-0">ساعات العمل</h6>
+                                    </div>
+                                    <p class="text-muted ms-4">
+                                        السبت - الخميس: 9:00 ص - 10:00 م<br>
+                                        الجمعة: 3:00 م - 10:00 م
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- Social Media -->
+                            <div class="social-media mt-4">
+                                <h6 class="fw-bold mb-3">تابعنا على</h6>
+                                <div class="d-flex gap-3">
+                                    <a href="#" class="btn btn-outline-primary btn-sm">
+                                        <i class="fab fa-facebook-f"></i>
+                                    </a>
+                                    <a href="#" class="btn btn-outline-primary btn-sm">
+                                        <i class="fab fa-twitter"></i>
+                                    </a>
+                                    <a href="#" class="btn btn-outline-primary btn-sm">
+                                        <i class="fab fa-instagram"></i>
+                                    </a>
+                                    <a href="#" class="btn btn-outline-primary btn-sm">
+                                        <i class="fab fa-whatsapp"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="col-lg-8 col-md-6">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="card-title mb-0">
+                                <i class="fas fa-paper-plane me-2"></i>
+                                أرسل رسالة
+                            </h5>
+                        </div>
+                        <div class="card-body">
+                            <form id="contactForm">
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <label for="firstName" class="form-label">الاسم الأول *</label>
+                                        <input type="text" class="form-control" id="firstName" required>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label for="lastName" class="form-label">الاسم الأخير *</label>
+                                        <input type="text" class="form-control" id="lastName" required>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <label for="email" class="form-label">البريد الإلكتروني *</label>
+                                        <input type="email" class="form-control" id="email" required>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label for="phone" class="form-label">رقم الهاتف</label>
+                                        <input type="tel" class="form-control" id="phone" placeholder="06xxxxxxxx">
+                                    </div>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="subject" class="form-label">الموضوع *</label>
+                                    <select class="form-select" id="subject" required>
+                                        <option value="">اختر الموضوع</option>
+                                        <option value="general">استفسار عام</option>
+                                        <option value="order">استفسار عن طلب</option>
+                                        <option value="product">استفسار عن منتج</option>
+                                        <option value="complaint">شكوى</option>
+                                        <option value="suggestion">اقتراح</option>
+                                        <option value="technical">مشكلة تقنية</option>
+                                    </select>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="message" class="form-label">الرسالة *</label>
+                                    <textarea class="form-control" id="message" rows="5"
+                                        placeholder="اكتب رسالتك هنا..." required></textarea>
+                                </div>
+
+                                <div class="mb-3 form-check">
+                                    <input type="checkbox" class="form-check-input" id="agreeTerms" required>
+                                    <label class="form-check-label" for="agreeTerms">
+                                        أوافق على <a href="terms-of-use.html" class="text-primary">شروط الاستخدام</a> و <a href="privacy-policy.html"
+                                            class="text-primary">سياسة الخصوصية</a>
+                                    </label>
+                                </div>
+
+                                <button type="submit" class="btn btn-primary btn-lg">
+                                    <i class="fas fa-paper-plane me-2"></i>
+                                    إرسال الرسالة
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAQ Section -->
+            <div class="row mt-5">
+                <div class="col-12">
+                    <h3 class="fw-bold mb-4">الأسئلة الشائعة</h3>
+                    <div class="accordion" id="faqAccordion">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="faq1">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapse1">
+                                    كيف يمكنني تتبع طلبي؟
+                                </button>
+                            </h2>
+                            <div id="collapse1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    بعد تأكيد طلبك، سيتم إرسال رقم التتبع إليك عبر الرسائل النصية أو البريد الإلكتروني.
+                                    يمكنك استخدام هذا الرقم لتتبع حالة طلبك.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="faq2">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapse2">
+                                    ما هي طرق الدفع المتاحة؟
+                                </button>
+                            </h2>
+                            <div id="collapse2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    نحن نقبل الدفع عند الاستلام فقط. ستقوم بدفع قيمة الطلب نقداً عند استلام المنتجات من
+                                    مندوب التوصيل.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="faq3">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapse3">
+                                    كم تستغرق عملية التوصيل؟
+                                </button>
+                            </h2>
+                            <div id="collapse3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    عادة ما تستغرق عملية التوصيل من 2-5 أيام عمل داخل المدن الرئيسية، و 5-7 أيام عمل
+                                    للمناطق الأخرى.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="faq4">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapse4">
+                                    هل يمكنني إرجاع أو استبدال المنتج؟
+                                </button>
+                            </h2>
+                            <div id="collapse4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    نعم، يمكنك إرجاع أو استبدال المنتج خلال 14 يوم من تاريخ الاستلام، بشرط أن يكون
+                                    المنتج في حالته الأصلية وغير مستخدم.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="faq5">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapse5">
+                                    هل التوصيل مجاني؟
+                                </button>
+                            </h2>
+                            <div id="collapse5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    نعم، التوصيل مجاني لجميع الطلبات داخل المملكة العربية السعودية بدون حد أدنى للطلب.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="faq6">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapse6">
+                                    كيف يمكنني إلغاء طلبي؟
+                                </button>
+                            </h2>
+                            <div id="collapse6" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    يمكنك إلغاء طلبك خلال ساعتين من تأكيد الطلب عبر الاتصال بخدمة العملاء أو إرسال رسالة
+                                    عبر نموذج الاتصال.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="faq7">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapse7">
+                                    هل تتوفر خدمة العملاء على مدار الساعة؟
+                                </button>
+                            </h2>
+                            <div id="collapse7" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    خدمة العملاء متاحة من السبت إلى الخميس من 9:00 صباحاً حتى 10:00 مساءً، ويوم الجمعة
+                                    من 2:00 ظهراً حتى 10:00 مساءً.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Map Section -->
+            <!-- <div class="row mt-5">
+                <div class="col-12">
+                    <h3 class="fw-bold mb-4">موقعنا على الخريطة</h3>
+                    <div class="card">
+                        <div class="card-body p-0">
+                            <div class="map-container" style="height: 400px; background: #f8f9fa; position: relative;">
+                                <div class="d-flex align-items-center justify-content-center h-100">
+                                    <div class="text-center">
+                                        <i class="fas fa-map-marker-alt fa-3x text-primary mb-3"></i>
+                                        <h5>الرياض، المملكة العربية السعودية</h5>
+                                        <p class="text-muted">حي الملك فهد، شارع الملك عبدالعزيز</p>
+                                        <a href="https://maps.google.com/?q=Riyadh,Saudi+Arabia" target="_blank"
+                                            class="btn btn-primary">
+                                            <i class="fas fa-external-link-alt me-2"></i>
+                                            فتح في خرائط جوجل
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+
+            <!-- Quick Contact Cards -->
+            <div class="row mt-5">
+                <div class="col-12">
+                    <h3 class="fw-bold mb-4">طرق التواصل السريع</h3>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="card text-center h-100 border-primary">
+                        <div class="card-body">
+                            <i class="fas fa-phone fa-2x text-primary mb-3"></i>
+                            <h5 class="card-title">اتصل بنا</h5>
+                            <p class="card-text">للاستفسارات العاجلة</p>
+                            <a href="tel:+966501234567" class="btn btn-primary">
+                                <i class="fas fa-phone me-2"></i>
+                                اتصل الآن
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="card text-center h-100 border-success">
+                        <div class="card-body">
+                            <i class="fab fa-whatsapp fa-2x text-success mb-3"></i>
+                            <h5 class="card-title">واتساب</h5>
+                            <p class="card-text">تواصل سريع ومباشر</p>
+                            <a href="https://wa.me/966501234567" target="_blank" class="btn btn-success">
+                                <i class="fab fa-whatsapp me-2"></i>
+                                راسلنا
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="card text-center h-100 border-info">
+                        <div class="card-body">
+                            <i class="fas fa-envelope fa-2x text-info mb-3"></i>
+                            <h5 class="card-title">البريد الإلكتروني</h5>
+                            <p class="card-text">للاستفسارات التفصيلية</p>
+                            <a href="mailto:info@store.com" class="btn btn-info">
+                                <i class="fas fa-envelope me-2"></i>
+                                أرسل إيميل
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="card text-center h-100 border-warning">
+                        <div class="card-body">
+                            <i class="fas fa-headset fa-2x text-warning mb-3"></i>
+                            <h5 class="card-title">الدعم الفني</h5>
+                            <p class="card-text">مساعدة تقنية متخصصة</p>
+                            <a href="mailto:support@store.com" class="btn btn-warning">
+                                <i class="fas fa-headset me-2"></i>
+                                طلب دعم
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5 class="fw-bold mb-3">المتجر الإلكتروني</h5>
+                    <p>نوفر أفضل المنتجات بأسعار تنافسية مع ضمان الجودة وسرعة التوصيل.</p>
+                </div>
+                <div class="col-md-4">
+                    <h5 class="fw-bold mb-3">روابط مفيدة</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html" class="text-white-50">الرئيسية</a></li>
+                        <li><a href="products.html" class="text-white-50">المنتجات</a></li>
+                        <li><a href="privacy-policy.html" class="text-white-50">سياسة الخصوصية</a></li>
+                        <li><a href="terms-of-use.html" class="text-white-50">شروط الاستخدام</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4" id="contact">
+                    <h5 class="fw-bold mb-3">اتصل بنا</h5>
+                    <p><i class="fas fa-phone me-2"></i> +212666666666</p>
+                    <p><i class="fas fa-envelope me-2"></i> our@store.com</p>
+                    <p><i class="fas fa-map-marker-alt me-2"></i>الدار البيضاء، المملكة المغربية</p>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <p>&copy; 2025 المتجر الإلكتروني. جميع الحقوق محفوظة.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Success Modal -->
+    <div class="modal fade" id="successModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header bg-success text-white">
+                    <h5 class="modal-title">
+                        <i class="fas fa-check-circle me-2"></i>
+                        تم الإرسال بنجاح
+                    </h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="text-center">
+                        <i class="fas fa-check-circle text-success fa-3x mb-3"></i>
+                        <h4>شكراً لك!</h4>
+                        <p>تم إرسال رسالتك بنجاح. سنقوم بالرد عليك في أقرب وقت ممكن.</p>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">حسناً</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cart Modal -->
+    <div class="modal fade" id="cartModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">سلة المشتريات</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body" id="cartModalBody">
+                    <!-- Cart items will be displayed here -->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">إغلاق</button>
+                    <button id="checkoutBtn" class="btn btn-primary">إتمام الطلب</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom JS -->
+    <script src="JS/data.js"></script>
+    <script src="JS/cart.js"></script>
+    <script src="JS/contact.js"></script>
+</body>
+
+</html>

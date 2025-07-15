@@ -40,7 +40,7 @@ const products = [
         originalPrice: 600,
         image: 'https://images.pexels.com/photos/932401/pexels-photo-932401.jpeg',
         images: [
-            'https://images.pexels.com/photos/1162983/pexels-photo-1162983.jpeg?auto=compress&cs=tinysrgb&w=800',
+            'https://images.pexels.com/photos/932401/pexels-photo-932401.jpeg',
             'https://images.pexels.com/photos/1040945/pexels-photo-1040945.jpeg?auto=compress&cs=tinysrgb&w=800'
         ],
         category: 'fashion',
@@ -65,7 +65,7 @@ const products = [
         price: 120,
         image: 'https://images.pexels.com/photos/1741231/pexels-photo-1741231.jpeg',
         images: [
-            'https://images.pexels.com/photos/159866/books-book-pages-read-159866.jpeg?auto=compress&cs=tinysrgb&w=800',
+            'https://images.pexels.com/photos/1741231/pexels-photo-1741231.jpeg',
             'https://images.pexels.com/photos/1370298/pexels-photo-1370298.jpeg?auto=compress&cs=tinysrgb&w=800'
         ],
         category: 'books',
@@ -268,7 +268,7 @@ const products = [
         image: 'https://images.pexels.com/photos/1370298/pexels-photo-1370298.jpeg?auto=compress&cs=tinysrgb&w=800',
         images: [
             'https://images.pexels.com/photos/1370298/pexels-photo-1370298.jpeg?auto=compress&cs=tinysrgb&w=800',
-            'https://images.pexels.com/photos/159866/books-book-pages-read-159866.jpeg?auto=compress&cs=tinysrgb&w=800'
+            'https://images.pexels.com/photos/1741231/pexels-photo-1741231.jpeg'
         ],
         category: 'books',
         description: 'كتاب شامل للطبخ العربي التقليدي، يحتوي على أكثر من 200 وصفة مختلفة.',
@@ -333,7 +333,7 @@ products.forEach(product => {
             fashion++;
             break;
         default:
-            console.log("New category");
+            console.log(`New category ${product.category}`);
     }
 });
 

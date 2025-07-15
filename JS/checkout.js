@@ -302,14 +302,37 @@ function showOrderConfirmation(order) {
 // Get city name in Arabic
 function getCityName(cityValue) {
     const cities = {
-        'riyadh': 'الرياض',
-        'jeddah': 'جدة',
-        'dammam': 'الدمام',
-        'mecca': 'مكة المكرمة',
-        'medina': 'المدينة المنورة',
-        'taif': 'الطائف',
-        'khobar': 'الخبر',
-        'other': 'أخرى'
+        'casablanca': 'الدار البيضاء',
+        'rabat': 'الرباط',
+        'marrakech': 'مراكش',
+        'fes': 'فاس',
+        'meknes': 'مكناس',
+        'tangier': 'طنجة',
+        'agadir': 'أكادير',
+        'oujda': 'وجدة',
+        'kenitra': 'القنيطرة',
+        'tetouan': 'تطوان',
+        'safi': 'آسفي',
+        'eljadida': 'الجديدة',
+        'nador': 'الناظور',
+        'khouribga': 'خريبكة',
+        'beni_mellal': 'بني ملال',
+        'taourirt': 'تاوريرت',
+        'larache': 'العرائش',
+        'khemisset': 'الخميسات',
+        'berkane': 'بركان',
+        'khenifra': 'خنيفرة',
+        'guelmim': 'كلميم',
+        'settat': 'سطات',
+        'taza': 'تازة',
+        'errachidia': 'الرشيدية',
+        'laayoune': 'العيون',
+        'dakhla': 'الداخلة',
+        'taroudant': 'تارودانت',
+        'azrou': 'أزرو',
+        'ifrane': 'إفران',
+        'sidi_ifni': 'سيدي إفني',
+        'zagora': 'زاكورة'
     };
 
     return cities[cityValue] || cityValue;
