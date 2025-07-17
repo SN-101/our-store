@@ -11,9 +11,17 @@ class ShoppingCart {
     loadFromStorage() {
         const savedCart = localStorage.getItem('shoppingCart');
         if (savedCart) {
-            this.items = JSON.parse(savedCart);
+            const rawItems = JSON.parse(savedCart);
+            this.items = rawItems.map(item => {
+                const fullProduct = getProductById(item.productId);
+                return {
+                    ...item,
+                    product: fullProduct
+                };
+            });
         }
     }
+
 
     saveToStorage() {
         localStorage.setItem('shoppingCart', JSON.stringify(this.items));
