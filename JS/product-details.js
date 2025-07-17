@@ -12,8 +12,12 @@ document.addEventListener('DOMContentLoaded', function () {
         window.location.href = 'products.html';
     }
 
-    // Load cart count
-    cart.updateCartDisplay();
+    // Load cart count from cart object or fallback
+    if (typeof cart !== 'undefined' && cart.updateCartDisplay) {
+        cart.updateCartDisplay();
+    } else {
+        updateCartCount();
+    }
 
     // Initialize search
     initializeSearch();
@@ -80,36 +84,36 @@ function displayProductDetails(product) {
                 </div>
             </div>
         </div>
-        
+
         <div class="col-lg-6 col-md-6">
             <div class="product-info">
                 <h1 class="product-title">${product.name}</h1>
-                
+
                 <div class="product-rating mb-3">
                     ${generateStarRating(product.rating)}
                     <span class="text-muted ms-2">(${formatNumberToArabic(product.reviews)} تقييم)</span>
                 </div>
-                
+
                 <div class="product-price mb-3">
                     ${originalPrice}
                     <span class="fw-bold text-success fs-3">${formatPrice(product.price)}</span>
                 </div>
-                
+
                 <div class="mb-3">
                     ${stockStatus}
                 </div>
-                
+
                 <div class="product-description mb-4">
                     <p class="lead">${product.description}</p>
                 </div>
-                
+
                 <div class="specifications mb-4">
                     <h5 class="fw-bold mb-3">المواصفات:</h5>
                     <ul class="list-group list-group-flush">
                         ${specifications}
                     </ul>
                 </div>
-                
+
                 <div class="quantity-selector mb-4">
                     <label class="form-label fw-bold">الكمية:</label>
                     <div class="d-flex align-items-center">
@@ -122,7 +126,7 @@ function displayProductDetails(product) {
                         </button>
                     </div>
                 </div>
-                
+
                 <div class="d-grid gap-2 d-md-flex">
                     <button class="btn btn-primary btn-lg flex-fill add-to-cart-btn" 
                             data-product-id="${product.id}" 
@@ -171,7 +175,7 @@ function createProductCard(product) {
     return `
         <div class="col-lg-3 col-md-6 col-sm-6 col-12 mb-4">
             <div class="card product-card h-100">
-                <div class="position-relative"  onclick="goToProduct('${product.id}')">
+                <div class="position-relative" onclick="goToProduct('${product.id}')">
                     <img src="${product.image}" class="card-img-top product-image" alt="${product.name}" loading="lazy">
                     ${discountBadge}
                 </div>
@@ -192,8 +196,8 @@ function createProductCard(product) {
                             <button class="btn btn-outline-primary btn-sm me-2" onclick="goToProduct('${product.id}')">
                                 <i class="fas fa-eye"></i>
                             </button>
-                            <button class="btn btn-primary btn-sm add-to-cart-btn" 
-                                    data-product-id="${product.id}" 
+                            <button class="btn btn-primary btn-sm add-to-cart-btn"
+                                    data-product-id="${product.id}"
                                     ${!product.inStock ? 'disabled' : ''}>
                                 <i class="fas fa-shopping-cart"></i>
                             </button>
@@ -262,12 +266,98 @@ function decreaseQuantity() {
     }
 }
 
-// Add to cart with quantity
+// Add to cart with quantity (uses cart object if available, fallback manual otherwise)
 function addToCartWithQuantity(productId) {
+    // Prevent multiple clicks
+    const button = document.querySelector(`[data-product-id="${productId}"]`);
+    if (button && button.disabled) return;
+
+    if (button) {
+        button.disabled = true;
+        button.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i>جاري الإضافة...';
+    }
+
     const quantityInput = document.getElementById('quantityInput');
     const quantity = quantityInput ? parseInt(quantityInput.value) : 1;
 
-    cart.addItem(productId, quantity);
+    if (typeof cart !== 'undefined' && typeof cart.addItem === 'function') {
+        cart.addItem(productId, quantity);
+    } else {
+        addToCartManual(productId, quantity);
+    }
+
+    setTimeout(() => {
+        if (button) {
+            button.disabled = false;
+            button.innerHTML = '<i class="fas fa-shopping-cart me-2"></i>إضافة إلى السلة';
+        }
+    }, 1000);
+}
+
+// Manual add to cart function as fallback
+function addToCartManual(productId, quantity = 1) {
+    const product = getProductById(productId);
+    if (!product) return;
+
+    // Get existing cart from localStorage
+    let cartItems = JSON.parse(localStorage.getItem('shoppingCart') || '[]');
+
+    // Check if item already exists
+    const existingItem = cartItems.find(item => item.productId === productId);
+
+    if (existingItem) {
+        existingItem.quantity += quantity;
+    } else {
+        cartItems.push({
+            productId: productId,
+            quantity: quantity,
+            product: product
+        });
+    }
+
+    // Save to localStorage
+    localStorage.setItem('shoppingCart', JSON.stringify(cartItems));
+
+    // Update cart display
+    updateCartCount();
+
+    // Show success message
+    showAddToCartMessage(product.name);
+}
+
+// Update cart count manually (fallback)
+function updateCartCount() {
+    const cartItems = JSON.parse(localStorage.getItem('shoppingCart') || '[]');
+    const count = cartItems.reduce((total, item) => total + item.quantity, 0);
+
+    const cartCountElement = document.getElementById('cartCount');
+    if (cartCountElement) {
+        cartCountElement.textContent = count;
+        cartCountElement.style.display = count > 0 ? 'flex' : 'none';
+    }
+}
+
+// Show add to cart success message
+function showAddToCartMessage(productName) {
+    const message = document.createElement('div');
+    message.className = 'alert alert-success position-fixed';
+    message.style.cssText = `
+        top: 100px;
+        right: 20px;
+        z-index: 9999;
+        max-width: 300px;
+        animation: slideIn 0.3s ease-out;
+    `;
+    message.innerHTML = `
+        <i class="fas fa-check-circle me-2"></i>
+        تم إضافة "${productName}" إلى السلة
+    `;
+
+    document.body.appendChild(message);
+
+    setTimeout(() => {
+        message.remove();
+    }, 3000);
 }
 
 // Navigation functions
@@ -290,7 +380,6 @@ function initializeSearch() {
         }
     });
 
-    // Search button click
     const searchBtn = document.querySelector('.btn-search');
     if (searchBtn) {
         searchBtn.addEventListener('click', performSearch);

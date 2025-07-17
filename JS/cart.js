@@ -2,9 +2,11 @@
 class ShoppingCart {
     constructor() {
         this.items = [];
-        this.lastRenderedCartItems = '';
         this.loadFromStorage();
+        this.updateCartDisplay();
     }
+
+
 
     loadFromStorage() {
         const savedCart = localStorage.getItem('shoppingCart');
@@ -19,46 +21,51 @@ class ShoppingCart {
 
     addItem(productId, quantity = 1) {
         const product = getProductById(productId);
-        if (!product) return false;
+        if (!product || typeof product.price !== 'number') return false;
 
         const existingItem = this.items.find(item => item.productId === productId);
+
         if (existingItem) {
             existingItem.quantity += quantity;
         } else {
-            this.items.push({ productId, quantity });
+            this.items.push({
+                productId: productId,
+                quantity: quantity,
+                product: product
+            });
         }
 
-        this.refreshCartUI();
+        this.saveToStorage();
+        this.updateCartDisplay();
         this.showAddToCartMessage(product.name);
         return true;
     }
 
     removeItem(productId) {
         this.items = this.items.filter(item => item.productId !== productId);
-        this.refreshCartUI();
+        this.saveToStorage();
+        this.updateCartDisplay();
+        this.renderCartModal();
     }
 
     updateQuantity(productId, quantity) {
         const item = this.items.find(item => item.productId === productId);
-        if (item) {
-            if (quantity > 0) {
-                item.quantity = quantity;
-                this.refreshCartUI();
-            } else {
-                const confirmDelete = confirm("هل أنت متأكد أنك تريد حذف هذا المنتج من السلة؟");
-                if (confirmDelete) {
-                    this.removeItem(productId);
-                }
-            }
+        if (!item) return;
+
+        if (quantity > 0) {
+            item.quantity = quantity;
+            this.saveToStorage();
+            this.updateCartDisplay();
+            this.renderCartModal();
+        } else {
+            confirmRemoveItem(productId);
         }
     }
 
 
     getTotal() {
         return this.items.reduce((total, item) => {
-            const product = getProductById(item.productId);
-            const price = parseFloat(product?.price) || 0;
-            return total + (price * item.quantity);
+            return total + (item.product.price * item.quantity);
         }, 0);
     }
 
@@ -68,7 +75,9 @@ class ShoppingCart {
 
     clear() {
         this.items = [];
-        this.refreshCartUI();
+        this.saveToStorage();
+        this.updateCartDisplay();
+        this.renderCartModal();
     }
 
     updateCartDisplay() {
@@ -102,11 +111,6 @@ class ShoppingCart {
         const cartModalBody = document.getElementById('cartModalBody');
         if (!cartModalBody) return;
 
-        const currentCartJSON = JSON.stringify(this.items);
-        if (this.lastRenderedCartItems === currentCartJSON) return;
-
-        this.lastRenderedCartItems = currentCartJSON;
-
         if (this.items.length === 0) {
             cartModalBody.innerHTML = `
                 <div class="cart-empty">
@@ -120,15 +124,12 @@ class ShoppingCart {
 
         let cartHTML = '<div class="cart-items">';
         this.items.forEach(item => {
-            const product = getProductById(item.productId);
-            const price = parseFloat(product?.price) || 0;
-
             cartHTML += `
                 <div class="cart-item">
-                    <img src="${product.image}" alt="${product.name}" class="cart-item-image">
+                    <img src="${item.product.image}" alt="${item.product.name}" class="cart-item-image">
                     <div class="cart-item-details">
-                        <h6 class="cart-item-name">${product.name}</h6>
-                        <p class="cart-item-price">${formatPrice(price)}</p>
+                        <h6 class="cart-item-name">${item.product.name}</h6>
+                        <p class="cart-item-price">${formatPrice(item.product.price)}</p>
                         <div class="quantity-selector">
                             <button class="quantity-btn" onclick="cart.updateQuantity('${item.productId}', ${item.quantity - 1})">-</button>
                             <span class="quantity-display">${item.quantity}</span>
@@ -136,15 +137,14 @@ class ShoppingCart {
                         </div>
                     </div>
                     <div class="cart-item-actions">
-                        <div class="cart-item-total">${formatPrice(price * item.quantity)}</div>
-                        <button class="btn btn-outline-danger btn-sm" onclick="confirmDelete('${item.productId}')">
+                        <div class="cart-item-total">${formatPrice(item.product.price * item.quantity)}</div>
+                        <button class="btn btn-outline-danger btn-sm" onclick="confirmRemoveItem('${item.productId}')">
                             <i class="fas fa-trash"></i>
                         </button>
                     </div>
                 </div>
             `;
         });
-
         cartHTML += '</div>';
         cartHTML += `
             <div class="cart-summary">
@@ -154,36 +154,36 @@ class ShoppingCart {
                 </div>
             </div>
         `;
-
         cartModalBody.innerHTML = cartHTML;
+
+        document.getElementById("checkoutBtn").addEventListener("click", function () {
+            if (!cart.items || cart.items.length === 0) {
+                Swal.fire({
+                    icon: 'info',
+                    title: 'السلة فارغة',
+                    text: 'يرجى إضافة منتجات قبل إتمام الطلب.',
+                    confirmButtonText: 'حسنًا'
+                });
+            } else {
+                window.location.href = "checkout.html";
+            }
+        });
+
     }
 
     getCartItems() {
-        return this.items.map(item => {
-            const product = getProductById(item.productId);
-            const price = parseFloat(product?.price) || 0;
-            return {
-                productId: item.productId,
-                quantity: item.quantity,
-                product,
-                total: price * item.quantity
-            };
-        });
-    }
-
-    refreshCartUI() {
-        this.saveToStorage();
-        this.updateCartDisplay();
-        this.renderCartModal();
+        return this.items.map(item => ({
+            ...item,
+            total: item.product.price * item.quantity
+        }));
     }
 }
 
 // Initialize cart
 const cart = new ShoppingCart();
 
+// Event listeners
 document.addEventListener('DOMContentLoaded', function () {
-    cart.updateCartDisplay();
-
     const cartBtn = document.getElementById('cartBtn');
     if (cartBtn) {
         cartBtn.addEventListener('click', function () {
@@ -191,38 +191,76 @@ document.addEventListener('DOMContentLoaded', function () {
             const cartModal = new bootstrap.Modal(document.getElementById('cartModal'));
             cartModal.show();
         });
+
+        const checkoutBtn = document.getElementById('checkoutBtn');
+
+        if (checkoutBtn) {
+            checkoutBtn.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                if (cart.getItemsCount() === 0) {
+                    Swal.fire({
+                        icon: 'warning',
+                        title: 'السلة فارغة!',
+                        text: 'الرجاء إضافة منتجات قبل إتمام الطلب.',
+                        confirmButtonText: 'حسنًا'
+                    });
+                } else {
+                    // انتقل إلى صفحة إتمام الطلب
+                    window.location.href = "checkout.html";
+                }
+            });
+        }
     }
 
     document.addEventListener('click', function (e) {
-        if (e.target.classList.contains('add-to-cart-btn') || e.target.closest('.add-to-cart-btn')) {
+        if ((e.target.classList.contains('add-to-cart-btn') || e.target.closest('.add-to-cart-btn')) &&
+            !document.getElementById('quantityInput')) {
             const button = e.target.classList.contains('add-to-cart-btn') ? e.target : e.target.closest('.add-to-cart-btn');
             const productId = button.getAttribute('data-product-id');
             const quantity = parseInt(button.getAttribute('data-quantity')) || 1;
+
             if (productId) {
+                if (button.disabled) return;
+                button.disabled = true;
+                const originalText = button.innerHTML;
+                button.innerHTML = '<i class="fas fa-spinner fa-spin"></i>';
+
                 cart.addItem(productId, quantity);
+
+                setTimeout(() => {
+                    button.disabled = false;
+                    button.innerHTML = originalText;
+                }, 1000);
             }
         }
     });
-
-    const checkoutBtn = document.getElementById('checkoutBtn');
-    if (checkoutBtn) {
-        checkoutBtn.addEventListener('click', function () {
-            if (cart.items && cart.items.length > 0) {
-                window.location.href = 'checkout.html';
-            } else {
-                alert('سلة المشتريات فارغة. يرجى إضافة منتجات أولًا.');
-            }
-        });
-    }
 });
 
-// Helper functions
+// Helpers
+function confirmRemoveItem(productId) {
+    Swal.fire({
+        title: 'هل أنت متأكد؟',
+        text: "هل تريد حذف هذا المنتج من السلة؟",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#d33',
+        cancelButtonColor: '#3085d6',
+        confirmButtonText: 'نعم، احذف',
+        cancelButtonText: 'إلغاء'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            cart.removeItem(productId);
+        }
+    });
+}
+
 function addToCart(productId, quantity = 1) {
     cart.addItem(productId, quantity);
 }
 
 function removeFromCart(productId) {
-    cart.removeItem(productId);
+    confirmRemoveItem(productId);
 }
 
 function updateCartQuantity(productId, quantity) {
@@ -233,9 +271,4 @@ function clearCart() {
     cart.clear();
 }
 
-function confirmDelete(productId) {
-    const confirmDelete = confirm("هل أنت متأكد أنك تريد حذف هذا المنتج من السلة؟");
-    if (confirmDelete) {
-        cart.removeItem(productId);
-    }
-}
+

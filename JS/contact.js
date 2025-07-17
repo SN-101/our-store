@@ -98,7 +98,7 @@ function validateEmail(input) {
 
 // Validate phone number
 function validatePhoneNumber(input) {
-    const phoneRegex = /^(05|5)[0-9]{8}$/;
+    const phoneRegex = /^(05|06|07)[0-9]{8}$/;
     const isValid = phoneRegex.test(input.value);
 
     if (input.value && !isValid) {
