@@ -4,6 +4,7 @@ let home = 0
 let electronics = 0
 let beauty = 0
 let fashion = 0
+let courses = 0
 
 const products = [
     {
@@ -309,6 +310,56 @@ const products = [
         reviews: 88,
         inStock: true,
         featured: false
+    },
+    {
+        id: '13',
+        name: 'تعلم بايثون بالكامل بطريقة بسيطة',
+        price: 199.99,
+        originalPrice: 650,
+        image: 'files/id13/python.webp',
+        images: [
+            'files/id13/python.webp',
+            'files/id13/python2.webp'
+        ],
+        category: 'courses',
+        description: 'فيديوهات مباشرة للفصول الدراسية لشرح مفاهيم Python 3 بالتفصيل من مستوى المبتدئين إلى الخبراء.',
+        specifications: [
+            '114 ساعة من الفيديوهات عند الطلب',
+            '37 مصدرًا قابلًا للتنزيل',
+            'متاح على الهاتف المحمول والتلفزيون',
+            'تعلم لغة بايثون بالتفصيل',
+            'اللغة الإنجليزية'
+        ],
+        rating: 4.7,
+        reviews: 600,
+        inStock: true,
+        featured: true,
+        discount: 69
+    },
+    {
+        id: '14',
+        name: 'تعلم البرمجة الإبداعية باستخدام JavaScript الفانيليا',
+        price: 149.99,
+        originalPrice: 500,
+        image: 'files/id14/js.webp',
+        images: [
+            'files/id14/js.webp',
+            'files/id14/jsdrawing.webp'
+        ],
+        category: 'courses',
+        description: 'دعونا نصنع الفن باستخدام الكود ونتعلم البرمجة الموجهة للكائنات باستخدام JavaScript البسيط في هذه العملية',
+        specifications: [,
+            'استكشف البرمجة الإبداعية باستخدام HTML وCSS وJavaScript',
+            'تعلم الرسم باستخدام البرمجة',
+            'اكتسب فهمًا عميقًا لتقنيات الرسم على لوحة HTML القماشية',
+            'أنشئ مشروعًا فنيًا توليديًا متكاملًا',
+            'اللغة الإنجليزية'
+        ],
+        rating: 4.7,
+        reviews: 110,
+        inStock: true,
+        featured: false,
+        discount: 70
     }
 ];
 
@@ -332,6 +383,9 @@ products.forEach(product => {
         case "fashion":
             fashion++;
             break;
+        case "courses":
+            courses++;
+            break;
         default:
             console.log(`New category ${product.category}`);
     }
@@ -343,43 +397,43 @@ const categories = [
         id: 'electronics',
         name: 'إلكترونيات',
         icon: 'fas fa-laptop',
-        count: electronics,
-        image: 'https://images.pexels.com/photos/404280/pexels-photo-404280.jpeg?auto=compress&cs=tinysrgb&w=400'
+        count: electronics
     },
     {
         id: 'fashion',
         name: 'أزياء',
         icon: 'fas fa-tshirt',
-        count: fashion,
-        image: 'https://images.pexels.com/photos/1162983/pexels-photo-1162983.jpeg?auto=compress&cs=tinysrgb&w=400'
+        count: fashion
     },
     {
         id: 'home',
         name: 'منزل ومطبخ',
         icon: 'fas fa-home',
-        count: home,
-        image: 'https://images.pexels.com/photos/4226881/pexels-photo-4226881.jpeg?auto=compress&cs=tinysrgb&w=400'
+        count: home
     },
     {
         id: 'books',
         name: 'كتب',
         icon: 'fas fa-book',
-        count: books,
-        image: 'https://images.pexels.com/photos/159866/books-book-pages-read-159866.jpeg?auto=compress&cs=tinysrgb&w=400'
+        count: books
     },
     {
         id: 'sports',
         name: 'رياضة',
         icon: 'fas fa-dumbbell',
-        count: sports,
-        image: 'https://images.pexels.com/photos/1478442/pexels-photo-1478442.jpeg?auto=compress&cs=tinysrgb&w=400'
+        count: sports
     },
     {
         id: 'beauty',
         name: 'تجميل',
         icon: 'fas fa-heart',
-        count: beauty,
-        image: 'https://images.pexels.com/photos/3373736/pexels-photo-3373736.jpeg?auto=compress&cs=tinysrgb&w=400'
+        count: beauty
+    },
+    {
+        id: 'courses',
+        name: 'دورات تدريبية',
+        icon: 'fas fa-chalkboard-user',
+        count: courses
     }
 ];
 
