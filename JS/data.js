@@ -2,7 +2,7 @@ let sports = 0
 let books = 0
 let home = 0
 let electronics = 0
-let beauty = 0
+// let beauty = 0
 let fashion = 0
 let courses = 0
 
@@ -62,25 +62,25 @@ const products = [
     },
     {
         id: '3',
-        name: 'كتاب تطوير الذات',
-        price: 120,
-        image: 'https://images.pexels.com/photos/1741231/pexels-photo-1741231.jpeg',
+        name: 'فن اللامبالاة',
+        price: 25,
+        image: 'files/id3/img1.webp',
         images: [
-            'https://images.pexels.com/photos/1741231/pexels-photo-1741231.jpeg',
-            'https://images.pexels.com/photos/1370298/pexels-photo-1370298.jpeg?auto=compress&cs=tinysrgb&w=800'
+            'files/id3/img1.webp',
+            'files/id3/img2.webp',
+            'files/id3/img3.webp'
         ],
         category: 'books',
-        description: 'كتاب شامل لتطوير الذات وتحسين الحياة الشخصية والمهنية، مكتوب بأسلوب سهل ومفهوم.',
+        description: 'كتاب فن اللامبالاة للكاتب الأمريكي مارك مانسون هو دليل فلسفي نفسي يساعد القارئ على فهم الحياة بواقعية وتجاوز الضغوط العاطفية. يركز على مبدأ بسيط: لا يمكننا أن نعطي اهتمامًا لكل شيء، لذلك يجب أن نختار بعناية ما نهتم به فعلًا.',
         specifications: [
-            '300 صفحة',
-            'غلاف فاخر',
+            'بجودة عالية pdf',
+            'حجم الكتاب 3.4 ميجا بايت',
+            'عدد الصفحات 272',
             'باللغة العربية',
-            'من تأليف خبير مختص',
-            'يحتوي على تمارين عملية',
-            'طباعة عالية الجودة'
+            'الكاتب الأمريكي مارك مانسون'
         ],
-        rating: 4.8,
-        reviews: 200,
+        rating: 4.4,
+        reviews: 150,
         inStock: true,
         featured: false
     },
@@ -160,32 +160,32 @@ const products = [
         featured: true,
         discount: 20
     },
-    {
-        id: '7',
-        name: 'كريم مرطب للبشرة',
-        price: 95,
-        originalPrice: 120,
-        image: 'https://images.pexels.com/photos/3373736/pexels-photo-3373736.jpeg?auto=compress&cs=tinysrgb&w=800',
-        images: [
-            'https://images.pexels.com/photos/3373736/pexels-photo-3373736.jpeg?auto=compress&cs=tinysrgb&w=800',
-            'https://images.pexels.com/photos/3762879/pexels-photo-3762879.jpeg?auto=compress&cs=tinysrgb&w=800'
-        ],
-        category: 'beauty',
-        description: 'كريم مرطب طبيعي للبشرة، يحتوي على مكونات طبيعية مغذية ومرطبة.',
-        specifications: [
-            'مكونات طبيعية 100%',
-            'مناسب لجميع أنواع البشرة',
-            'خالي من المواد الكيميائية الضارة',
-            'مرطب ومغذي',
-            'سريع الامتصاص',
-            'حجم 50 مل'
-        ],
-        rating: 4.7,
-        reviews: 75,
-        inStock: true,
-        featured: false,
-        discount: 21
-    },
+    // {
+    //     id: '7',
+    //     name: 'كريم مرطب للبشرة',
+    //     price: 95,
+    //     originalPrice: 120,
+    //     image: 'https://images.pexels.com/photos/3373736/pexels-photo-3373736.jpeg?auto=compress&cs=tinysrgb&w=800',
+    //     images: [
+    //         'https://images.pexels.com/photos/3373736/pexels-photo-3373736.jpeg?auto=compress&cs=tinysrgb&w=800',
+    //         'https://images.pexels.com/photos/3762879/pexels-photo-3762879.jpeg?auto=compress&cs=tinysrgb&w=800'
+    //     ],
+    //     category: 'beauty',
+    //     description: 'كريم مرطب طبيعي للبشرة، يحتوي على مكونات طبيعية مغذية ومرطبة.',
+    //     specifications: [
+    //         'مكونات طبيعية 100%',
+    //         'مناسب لجميع أنواع البشرة',
+    //         'خالي من المواد الكيميائية الضارة',
+    //         'مرطب ومغذي',
+    //         'سريع الامتصاص',
+    //         'حجم 50 مل'
+    //     ],
+    //     rating: 4.7,
+    //     reviews: 75,
+    //     inStock: true,
+    //     featured: false,
+    //     discount: 21
+    // },
     {
         id: '8',
         name: 'لابتوب عالي الأداء',
@@ -264,25 +264,25 @@ const products = [
     },
     {
         id: '11',
-        name: 'كتاب الطبخ العربي',
-        price: 85,
-        image: 'https://images.pexels.com/photos/1370298/pexels-photo-1370298.jpeg?auto=compress&cs=tinysrgb&w=800',
+        name: 'لماذا ننام',
+        price: 25,
+        image: 'files/id11/img3.webp',
         images: [
-            'https://images.pexels.com/photos/1370298/pexels-photo-1370298.jpeg?auto=compress&cs=tinysrgb&w=800',
-            'https://images.pexels.com/photos/1741231/pexels-photo-1741231.jpeg'
+            'files/id11/img3.webp',
+            'files/id11/img2.webp',
+            'files/id11/img1.webp'
         ],
         category: 'books',
-        description: 'كتاب شامل للطبخ العربي التقليدي، يحتوي على أكثر من 200 وصفة مختلفة.',
+        description: 'كتاب لماذا ننام هو عمل علمي شهير من تأليف ماثيو ووكر، أستاذ علم الأعصاب وعلم النفس في جامعة كاليفورنيا. نُشر الكتاب لأول مرة في عام 2017، وهو يقدم تحليلًا علميًا شاملًا عن النوم وأثره العميق على حياتنا وصحتنا. يعتمد الكتاب على الأبحاث العلمية الحديثة ويجمع بين المعرفة العصبية والفسيولوجية والنفسية لتوضيح الأهمية الحيوية للنوم. يحاول ووكر في هذا الكتاب الإجابة على سؤال “لماذا ننام؟” ويكشف كيف أن النوم ليس مجرد حالة من السكون والراحة، بل عملية حيوية ومعقدة لها تأثيرات بالغة على صحة الدماغ والجسم.',
         specifications: [
-            '400 صفحة',
-            'أكثر من 200 وصفة',
-            'صور ملونة للأطباق',
-            'نصائح للطبخ المنزلي',
+            'جودة عالية pdf',
+            'حجم الكتاب 7 ميجا بايت',
+            'عدد الصفحات 511',
             'باللغة العربية',
-            'غلاف صلب فاخر'
+            'الكاتب الأمريكي ماثيو ووكر'
         ],
-        rating: 4.9,
-        reviews: 145,
+        rating: 4.5,
+        reviews: 147,
         inStock: true,
         featured: true
     },
@@ -314,7 +314,7 @@ const products = [
     {
         id: '13',
         name: 'تعلم بايثون بالكامل بطريقة بسيطة',
-        price: 199.99,
+        price: 200,
         originalPrice: 650,
         image: 'files/id13/python.webp',
         images: [
@@ -339,7 +339,7 @@ const products = [
     {
         id: '14',
         name: 'تعلم البرمجة الإبداعية باستخدام JavaScript الفانيليا',
-        price: 149.99,
+        price: 150,
         originalPrice: 500,
         image: 'files/id14/js.webp',
         images: [
@@ -360,7 +360,57 @@ const products = [
         inStock: true,
         featured: false,
         discount: 70
-    }
+    },
+    {
+        id: '15',
+        name: 'دورة التسويق الرقمي',
+        price: 45,
+        image: 'files/id15/img1.webp',
+        images: [
+            'files/id15/img1.webp',
+            'files/id15/img2.webp'
+        ],
+        category: 'courses',
+        description: 'استراتيجية التسويق الرقمي، تسويق وسائل التواصل الاجتماعي، ووردبريس، تحسين محركات البحث، ChatGPT، البريد الإلكتروني، إنستغرام، فيسبوك، يوتيوب، الإعلانات',
+        specifications: [,
+            'تخطيط متقدم للتسويق الرقمي',
+            'ChatGPT للتسويق',
+            'هندسة فورية للتسويق',
+            'بناء مواقع إلكترونية ومتاجر إلكترونية - بدون برمجة',
+            'تكتيكات تسويقية نفسية',
+            'التسويق عبر البريد الإلكتروني + استراتيجيات احترافية باستخدام الذكاء الاصطناعي',
+            'كتابة محتوى إعلاني يحقق مبيعات عالية',
+            'زيادة هائلة في عدد الزيارات وترتيب محركات البحث',
+            'اللغة الإنجليزية'
+        ],
+        rating: 4.7,
+        reviews: 310,
+        inStock: true,
+        featured: false,
+    },
+    {
+        id: '16',
+        name: 'دورة الماجستير في اللغة الإنجليزية',
+        price: 24,
+        originalPrice: 120,
+        image: 'files/id16/img1.webp',
+        images: [
+            'files/id16/img1.webp',
+            'files/id16/img2.webp'
+        ],
+        category: 'courses',
+        description: 'دورة لغة إنجليزية كاملة: قواعد اللغة الإنجليزية، التحدث، النطق، والكتابة. اللغة الإنجليزية البريطانية والأمريكية.',
+        specifications: [,
+            'تعلم كل شيء عن قواعد اللغة الإنجليزية، التحدث والكتابة والنطق.أتقن اللغة الإنجليزية',
+            'قسم شامل لقواعد اللغة الإنجليزية، يغطي أكثر من 90 موضوعًا في قواعد اللغة الإنجليزية.',
+            'قم بتحسين نتائجك في امتحانات اللغة الإنجليزية مثل A1، A2، B1، B2، C1، TOEFL، IELTS، وTOEIC.',
+        ],
+        rating: 4.8,
+        reviews: 450,
+        inStock: true,
+        featured: true,
+        discount: 80
+    },
 ];
 
 products.forEach(product => {
@@ -377,9 +427,9 @@ products.forEach(product => {
         case "electronics":
             electronics++;
             break;
-        case "beauty":
-            beauty++;
-            break;
+        // case "beauty":
+        //     beauty++;
+        //     break;
         case "fashion":
             fashion++;
             break;
@@ -413,7 +463,7 @@ const categories = [
     },
     {
         id: 'books',
-        name: 'كتب',
+        name: 'كتب PDF',
         icon: 'fas fa-book',
         count: books
     },
@@ -423,12 +473,12 @@ const categories = [
         icon: 'fas fa-dumbbell',
         count: sports
     },
-    {
-        id: 'beauty',
-        name: 'تجميل',
-        icon: 'fas fa-heart',
-        count: beauty
-    },
+    // {
+    //     id: 'beauty',
+    //     name: 'تجميل',
+    //     icon: 'fas fa-heart',
+    //     count: beauty
+    // },
     {
         id: 'courses',
         name: 'دورات تدريبية',

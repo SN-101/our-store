@@ -9,6 +9,9 @@ document.addEventListener('DOMContentLoaded', function () {
     // Initialize order confirmation
     initializeOrderConfirmation();
 
+    // Initialize the way paying
+    focusBtnPay()
+
     // Load cart count
     cart.updateCartDisplay();
 
@@ -66,9 +69,9 @@ function showEmptyCart() {
             <div class="row justify-content-center">
                 <div class="col-md-6">
                     <div class="text-center py-5">
-                        <i class="fas fa-shopping-cart fa-3x text-muted mb-3"></i>
+                        <i class="fas fa-shopping-cart fa-3x text-white mb-3"></i>
                         <h3>السلة فارغة</h3>
-                        <p class="text-muted mb-4">لا توجد منتجات في سلة المشتريات</p>
+                        <p class="text-white mb-4">لا توجد منتجات في سلة المشتريات</p>
                         <a href="products.html" class="btn btn-primary">تسوق الآن</a>
                     </div>
                 </div>
@@ -102,7 +105,7 @@ function initializeFormValidation() {
 
 // Validate phone number
 function validatePhoneNumber(input) {
-    const phoneRegex = /^(05|5)[0-9]{8}$/;
+    const phoneRegex = /^(05|06|07)[0-9]{8}$/;
     const isValid = phoneRegex.test(input.value);
 
     if (input.value && !isValid) {
@@ -297,6 +300,97 @@ function showOrderConfirmation(order) {
     // Show modal
     const modal = new bootstrap.Modal(document.getElementById('confirmationModal'));
     modal.show();
+}
+
+
+const alertInfo = document.getElementById("alertInfo");
+const titlePay = document.getElementById("title_pay");
+const textPay = document.getElementById("text_pay");
+const paypalPay = document.getElementById("paypalPay");
+const cashPay = document.getElementById("cashPay");
+const iconPaying = document.getElementById("iconPaying");
+const wayToPay = document.getElementById("wayToPay");
+
+function paypalPaying() {
+    iconPaying.className = "";
+    alertInfo.innerHTML = `<i class="fas fa-info-circle me-2"></i><strong>الدفع عن طريق PayPal د.م <i class="fa-solid fa-money-bill-transfer"></i> $: </strong> ستقوم بدفع قيمة الطلب عن طريق PayPal وستستلم المنتجات خلال دقائق`;
+    iconPaying.classList.add("fa-brands", "fa-cc-paypal", "text-success", "me-3", "fa-2x");
+    titlePay.innerHTML = `الدفع عن طريق PayPal`;
+    textPay.innerHTML = "ادفع عن طريق PayPal وسنرسل لك طلبك";
+
+    paypalBg();
+
+    // إظهار زر PayPal
+    document.getElementById("paypal-button-container").style.display = "block";
+    const totalAmountValue = cart.getTotal().toFixed(2);
+    document.getElementById('confirmOrder').style.display = "none";
+
+    const exchangeRate = 1 / 10; // 1 MAD = 0.10 USD
+    const totalUSD = (totalAmountValue * exchangeRate).toFixed(2);
+
+    // تحميل الزر مرة واحدة فقط
+    if (!window.paypalBtnLoaded) {
+        paypal.Buttons({
+            createOrder: function (data, actions) {
+                return actions.order.create({
+                    purchase_units: [{
+                        amount: {
+                            value: totalUSD
+                        }
+                        
+                    }]
+                });
+            },
+            onApprove: function (data, actions) {
+                return actions.order.capture().then(function (details) {
+                    alert('تم الدفع بنجاح بواسطة: ' + details.payer.name.given_name);
+                    // يمكنك هنا توجيه المستخدم أو حفظ بيانات الطلب
+                });
+            }
+        }).render('#paypal-button-container');
+        window.paypalBtnLoaded = true;
+    }
+}
+
+
+function cashPaying() {
+    alertInfo.innerHTML = `<i class="fas fa-info-circle me-2"></i><strong>الدفع عند الاستلام: </strong> ستقوم بدفع قيمة الطلب نقداً عند استلام المنتجات`
+    iconPaying.className = "";
+    iconPaying.classList.add("fas", "fa-money-bill-wave", "text-success", "me-3", "fa-2x");
+    titlePay.innerHTML = "الدفع عند الاستلام";
+    textPay.innerHTML = `ادفع نقداً عند استلام طلبك`;
+    cashBg()
+
+    document.getElementById("paypal-button-container").style.display = "none";
+    document.getElementById('confirmOrder').style.display = "block";
+}
+
+function paypalBg() {
+    paypalPay.classList.remove("btn-outline-success");
+    paypalPay.classList.add("btn-success");
+    cashPay.classList.add("btn-outline-success");
+    cashPay.classList.remove("btn-success");
+}
+
+function cashBg() {
+    paypalPay.classList.add("btn-outline-success");
+    paypalPay.classList.remove("btn-success");
+    cashPay.classList.remove("btn-outline-success");
+    cashPay.classList.add("btn-success");
+}
+
+function focusBtnPay() {
+    const hasRestrictedCategory = cart.getCartItems().some(item =>
+        item.product.category === "books" || item.product.category === "courses"
+    );
+
+    if (hasRestrictedCategory) {
+        paypalBg()
+        paypalPaying()
+    } else {
+        cashBg()
+        cashPaying()
+    }
 }
 
 // Get city name in Arabic
