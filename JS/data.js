@@ -510,35 +510,86 @@ function searchProducts(query) {
     );
 }
 
-// Function to filter products
+// Function to sort products
+// function filterProducts(filters) {
+//     console.log('minPrice:', filters.minPrice, 'maxPrice:', filters.maxPrice);
+//     let filteredProducts = [...products];
+
+//     // فلترة حسب التصنيف
+//     if (filters.category && filters.category !== 'all') {
+//         filteredProducts = filteredProducts.filter(product => product.category === filters.category);
+//     }
+
+//     // فلترة حسب السعر الأدنى
+//     if (filters.minPrice !== undefined && filters.minPrice !== '') {
+//         const min = Number(filters.minPrice.trim());
+//         if (!isNaN(min)) {
+//             filteredProducts = filteredProducts.filter(product => product.price >= min);
+//         }
+//     }
+
+//     // فلترة حسب السعر الأعلى
+//     if (filters.maxPrice !== undefined && filters.maxPrice !== '') {
+//         const max = Number(filters.maxPrice.trim());
+//         if (!isNaN(max)) {
+//             filteredProducts = filteredProducts.filter(product => product.price <= max);
+//         }
+//     }
+
+//     // فلترة حسب التقييم
+//     if (filters.rating) {
+//         filteredProducts = filteredProducts.filter(product => product.rating >= filters.rating);
+//     }
+
+//     // فلترة حسب توفر المنتج
+//     if (filters.inStock) {
+//         filteredProducts = filteredProducts.filter(product => product.inStock);
+//     }
+
+//     // فلترة حسب البحث بالكلمة المفتاحية
+//     if (filters.query) {
+//         filteredProducts = filteredProducts.filter(product =>
+//             product.name.toLowerCase().includes(filters.query.toLowerCase()) ||
+//             product.description.toLowerCase().includes(filters.query.toLowerCase())
+//         );
+//     }
+
+//     return filteredProducts;
+// }
+
+
 function filterProducts(filters) {
     let filteredProducts = [...products];
 
-    // Filter by category
+    // فلترة حسب التصنيف
     if (filters.category && filters.category !== 'all') {
         filteredProducts = filteredProducts.filter(product => product.category === filters.category);
     }
 
-    // Filter by price range
-    if (filters.minPrice !== undefined && filters.minPrice !== '') {
-        filteredProducts = filteredProducts.filter(product => product.price >= filters.minPrice);
+    // السعر الأدنى
+    const min = parseFloat(filters.minPrice);
+    if (!isNaN(min)) {
+        filteredProducts = filteredProducts.filter(product => product.price >= min);
     }
 
-    if (filters.maxPrice !== undefined && filters.maxPrice !== '') {
-        filteredProducts = filteredProducts.filter(product => product.price <= filters.maxPrice);
+    // السعر الأعلى
+    const max = parseFloat(filters.maxPrice);
+    if (!isNaN(max)) {
+        filteredProducts = filteredProducts.filter(product => product.price <= max);
     }
 
-    // Filter by rating
+
+    // فلترة حسب التقييم
     if (filters.rating) {
         filteredProducts = filteredProducts.filter(product => product.rating >= filters.rating);
     }
 
-    // Filter by in stock
+    // فلترة حسب توفر المنتج
     if (filters.inStock) {
         filteredProducts = filteredProducts.filter(product => product.inStock);
     }
 
-    // Search query
+    // فلترة حسب البحث بالكلمة المفتاحية
     if (filters.query) {
         filteredProducts = filteredProducts.filter(product =>
             product.name.toLowerCase().includes(filters.query.toLowerCase()) ||
@@ -549,7 +600,6 @@ function filterProducts(filters) {
     return filteredProducts;
 }
 
-// Function to sort products
 function sortProducts(products, sortBy) {
     const sortedProducts = [...products];
 

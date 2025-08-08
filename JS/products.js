@@ -31,11 +31,6 @@ function initializeProductsPage() {
 
     if (category) {
         currentFilters.category = category;
-        // Set category filter
-        const categoryRadio = document.querySelector(`input[name="category"][value="${category}"]`);
-        if (categoryRadio) {
-            categoryRadio.checked = true;
-        }
     }
 
     if (search) {
@@ -49,6 +44,13 @@ function initializeProductsPage() {
     // Load category filters
     loadCategoryFilters();
 
+    if (category) {
+        const categoryRadio = document.querySelector(`input[name="category"][value="${category}"]`);
+        if (categoryRadio) {
+            categoryRadio.checked = true;
+        }
+    }
+
     // Load and display products
     loadProducts();
 }
@@ -60,7 +62,7 @@ function loadCategoryFilters() {
 
     let filtersHTML = `
         <div class="form-check">
-            <input class="form-check-input" type="radio" name="category" id="categoryAll" value="all" checked>
+            <input class="form-check-input" type="radio" name="category" id="categoryAll" value="all" ${currentFilters.category === 'all' ? 'checked' : ''}>
             <label class="form-check-label" for="categoryAll">جميع المنتجات</label>
         </div>
     `;
@@ -79,25 +81,29 @@ function loadCategoryFilters() {
     categoryFilter.innerHTML = filtersHTML;
 }
 
-// Load and display products
 function loadProducts() {
-    let filteredProducts = filterProducts(currentFilters);
-    filteredProducts = sortProducts(filteredProducts, currentSort);
+    showLoadingSpinner();
 
-    // Update products count
-    updateProductsCount(filteredProducts.length);
+    setTimeout(() => {
+        let filteredProducts = filterProducts(currentFilters);
+        filteredProducts = sortProducts(filteredProducts, currentSort);
 
-    // Paginate products
-    const startIndex = (currentPage - 1) * productsPerPage;
-    const endIndex = startIndex + productsPerPage;
-    const paginatedProducts = filteredProducts.slice(startIndex, endIndex);
+        // Update products count
+        updateProductsCount(filteredProducts.length);
 
-    // Display products
-    displayProducts(paginatedProducts);
+        // Paginate products
+        const startIndex = (currentPage - 1) * productsPerPage;
+        const endIndex = startIndex + productsPerPage;
+        const paginatedProducts = filteredProducts.slice(startIndex, endIndex);
 
-    // Update pagination
-    updatePagination(filteredProducts.length);
+        // Display products
+        displayProducts(paginatedProducts);
+
+        // Update pagination
+        updatePagination(filteredProducts.length);
+    }, 500);
 }
+
 
 // Display products
 function displayProducts(products) {
@@ -188,6 +194,7 @@ function initializeFilters() {
         if (e.target.name === 'rating') {
             currentFilters.rating = e.target.value;
             currentPage = 1;
+            updateURLParams();
             loadProducts();
         }
     });
@@ -198,7 +205,7 @@ function initializeFilters() {
 
     if (minPriceInput) {
         minPriceInput.addEventListener('input', debounce(function () {
-            currentFilters.minPrice = this.value;
+            currentFilters.minPrice = minPriceInput.value;
             currentPage = 1;
             loadProducts();
         }, 500));
@@ -206,7 +213,7 @@ function initializeFilters() {
 
     if (maxPriceInput) {
         maxPriceInput.addEventListener('input', debounce(function () {
-            currentFilters.maxPrice = this.value;
+            currentFilters.maxPrice = maxPriceInput.value;
             currentPage = 1;
             loadProducts();
         }, 500));
@@ -275,6 +282,7 @@ function initializeSearch() {
     searchInput.addEventListener('input', debounce(function () {
         currentFilters.query = this.value;
         currentPage = 1;
+        updateURLParams();
         loadProducts();
     }, 300));
 
@@ -284,6 +292,7 @@ function initializeSearch() {
         searchBtn.addEventListener('click', function () {
             currentFilters.query = searchInput.value;
             currentPage = 1;
+            updateURLParams();
             loadProducts();
         });
     }
@@ -398,3 +407,31 @@ function debounce(func, wait) {
         timeout = setTimeout(later, wait);
     };
 }
+
+function updateURLParams() {
+    const params = new URLSearchParams();
+
+    if (currentFilters.category && currentFilters.category !== 'all') {
+        params.set('category', currentFilters.category);
+    }
+
+    if (currentFilters.query) {
+        params.set('search', currentFilters.query);
+    }
+
+    const newUrl = `${window.location.pathname}?${params.toString()}`;
+    history.replaceState({}, '', newUrl);
+}
+
+function showLoadingSpinner(message = "جاري تحميل المنتجات...") {
+    const container = document.getElementById('productsContainer');
+    container.innerHTML = `
+        <div class="text-center py-5">
+            <div class="spinner-border text-primary mb-3" role="status" style="width: 3rem; height: 3rem;">
+                <span class="visually-hidden">${message}</span>
+            </div>
+            <div class="text-muted">${message}</div>
+        </div>
+    `;
+}
+
