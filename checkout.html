@@ -8,7 +8,7 @@
 
     <!-- Bootstrap 5 RTL -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
-    
+
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
 
@@ -20,9 +20,13 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css">
 
+    <!-- Email.js -->
+    <!-- EmailJS SDK v4 -->
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+
     <!-- PayPal -->
-    <script defer
-        src="https://www.paypal.com/sdk/js?client-id=AfeyzZmy4zvSj3PrLqUaaIvDYjAfKRb_oQ26nTgGRrAVd4tZbNqgkyrU4gYrftm813U7if03GcFmxkYl&currency=USD"></script>
+    <!-- <script defer
+        src="https://www.paypal.com/sdk/js?client-id=AfeyzZmy4zvSj3PrLqUaaIvDYjAfKRb_oQ26nTgGRrAVd4tZbNqgkyrU4gYrftm813U7if03GcFmxkYl&currency=USD"></script> -->
 
 </head>
 
@@ -102,29 +106,30 @@
                                 <div class="row">
                                     <div class="col-md-6 mb-3">
                                         <label for="firstName" class="form-label">الاسم الأول *</label>
-                                        <input type="text" class="form-control" id="firstName" required>
+                                        <input type="text" class="form-control" id="firstName" name="firstName"
+                                            required>
                                     </div>
                                     <div class="col-md-6 mb-3">
                                         <label for="lastName" class="form-label">الاسم الأخير *</label>
-                                        <input type="text" class="form-control" id="lastName" required>
+                                        <input type="text" class="form-control" id="lastName" name="lastName" required>
                                     </div>
                                 </div>
 
                                 <div class="mb-3">
                                     <label for="phone" class="form-label">رقم الهاتف *</label>
-                                    <input type="tel" class="form-control" id="phone" placeholder="06xxxxxxxx" required>
-                                    <div class="form-text">سيتم التواصل معك عبر هذا الرقم لتأكيد الطلب</div>
+                                    <input type="tel" class="form-control" id="phone" name="phone"
+                                        placeholder="06xxxxxxxx" required>
                                 </div>
 
                                 <div class="mb-3">
-                                    <label for="email" class="form-label">البريد الإلكتروني *</label>
-                                    <input type="email" class="form-control" id="email" placeholder="example@email.com"
-                                        required>
+                                    <label for="email" class="form-label">البريد الإلكتروني</label>
+                                    <input type="email" class="form-control" id="email" name="email"
+                                        placeholder="example@email.com">
                                 </div>
 
                                 <div class="mb-3">
                                     <label for="city" class="form-label">المدينة *</label>
-                                    <select class="form-select" id="city" required>
+                                    <select class="form-select" name="city" id="city" required>
                                         <option value="">اختر المدينة</option>
                                         <option value="casablanca">الدار البيضاء</option>
                                         <option value="rabat">الرباط</option>
@@ -163,14 +168,14 @@
 
                                 <div class="mb-3">
                                     <label for="address" class="form-label">العنوان التفصيلي *</label>
-                                    <textarea class="form-control" id="address" rows="3"
+                                    <textarea class="form-control" id="address" name="address" rows="3"
                                         placeholder="اكتب العنوان التفصيلي (الحي، الشارع، رقم المبنى)"
                                         required></textarea>
                                 </div>
 
                                 <div class="mb-3">
                                     <label for="notes" class="form-label">ملاحظات إضافية</label>
-                                    <textarea class="form-control" id="notes" rows="2"
+                                    <textarea class="form-control" name="notes" id="notes" rows="2"
                                         placeholder="أي ملاحظات خاصة للتوصيل (اختياري)"></textarea>
                                 </div>
                             </form>
@@ -184,10 +189,10 @@
                         </div>
                         <div id="wayToPay" class="card-body">
                             <div class="mb-3 d-flex justify-content-around w-100">
-                                <button id="paypalPay" onclick="paypalPaying()" type="button"
-                                    class="btn btn-outline-success"><i class="fa-brands fa-paypal"></i> PayPal</button>
-                                <button id="cashPay" onclick="cashPaying()" type="button"
-                                    class="btn btn-outline-success"><i class="fas fa-money-bill-wave"></i>
+                                <!-- <button id="paypalPay" onclick="paypalPaying()" type="button"
+                                    class="btn btn-outline-success"><i class="fa-brands fa-paypal"></i> PayPal</button> -->
+                                <button id="cashPay" type="button" class="btn btn-outline-success"><i
+                                        class="fas fa-money-bill-wave"></i>
                                     نقداً</button>
                             </div>
                             <div id="alertInfo" class="alert alert-info">
