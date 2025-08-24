@@ -2,9 +2,9 @@
 document.addEventListener("DOMContentLoaded", () => {
     CartUI.loadSummary();
     FormValidation.init();
-    Payment.init("cash");
+    Payment.init("paypal");
     cart.updateCartDisplay();
-    
+
     if (cart.items.length === 0) {
         CartUI.showEmpty();
     }
@@ -117,7 +117,7 @@ const FormValidation = {
         const regex = /^(05|06|07)[0-9]{8}$/;
         const ok = regex.test(input.value);
         if (input.value && !ok) {
-            this.showError(input, "يرجى إدخال رقم هاتف صحيح (05xxxxxxxx)");
+            this.showError(input, "يرجى إدخال رقم هاتف صحيح (06xxxxxxxx)");
         } else {
             this.clearError(input);
         }
@@ -204,7 +204,7 @@ const OrderManager = {
         addHiddenField("total", formatPrice(order.total));
         addHiddenField("items", order.items
             .map(i => `${i.product.name} × ${i.quantity} = ${formatPrice(i.total)}`)
-            .join("<br>"));
+            .join("\n"));
 
         emailjs.init("vAodR1HFl2lZJYfhe");
         emailjs.sendForm("service_gtnl9z6", "template_hmsw63u", tempForm)
@@ -238,29 +238,162 @@ const OrderManager = {
 
 /* ---------------- Payment ---------------- */
 const Payment = {
+    selectedMethod: "cash",
+
     init(method) {
-        if (method === "cash") {
-            this.cash();
+        const cashBtn = document.getElementById("cashPay");
+        const paypalBtn = document.getElementById("paypalPay");
+
+        if (cashBtn) cashBtn.addEventListener("click", () => this.selectCash());
+        if (paypalBtn) paypalBtn.addEventListener("click", () => this.selectPayPal());
+
+        if (method === "paypal") this.selectPayPal();
+        else this.selectCash();
+
+        const paypalContainer = document.getElementById("paypal-button-container");
+        if (!window.paypal || typeof paypal.Buttons !== "function") {
+            console.warn("PayPal SDK غير محمّل أو client-id غير صحيح.");
+            if (paypalContainer) {
+                paypalContainer.innerHTML = `
+                  <div class="alert alert-warning">
+                    تعذّر تحميل PayPal. تأكّد من <code>client-id</code> وترتيب السكربتات.
+                  </div>`;
+            }
         }
-        // future: else if (method === "paypal") { this.paypal(); }
     },
 
-    cash() {
+    selectCash() {
+        const confirmBtn = document.getElementById("confirmOrder");
+        const paypalContainer = document.getElementById("paypal-button-container");
+
+        if (confirmBtn) confirmBtn.style.display = "block";
+        if (paypalContainer) {
+            paypalContainer.style.display = "none";
+            paypalContainer.innerHTML = "";
+        }
+
         const alertInfo = document.getElementById("alertInfo");
         const icon = document.getElementById("iconPaying");
         const title = document.getElementById("title_pay");
         const text = document.getElementById("text_pay");
         const cashBtn = document.getElementById("cashPay");
+        const paypalBtn = document.getElementById("paypalPay");
 
-        alertInfo.innerHTML = `<i class="fas fa-info-circle me-2"></i><strong>الدفع عند الاستلام:</strong> ستقوم بدفع قيمة الطلب نقداً عند استلام المنتجات`;
-        icon.className = "fas fa-money-bill-wave text-success me-3 fa-2x";
-        title.textContent = "الدفع عند الاستلام";
-        text.textContent = "ادفع نقداً عند استلام طلبك";
+        if (alertInfo) {
+            alertInfo.innerHTML = `<i class="fas fa-info-circle me-2"></i>
+            <strong>الدفع عند الاستلام:</strong> ستقوم بدفع قيمة الطلب نقداً عند استلام المنتجات`;
+        }
+        if (icon) icon.className = "fas fa-money-bill-wave text-success me-3 fa-2x";
+        if (title) title.textContent = "الدفع عند الاستلام";
+        if (text) text.textContent = "ادفع نقداً عند استلام طلبك";
 
-        cashBtn.classList.remove("btn-outline-success");
-        cashBtn.classList.add("btn-success");
+        if (cashBtn) {
+            cashBtn.classList.add("btn-success");
+            cashBtn.classList.remove("btn-outline-success");
+        }
+        if (paypalBtn) {
+            paypalBtn.classList.add("btn-outline-primary");
+            paypalBtn.classList.remove("btn-primary", "text-white");
+        }
+
+        this.selectedMethod = "cash";
+    },
+
+    selectPayPal() {
+        const confirmBtn = document.getElementById("confirmOrder");
+        const paypalContainer = document.getElementById("paypal-button-container");
+
+        if (confirmBtn) confirmBtn.style.display = "none";
+        if (paypalContainer) paypalContainer.style.display = "block";
+
+        const alertInfo = document.getElementById("alertInfo");
+        const icon = document.getElementById("iconPaying");
+        const title = document.getElementById("title_pay");
+        const text = document.getElementById("text_pay");
+        const paypalBtn = document.getElementById("paypalPay");
+        const cashBtn = document.getElementById("cashPay");
+
+        if (alertInfo) {
+            alertInfo.innerHTML = `<i class="fas fa-info-circle me-2"></i>
+            <strong>الدفع عبر PayPal:</strong> يمكنك الدفع باستخدام حسابك بايبال أو بطاقة بنكية مرتبطة`;
+        }
+        if (icon) icon.className = "fab fa-paypal text-primary me-3 fa-2x";
+        if (title) title.textContent = "الدفع عبر PayPal";
+        if (text) text.textContent = "ادفع بأمان باستخدام PayPal أو البطاقة البنكية";
+
+        if (paypalBtn) {
+            paypalBtn.classList.add("btn-primary", "text-white");
+            paypalBtn.classList.remove("btn-outline-primary");
+        }
+        if (cashBtn) {
+            cashBtn.classList.add("btn-outline-success");
+            cashBtn.classList.remove("btn-success");
+        }
+
+        this.selectedMethod = "paypal";
+        this.renderPayPalButton();
+    },
+
+    renderPayPalButton() {
+        const paypalContainer = document.getElementById("paypal-button-container");
+        if (!paypalContainer) return;
+
+        paypalContainer.innerHTML = "";
+
+        if (!window.paypal || typeof paypal.Buttons !== "function") {
+            return;
+        }
+
+        paypal.Buttons({
+            style: {
+                layout: 'vertical',
+                color: 'gold',
+                shape: 'pill',
+                label: 'pay'
+            },
+
+            onClick: (data, actions) => {
+                if (!FormValidation.validate()) {
+                    return actions.reject();
+                }
+                if (!cart || !cart.items || cart.items.length === 0) {
+                    CartUI.showEmpty();
+                    return actions.reject();
+                }
+                return actions.resolve();
+            },
+
+            createOrder: (data, actions) => {
+                const total = cart.getTotal() / 9; // انتبه: هذا بالمغربي (MAD) غالبًا
+                // إن كنت تستخدم currency=USD في سكربت PayPal، حوّل القيمة إلى USD قبل الإرسال.
+                // حالياً نرسلها كما هي، لكن يفضّل توحيد العملة.
+                return actions.order.create({
+                    purchase_units: [{
+                        amount: { value: total.toFixed(2) }
+                    }]
+                });
+            },
+
+            onApprove: (data, actions) => {
+                return actions.order.capture().then(details => {
+                    // أنشئ نفس الطلب ثم مر بمسار التأكيد نفسه
+                    const order = OrderManager.create();
+                    order.paymentMethod = "paypal";
+                    order.status = "paid";
+                    OrderManager.confirm(order);
+                    // لا حاجة لفتح المودال هنا؛ showConfirmation داخل OrderManager تتكفل بذلك
+                });
+            },
+
+            onError: err => {
+                console.error("❌ خطأ في الدفع عبر PayPal:", err);
+                alert("حدث خطأ أثناء الدفع عبر PayPal. حاول مرة أخرى.");
+            }
+        }).render('#paypal-button-container');
     }
 };
+
+
 
 /* ---------------- Helpers ---------------- */
 function getCityName(value) {
