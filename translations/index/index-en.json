@@ -1,0 +1,34 @@
+{
+  "index": {
+    "big-title":"My Store - Home",
+    "first_slide": {
+      "title": "Discounts up to 50%",
+      "text": "Discover the latest products at the best prices.",
+      "btn": "Shop now"
+    },
+    "second_slide": {
+      "title": "High-quality products",
+      "text": "Quality assurance and prompt delivery.",
+      "btn": "Discover more"
+    },
+    "third_slide": {
+      "title": "Fast and free delivery.",
+      "text": "Free delivery to your doorstep.",
+      "btn": "Order now"
+    },
+    "categories": {
+      "name": "Categories",
+      "text": "Browse our products by category"
+    },
+    "products": {
+      "name": "Featured Products",
+      "text": "The best products selected for you",
+      "all": "Show all products"
+    },
+    "offer": {
+      "name": "Special offers for a limited time!",
+      "text": "Discounts of up to 80% on a selected range of products.",
+      "btn": "Shop now"
+    }
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "index": {
+    "big-title": "Ma boutique - Accueil",
+    "first_slide": {
+      "title": "Des réductions allant jusqu'à 50 %",
+      "text": "Découvrez les derniers produits aux meilleurs prix",
+      "btn": "Achetez maintenant"
+    },
+    "second_slide": {
+      "title": "Produits de haute qualité",
+      "text": "Garantie de qualité et rapidité de livraison.",
+      "btn": "Découvrez davantage"
+    },
+    "third_slide": {
+      "title": "Livraison rapide et gratuite.",
+      "text": "Livraison gratuite à votre domicile.",
+      "btn": "Demandez maintenant."
+    },
+    "categories": {
+      "name": "Catégories",
+      "text": "Parcourez nos produits par catégorie"
+    },
+    "products": {
+      "name": "Produits en vedette",
+      "text": "Les meilleurs produits sélectionnés pour vous",
+      "all": "Afficher tous les produits"
+    },
+    "offer": {
+      "name": "Offres spéciales pour une durée limitée!",
+      "text": "Des remises allant jusqu'à 80 % sur une sélection de produits.",
+      "btn": "Achetez maintenant"
+    }
+  }
+}

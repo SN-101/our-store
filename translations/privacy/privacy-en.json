@@ -1,0 +1,42 @@
+{
+  "privacy": {
+    "title": "Privacy Policy",
+    "breadcrumb": {
+      "home": "Home",
+      "active": "Privacy Policy"
+    },
+    "intro": "We respect your privacy and are committed to protecting your personal data.",
+    "section1": {
+      "title": "1. Data We Collect",
+      "description": "When you use our store, we may collect the following data:",
+      "full_name": "Full Name",
+      "email": "Email Address",
+      "phone": "Phone Number",
+      "address": "Address"
+    },
+    "section2": {
+      "title": "2. How We Use Data",
+      "description": "We use your data for:",
+      "process_orders": "Processing orders and communicating with you regarding them.",
+      "send_offers": "Sending offers and updates via email (you can unsubscribe at any time).",
+      "improve_experience": "Improving user experience using analytics tools (like Google Analytics)."
+    },
+    "section3": {
+      "title": "3. Data Protection",
+      "description": "We commit to keeping your data confidential and will not sell or share it with any third party, unless legally required."
+    },
+    "section4": {
+      "title": "4. Cookies",
+      "description": "Our website uses cookies to improve user experience and analyze performance via Google Analytics."
+    },
+    "section5": {
+      "title": "5. Your Rights",
+      "description": "You have the right to request access to your data, modify it, delete it, or unsubscribe from our mailing list at any time."
+    },
+    "contact": {
+      "title": "Contact Us",
+      "description": "If you have any questions about our privacy policy, please contact us:"
+    },
+    "last_updated": "Last Updated: January 2024"
+  }
+}

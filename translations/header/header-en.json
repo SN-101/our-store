@@ -1,0 +1,11 @@
+{
+  "nav": {
+    "logo": "MyStore",
+    "home": "Home",
+    "products": "Products",
+    "about": "About Us",
+    "contact": "Contact Us",
+    "search_placeholder": "Search for a product...",
+    "language_btn": "lang"
+  }
+}

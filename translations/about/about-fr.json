@@ -1,0 +1,123 @@
+{
+  "about": {
+    "about_title": "À propos de nous - Boutique en ligne",
+    "hero": {
+      "title": "À propos de nous",
+      "description": "Nous sommes une boutique en ligne leader qui vise à offrir les meilleurs produits à des prix compétitifs avec une garantie de qualité et une livraison rapide",
+      "img_alt": "Notre Équipe"
+    },
+    "breadcrumb": {
+      "home": "Accueil",
+      "active": "À propos de nous"
+    },
+    "story": {
+      "title": "Notre Histoire",
+      "lead": "Notre parcours a commencé en 2020 avec une vision claire : offrir une expérience d'achat en ligne exceptionnelle aux clients de la région arabe.",
+      "p1": "Nous croyons que l'achat en ligne doit être facile, sécurisé et agréable. C'est pourquoi nous développons continuellement nos services et améliorons l'expérience client.",
+      "p2": "Aujourd'hui, nous sommes fiers de servir des milliers de clients satisfaits et d'offrir une large gamme de produits de haute qualité à des prix compétitifs.",
+      "img_alt": "Notre Histoire"
+    },
+    "mission": {
+      "title": "Notre Mission",
+      "text": "Offrir les meilleurs produits à des prix compétitifs avec une garantie de qualité et une livraison rapide, en construisant des relations à long terme avec nos clients grâce à la confiance et à la transparence."
+    },
+    "vision": {
+      "title": "Notre Vision",
+      "text": "Être la boutique en ligne leader dans la région arabe, le point de départ préféré des clients recherchant qualité et service exceptionnel."
+    },
+    "values": {
+      "title": "Nos Valeurs",
+      "trust": {
+        "title": "Confiance",
+        "desc": "Nous construisons la confiance avec nos clients grâce à la transparence et à l'honnêteté dans toutes nos transactions."
+      },
+      "quality": {
+        "title": "Qualité",
+        "desc": "Nous sélectionnons soigneusement nos produits pour garantir à nos clients la meilleure qualité possible."
+      },
+      "speed": {
+        "title": "Rapidité",
+        "desc": "Nous nous engageons à une livraison rapide et au traitement des commandes pour offrir une expérience fluide à nos clients."
+      },
+      "care": {
+        "title": "Attention",
+        "desc": "Nous accordons de l'importance à chaque détail du parcours client, du début à après la vente."
+      }
+    },
+    "stats": {
+      "title": "Nos Réalisations en Chiffres",
+      "customers": {
+        "title": "+8 200 Clients Actifs au cours des 12 Derniers Mois",
+        "desc": "Une confiance qui grandit jour après jour."
+      },
+      "products": {
+        "title": "+340 Produits Diversifiés à Travers 12 Catégories Principales",
+        "desc": "Des options adaptées à tous les goûts."
+      },
+      "orders": {
+        "title": "+21 500 Commandes Livrées avec Succès",
+        "desc": "96 % des commandes arrivent en toute sécurité en moins de 48 heures."
+      },
+      "reviews": {
+        "title": "4,6/5 Sur 1 400+ Avis Vérifiés",
+        "desc": "Une qualité que nous nous efforçons de maintenir."
+      }
+    },
+    "why": {
+      "title": "Pourquoi Nous Choisir ?",
+      "original": {
+        "title": "Produits 100 % Originaux",
+        "desc": "Tous nos produits sont originaux et garantis par des fournisseurs certifiés."
+      },
+      "delivery": {
+        "title": "Livraison Rapide et Gratuite",
+        "desc": "Nous livrons vos commandes le plus rapidement possible gratuitement à votre porte."
+      },
+      "support": {
+        "title": "Support Client Exceptionnel",
+        "desc": "Notre équipe d'assistance clientèle est disponible pour vous aider à tout moment."
+      },
+      "return": {
+        "title": "Politique de Retour Flexible",
+        "desc": "Vous pouvez facilement retourner ou échanger des produits dans les 24 heures."
+      },
+      "security": {
+        "title": "Sécurité et Confidentialité",
+        "desc": "Nous protégeons vos données personnelles et assurons la sécurité de vos transactions."
+      },
+      "price": {
+        "title": "Prix Compétitifs",
+        "desc": "Nous proposons les meilleurs prix avec des offres et réductions continues."
+      }
+    },
+    "team": {
+      "title": "Notre Équipe",
+      "ceo": {
+        "name": "Ahmed Mohammed",
+        "role": "PDG",
+        "desc": "Plus de 10 ans d'expérience dans le commerce électronique",
+        "img_alt": "PDG"
+      },
+      "marketing": {
+        "name": "Fatima Ali",
+        "role": "Responsable Marketing",
+        "desc": "Spécialisée en marketing digital et gestion de la relation client",
+        "img_alt": "Responsable Marketing"
+      },
+      "tech": {
+        "name": "Mohammed Salem",
+        "role": "Responsable Technologie",
+        "desc": "Développeur logiciel spécialisé dans le développement de sites e-commerce",
+        "img_alt": "Responsable Technologie",
+        "github": "GitHub"
+
+      }
+    },
+    "cta": {
+      "title": "Rejoignez Notre Famille de Clients Satisfaits",
+      "desc": "Démarrez votre parcours d'achat avec nous et découvrez la différence en qualité et service",
+      "shop": "Acheter Maintenant",
+      "contact": "Contactez-nous"
+    }
+  }
+}

@@ -4,11 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>المنتجات - المتجر الإلكتروني</title>
+    <title data-key="products.big-title">المتجري - المنتجات</title>
 
     <!-- Bootstrap 5 RTL -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
-    
+
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
 
@@ -27,41 +27,49 @@
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
             <div class="container">
                 <a class="navbar-brand fw-bold" href="index.html">
-                    <i class="fas fa-store me-2"></i>
-                    المتجر الإلكتروني
+                    <i class="fas fa-store me-2"></i> <span data-key="nav.logo">متجري</span>
                 </a>
-    
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-    
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav me-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="index.html">الرئيسية</a>
+                            <a class="nav-link" href="index.html" data-key="nav.home">الرئيسية</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" href="products.html">المنتجات</a>
+                            <a class="nav-link active" href="products.html" data-key="nav.products">المنتجات</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="about.html">من نحن</a>
+                            <a class="nav-link" href="about.html" data-key="nav.about">من نحن</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="contact.html">اتصل بنا</a>
+                            <a class="nav-link" href="contact.html" data-key="nav.contact">اتصل بنا</a>
                         </li>
                     </ul>
-    
+                    <div class="dropdown p-1">
+                        <button class="btn btn-outline-light dropdown-toggle" type="button" id="languageDropdown"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fa-sharp fa-solid fa-language"></i> <span data-key="nav.language_btn">اللغة</span>
+                        </button>
+                        <ul class="dropdown-menu text-center" aria-labelledby="languageDropdown">
+                            <li><a class="dropdown-item" data-lang="ar" data-key="lang_ar">العربية</a></li>
+                            <li><a class="dropdown-item" data-lang="en" data-key="lang_en">English</a></li>
+                            <li><a class="dropdown-item" data-lang="fr" data-key="lang_fr">Français</a></li>
+                        </ul>
+                    </div>
                     <div class="d-flex align-items-center">
                         <div class="position-relative me-3">
                             <input type="text" class="form-control search-input" placeholder="البحث عن المنتجات..."
-                                id="searchInput">
+                                id="searchInput" data-key="nav.search_placeholder">
                             <button class="btn btn-outline-dark btn-search" type="button">
                                 <i class="fas fa-search"></i>
                             </button>
                         </div>
                         <button class="btn btn-outline-light position-relative me-3" id="cartBtn">
                             <i class="fas fa-shopping-cart"></i>
-                            <span class="cart-count badge bg-warning text-dark position-absolute" id="cartCount">0</span>
+                            <span class="cart-count badge bg-warning text-dark position-absolute"
+                                id="cartCount">0</span>
                         </button>
                     </div>
                 </div>
@@ -74,11 +82,12 @@
         <div class="container">
             <div class="row">
                 <div class="col-12 mb-4">
-                    <h1 class="h2 fw-bold">جميع المنتجات</h1>
+                    <h1 class="h2 fw-bold" data-key="products.all_products_title">جميع المنتجات</h1>
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="index.html">الرئيسية</a></li>
-                            <li class="breadcrumb-item active">المنتجات</li>
+                            <li class="breadcrumb-item"><a href="index.html" data-key="products.breadcrumb_home">الرئيسية</a>
+                            </li>
+                            <li class="breadcrumb-item active" data-key="products.breadcrumb_products">المنتجات</li>
                         </ol>
                     </nav>
                 </div>
@@ -89,12 +98,12 @@
                 <div class="col-lg-3 col-md-4 mb-4">
                     <div class="card">
                         <div class="card-header">
-                            <h5 class="card-title mb-0">فلاتر البحث</h5>
+                            <h5 class="card-title mb-0" data-key="products.filter_title">فلاتر البحث</h5>
                         </div>
                         <div class="card-body">
                             <!-- Category Filter -->
                             <div class="mb-4">
-                                <h6 class="fw-bold mb-3">التصنيف</h6>
+                                <h6 class="fw-bold mb-3" data-key="products.filter_category">التصنيف</h6>
                                 <div id="categoryFilter">
                                     <!-- Categories will be loaded here -->
                                 </div>
@@ -102,40 +111,45 @@
 
                             <!-- Price Filter -->
                             <div class="mb-4">
-                                <h6 class="fw-bold mb-3">السعر</h6>
+                                <h6 class="fw-bold mb-3" data-key="products.filter_price">السعر</h6>
                                 <div class="row">
                                     <div class="col-6">
-                                        <input type="number" class="form-control" placeholder="من" id="minPrice">
+                                        <input type="number" class="form-control" placeholder="من" id="minPrice"
+                                            data-key="products.price_from">
                                     </div>
                                     <div class="col-6">
-                                        <input type="number" class="form-control" placeholder="إلى" id="maxPrice">
+                                        <input type="number" class="form-control" placeholder="إلى" id="maxPrice"
+                                            data-key="products.price_to">
                                     </div>
                                 </div>
                             </div>
 
                             <!-- Rating Filter -->
                             <div class="mb-4">
-                                <h6 class="fw-bold mb-3">التقييم</h6>
+                                <h6 class="fw-bold mb-3" data-key="products.filter_rating">التقييم</h6>
                                 <div id="ratingFilter">
                                     <div class="form-check">
                                         <input class="form-check-input" type="radio" name="rating" id="rating5"
                                             value="5">
                                         <label class="form-check-label" for="rating5">
-                                            <span class="text-warning">★★★★★</span> وأعلى
+                                            <span class="text-warning">★★★★★</span> <span
+                                                data-key="products.rating_and_above">وأعلى</span>
                                         </label>
                                     </div>
                                     <div class="form-check">
                                         <input class="form-check-input" type="radio" name="rating" id="rating4"
                                             value="4">
                                         <label class="form-check-label" for="rating4">
-                                            <span class="text-warning">★★★★</span> وأعلى
+                                            <span class="text-warning">★★★★</span> <span
+                                                data-key="products.rating_and_above">وأعلى</span>
                                         </label>
                                     </div>
                                     <div class="form-check">
                                         <input class="form-check-input" type="radio" name="rating" id="rating3"
                                             value="3">
                                         <label class="form-check-label" for="rating3">
-                                            <span class="text-warning">★★★</span> وأعلى
+                                            <span class="text-warning">★★★</span> <span
+                                                data-key="products.rating_and_above">وأعلى</span>
                                         </label>
                                     </div>
                                 </div>
@@ -143,8 +157,10 @@
 
                             <!-- Filter Actions -->
                             <div class="d-grid gap-2">
-                                <button class="btn btn-primary" id="applyFilters">تطبيق الفلاتر</button>
-                                <button class="btn btn-outline-secondary" id="resetFilters">إعادة تعيين</button>
+                                <button class="btn btn-primary" id="applyFilters" data-key="products.apply_filters">تطبيق
+                                    الفلاتر</button>
+                                <button class="btn btn-outline-secondary" id="resetFilters"
+                                    data-key="products.reset_filters">إعادة تعيين</button>
                             </div>
                         </div>
                     </div>
@@ -155,16 +171,18 @@
                     <!-- Sort Options -->
                     <div class="d-flex justify-content-between align-items-center mb-4">
                         <div>
-                            <span class="text-muted">عرض <span id="productsCount">0</span> منتج</span>
+                            <span class="text-muted" data-key="products.show_products">عرض</span> <span
+                                id="productsCount">0</span>
+                            <span data-key="products.products">منتجا</span>
                         </div>
                         <div class="d-flex align-items-center">
-                            <label class="me-2">ترتيب حسب:</label>
+                            <label class="me-2" data-key="products.sort_by">ترتيب حسب:</label>
                             <select class="form-select" id="sortSelect">
-                                <option value="default">الافتراضي</option>
-                                <option value="price-low">السعر: من الأقل للأعلى</option>
-                                <option value="price-high">السعر: من الأعلى للأقل</option>
-                                <option value="rating">التقييم</option>
-                                <option value="newest">الأحدث</option>
+                                <option value="default" data-key="products.sort_default">الافتراضي</option>
+                                <option value="price-low" data-key="products.sort_price_low">السعر: من الأقل للأعلى</option>
+                                <option value="price-high" data-key="products.sort_price_high">السعر: من الأعلى للأقل</option>
+                                <option value="rating" data-key="products.sort_rating">التقييم</option>
+                                <option value="newest" data-key="products.sort_newest">الأحدث</option>
                             </select>
                         </div>
                     </div>
@@ -187,36 +205,43 @@
         </div>
     </section>
 
+
     <!-- Footer -->
     <footer class="bg-dark text-white py-5">
         <div class="container">
             <div class="row">
                 <div class="col-md-4">
-                    <h5 class="fw-bold mb-3">المتجر الإلكتروني</h5>
-                    <p>نوفر أفضل المنتجات بأسعار تنافسية مع ضمان الجودة وسرعة التوصيل.</p>
+                    <h5 class="fw-bold mb-3" data-key="footer.store.name">متجري</h5>
+                    <p data-key="footer.store.text">نوفر أفضل المنتجات بأسعار تنافسية مع ضمان الجودة وسرعة التوصيل.</p>
                 </div>
                 <div class="col-md-4">
-                    <h5 class="fw-bold mb-3">روابط مفيدة</h5>
+                    <h5 class="fw-bold mb-3" data-key="footer.links.name">روابط مفيدة</h5>
                     <ul class="list-unstyled">
-                        <li><a href="index.html" class="text-white-50">الرئيسية</a></li>
-                        <li><a href="products.html" class="text-white-50">المنتجات</a></li>
-                        <li><a href="about.html" class="text-white-50">من نحن</a></li>
-                        <li><a href="contact.html" class="text-white-50">اتصل بنا</a></li>
-                        <li><a href="privacy-policy.html" class="text-white-50">سياسة الخصوصية</a></li>
-                        <li><a href="terms-of-use.html" class="text-white-50">شروط الاستخدام</a></li>
+                        <li><a href="index.html" class="text-white-50" data-key="footer.links.home">الرئيسية</a></li>
+                        <li><a href="products.html" class="text-white-50" data-key="footer.links.products">المنتجات</a>
+                        </li>
+                        <li><a href="about.html" class="text-white-50" data-key="footer.links.about">من نحن</a></li>
+                        <li><a href="contact.html" class="text-white-50" data-key="footer.links.contact">اتصل بنا</a>
+                        </li>
+                        <li><a href="privacy-policy.html" class="text-white-50" data-key="footer.links.privacy">سياسة
+                                الخصوصية</a></li>
+                        <li><a href="terms-of-use.html" class="text-white-50" data-key="footer.links.terms">شروط
+                                الاستخدام</a></li>
                     </ul>
                 </div>
                 <div class="col-md-4" id="contact">
-                    <h5 class="fw-bold mb-3">اتصل بنا</h5>
+                    <h5 class="fw-bold mb-3" data-key="footer.contacts.name">اتصل بنا</h5>
                     <p><i class="fas fa-phone me-2"></i> +212666666666</p>
                     <p><i class="fas fa-envelope me-2"></i> our@store.com</p>
-                    <p><i class="fas fa-map-marker-alt me-2"></i>الدار البيضاء، المملكة المغربية</p>
+                    <p><i class="fas fa-map-marker-alt me-2"></i><span data-key="footer.contacts.gps">الدار البيضاء،
+                            المملكة
+                            المغربية</span></p>
                 </div>
             </div>
             <hr class="my-4">
             <div class="row">
                 <div class="col-12 text-center">
-                    <p>&copy; 2025 المتجر الإلكتروني. جميع الحقوق محفوظة.</p>
+                    <p><span data-key="footer.copyright">المتجر الإلكتروني. جميع الحقوق محفوظة. 2025</span> &copy;</p>
                 </div>
             </div>
         </div>
@@ -227,16 +252,16 @@
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">سلة المشتريات</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    <h5 class="modal-title" data-key="cart.title">سلة المشتريات</h5> <button type="button" class="btn-close"
+                        data-bs-dismiss="modal"></button>
                 </div>
                 <div class="modal-body" id="cartModalBody">
                     <!-- Cart items will be displayed here -->
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">إغلاق</button>
-                    <button id="checkoutBtn" class="btn btn-primary">إتمام الطلب</button>
-                </div>
+                <div class="modal-footer"> <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
+                        data-key="cart.close">إغلاق</button> <button id="checkoutBtn" class="btn btn-primary"
+                        data-key="cart.confirm">إتمام
+                        الطلب</button> </div>
             </div>
         </div>
     </div>
@@ -249,8 +274,9 @@
 
     <!-- Custom JS -->
     <script defer src="JS/data.js"></script>
+    <script defer src="JS/lang.js"></script>
     <script defer src="JS/cart.js"></script>
-    <script defer src="JS/products.js"></script>
+    <script src="JS/products.js"></script>
 </body>
 
 </html>

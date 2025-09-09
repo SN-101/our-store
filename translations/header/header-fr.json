@@ -1,0 +1,11 @@
+{
+  "nav":{
+    "logo": "MaBoutique",
+    "home": "Accueil",
+    "products": "Produits",
+    "about": "Propos",
+    "contact": "Contactez",
+    "search_placeholder": "Rechercher un produit...",
+    "language_btn": "langue"
+  }
+}

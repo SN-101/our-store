@@ -1,0 +1,22 @@
+{
+  "footer": {
+    "store": {
+      "name": "MyStore",
+      "text": "We provide the best products at competitive prices with guaranteed quality and fast delivery."
+    },
+    "links": {
+      "name": "Useful links",
+      "home": "Home",
+      "products": "Products",
+      "about":"About Us",
+      "contact":"Contact Us",
+      "privacy":"Privacy Policy",
+      "terms":"Terms of Use"
+    },
+    "contacts":{
+        "name":"Contact Us",
+        "gps":"Casablanca, Morocco"
+    },
+    "copyright":"Online store. All rights reserved. 2025"
+  }
+}

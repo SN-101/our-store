@@ -1,0 +1,121 @@
+{
+  "about": {
+    "about_title": "About Us - E-commerce Store",
+    "hero": {
+      "title": "About Us",
+      "description": "We are a leading e-commerce store aiming to provide the best products at competitive prices with quality assurance and fast delivery",
+      "img_alt": "Our Team"
+    },
+    "breadcrumb": {
+      "home": "Home",
+      "active": "About Us"
+    },
+    "story": {
+      "title": "Our Story",
+      "lead": "Our journey began in 2020 with a clear vision: to provide an exceptional online shopping experience for customers in the Arab region.",
+      "p1": "We believe that online shopping should be easy, secure, and enjoyable. Therefore, we continuously develop our services and improve the customer experience.",
+      "p2": "Today, we take pride in serving thousands of satisfied customers and offering a wide range of high-quality products at competitive prices.",
+      "img_alt": "Our Story"
+    },
+    "mission": {
+      "title": "Our Mission",
+      "text": "To provide the best products at competitive prices with quality assurance and fast delivery, building long-term relationships with our customers through trust and transparency."
+    },
+    "vision": {
+      "title": "Our Vision",
+      "text": "To be the leading e-commerce store in the Arab region, the preferred starting point for customers seeking quality and exceptional service."
+    },
+    "values": {
+      "title": "Our Values",
+      "trust": {
+        "title": "Trust",
+        "desc": "We build trust with our customers through transparency and honesty in all our dealings."
+      },
+      "quality": {
+        "title": "Quality",
+        "desc": "We carefully select our products to ensure our customers get the best possible quality."
+      },
+      "speed": {
+        "title": "Speed",
+        "desc": "We commit to fast delivery and order processing to provide a smooth experience for our customers."
+      },
+      "care": {
+        "title": "Care",
+        "desc": "We care about every detail of the customer's journey with us from the beginning to after the sale."
+      }
+    },
+    "stats": {
+      "title": "Our Achievements in Numbers",
+      "customers": {
+        "title": "+8,200 Active Customers in the Last 12 Months",
+        "desc": "Trust that grows day by day."
+      },
+      "products": {
+        "title": "+340 Diverse Products Across 12 Main Categories",
+        "desc": "Options that suit all tastes."
+      },
+      "orders": {
+        "title": "+21,500 Orders Successfully Delivered",
+        "desc": "96% of orders arrive safely within 48 hours."
+      },
+      "reviews": {
+        "title": "4.6/5 Across 1,400+ Verified Reviews",
+        "desc": "Quality we strive to maintain."
+      }
+    },
+    "why": {
+      "title": "Why Choose Us?",
+      "original": {
+        "title": "100% Original Products",
+        "desc": "All our products are original and guaranteed from certified suppliers."
+      },
+      "delivery": {
+        "title": "Fast and Free Delivery",
+        "desc": "We deliver your orders as quickly as possible for free to your doorstep."
+      },
+      "support": {
+        "title": "Exceptional Customer Support",
+        "desc": "Our customer support team is available to assist you at any time."
+      },
+      "return": {
+        "title": "Flexible Return Policy",
+        "desc": "You can easily return or exchange products within 24 hours."
+      },
+      "security": {
+        "title": "Security and Privacy",
+        "desc": "We protect your personal data and ensure the security of your transactions."
+      },
+      "price": {
+        "title": "Competitive Prices",
+        "desc": "We offer the best prices with continuous offers and discounts."
+      }
+    },
+    "team": {
+      "title": "Our Team",
+      "ceo": {
+        "name": "Ahmed Mohammed",
+        "role": "CEO",
+        "desc": "Over 10 years of experience in e-commerce",
+        "img_alt": "CEO"
+      },
+      "marketing": {
+        "name": "Fatima Ali",
+        "role": "Marketing Manager",
+        "desc": "Specialized in digital marketing and customer relationship management",
+        "img_alt": "Marketing Manager"
+      },
+      "tech": {
+        "name": "Mohammed Salem",
+        "role": "Technology Manager",
+        "desc": "Software developer specialized in e-commerce website development",
+        "img_alt": "Technology Manager"
+      }
+    },
+    "cta": {
+      "title": "Join Our Family of Satisfied Customers",
+      "desc": "Start your shopping journey with us and discover the difference in quality and service",
+      "shop": "Shop Now",
+      "contact": "Contact Us"
+    }
+  }
+}

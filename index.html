@@ -4,19 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>متجر إلكتروني - الصفحة الرئيسية</title>
-
+    <title data-key="index.big-title">المتجري - الرئيسية</title>
     <!-- Bootstrap 5 RTL -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
-    
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
-
     <!-- Google Fonts -->
     <link
         href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&family=Roboto:wght@300;400;500;700&display=swap"
         rel="stylesheet">
-
     <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
@@ -27,34 +23,41 @@
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
             <div class="container">
                 <a class="navbar-brand fw-bold" href="index.html">
-                    <i class="fas fa-store me-2"></i>
-                    المتجر الإلكتروني
+                    <i class="fas fa-store me-2"></i> <span data-key="nav.logo">متجري</span>
                 </a>
-
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav me-auto">
                         <li class="nav-item">
-                            <a class="nav-link active" href="index.html">الرئيسية</a>
+                            <a class="nav-link active" href="index.html" data-key="nav.home">الرئيسية</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="products.html">المنتجات</a>
+                            <a class="nav-link" href="products.html" data-key="nav.products">المنتجات</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="about.html">من نحن</a>
+                            <a class="nav-link" href="about.html" data-key="nav.about">من نحن</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="contact.html">اتصل بنا</a>
+                            <a class="nav-link" href="contact.html" data-key="nav.contact">اتصل بنا</a>
                         </li>
                     </ul>
-
+                    <div class="dropdown p-1">
+                        <button class="btn btn-outline-light dropdown-toggle" type="button" id="languageDropdown"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fa-sharp fa-solid fa-language"></i> <span data-key="nav.language_btn">اللغة</span>
+                        </button>
+                        <ul class="dropdown-menu text-center" aria-labelledby="languageDropdown">
+                            <li><a class="dropdown-item " data-lang="ar" data-key="lang_ar">العربية</a></li>
+                            <li><a class="dropdown-item " data-lang="en" data-key="lang_en">English</a></li>
+                            <li><a class="dropdown-item " data-lang="fr" data-key="lang_fr">Français</a></li>
+                        </ul>
+                    </div>
                     <div class="d-flex align-items-center">
                         <div class="position-relative me-3">
                             <input type="text" class="form-control search-input" placeholder="البحث عن المنتجات..."
-                                id="searchInput">
+                                id="searchInput" data-key="nav.search_placeholder">
                             <button class="btn btn-outline-dark btn-search" type="button">
                                 <i class="fas fa-search"></i>
                             </button>
@@ -73,71 +76,60 @@
     <!-- Hero Section -->
     <section class="hero-section">
         <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-indicators">
-                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active"></button>
-                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1"></button>
-                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2"></button>
-            </div>
-
+            <div class="carousel-indicators"> <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0"
+                    class="active"></button> <button type="button" data-bs-target="#heroCarousel"
+                    data-bs-slide-to="1"></button> <button type="button" data-bs-target="#heroCarousel"
+                    data-bs-slide-to="2"></button> </div>
             <div class="carousel-inner">
                 <div class="carousel-item active">
                     <div class="hero-slide bg-gradient-primary">
                         <div class="container">
                             <div class="row align-items-center">
                                 <div class="col-lg-6">
-                                    <h1 class="display-4 fw-bold text-white mb-4">خصومات تصل إلى 50%</h1>
-                                    <p class="lead text-white mb-4">اكتشف أحدث المنتجات بأفضل الأسعار</p>
-                                    <a href="products.html" class="btn btn-warning btn-lg px-4">تسوق الآن</a>
+                                    <h1 class="display-4 fw-bold text-white mb-4" data-key="index.first_slide.title">خصومات تصل إلى 50%</h1>
+                                    <p class="lead text-white mb-4" data-key="index.first_slide.text">اكتشف أحدث المنتجات بأفضل الأسعار</p> <a
+                                        href="products.html" class="btn btn-warning btn-lg px-4" data-key="index.first_slide.btn">تسوق الآن</a>
                                 </div>
-                                <div class="col-lg-6">
-                                    <img src="files/oraimo.jpg" class="img-fluid rounded shadow" alt="عرض خاص">
-                                </div>
+                                <div class="col-lg-6"> <img src="files/oraimo.jpg" class="img-fluid rounded shadow"
+                                        alt="عرض خاص"> </div>
                             </div>
                         </div>
                     </div>
                 </div>
-
                 <div class="carousel-item">
                     <div class="hero-slide bg-gradient-primary">
                         <div class="container">
                             <div class="row align-items-center">
                                 <div class="col-lg-6">
-                                    <h1 class="display-4 fw-bold text-white mb-4">منتجات عالية الجودة</h1>
-                                    <p class="lead text-white mb-4">ضمان الجودة وسرعة التوصيل</p>
-                                    <a href="products.html" class="btn btn-warning btn-lg px-4">اكتشف المزيد</a>
+                                    <h1 class="display-4 fw-bold text-white mb-4" data-key="index.second_slide.title">منتجات عالية الجودة</h1>
+                                    <p class="lead text-white mb-4" data-key="index.second_slide.text">ضمان الجودة وسرعة التوصيل</p> <a
+                                        href="products.html" class="btn btn-warning btn-lg px-4" data-key="index.second_slide.btn">اكتشف المزيد</a>
                                 </div>
-                                <div class="col-lg-6">
-                                    <img src="files/sac.jpg" class="img-fluid rounded shadow" alt="جودة عالية">
-                                </div>
+                                <div class="col-lg-6"> <img src="files/sac.jpg" class="img-fluid rounded shadow"
+                                        alt="جودة عالية"> </div>
                             </div>
                         </div>
                     </div>
                 </div>
-
                 <div class="carousel-item">
                     <div class="hero-slide bg-gradient-primary">
                         <div class="container">
                             <div class="row align-items-center">
                                 <div class="col-lg-6">
-                                    <h1 class="display-4 fw-bold text-white mb-4">توصيل سريع ومجاني</h1>
-                                    <p class="lead text-white mb-4">توصيل مجاني إلى باب منزلك</p>
-                                    <a href="products.html" class="btn btn-warning btn-lg px-4">طلب الآن</a>
+                                    <h1 class="display-4 fw-bold text-white mb-4" data-key="index.third_slide.title">توصيل سريع ومجاني</h1>
+                                    <p class="lead text-white mb-4" data-key="index.third_slide.text">توصيل مجاني إلى باب منزلك</p> <a
+                                        href="products.html" class="btn btn-warning btn-lg px-4" data-key="index.third_slide.btn">طلب الآن</a>
                                 </div>
-                                <div class="col-lg-6">
-                                    <img src="files/shoes.jpg" class="img-fluid rounded shadow" alt="توصيل سريع">
-                                </div>
+                                <div class="col-lg-6"> <img src="files/shoes.jpg" class="img-fluid rounded shadow"
+                                        alt="توصيل سريع"> </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-
-            <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon"></span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
-                <span class="carousel-control-next-icon"></span>
-            </button>
+            </div> <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel"
+                data-bs-slide="prev"> <span class="carousel-control-prev-icon"></span> </button> <button
+                class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next"> <span
+                    class="carousel-control-next-icon"></span> </button>
         </div>
     </section>
 
@@ -146,11 +138,10 @@
         <div class="container">
             <div class="row">
                 <div class="col-12 text-center mb-5">
-                    <h2 class="section-title">التصنيفات</h2>
-                    <p class="text-muted">تصفح منتجاتنا حسب التصنيف</p>
+                    <h2 class="section-title" data-key="index.categories.name">التصنيفات</h2>
+                    <p class="text-muted" data-key="index.categories.text">تصفح منتجاتنا حسب التصنيف</p>
                 </div>
             </div>
-
             <div class="row g-4" id="categoriesContainer">
                 <!-- Categories will be loaded here -->
             </div>
@@ -162,19 +153,15 @@
         <div class="container">
             <div class="row">
                 <div class="col-12 text-center mb-5">
-                    <h2 class="section-title">المنتجات المميزة</h2>
-                    <p class="text-muted">أفضل المنتجات المختارة لك</p>
+                    <h2 class="section-title"  data-key="index.products.name">المنتجات المميزة</h2>
+                    <p class="text-muted" data-key="index.products.text">أفضل المنتجات المختارة لك</p>
                 </div>
             </div>
-
             <div class="row g-4" id="featuredProducts">
                 <!-- Featured products will be loaded here -->
             </div>
-
             <div class="row mt-5">
-                <div class="col-12 text-center">
-                    <a href="products.html" class="btn btn-primary btn-lg">عرض جميع المنتجات</a>
-                </div>
+                <div class="col-12 text-center"> <a href="products.html" class="btn btn-primary btn-lg"  data-key="index.products.all">عرض جميع المنتجات</a> </div>
             </div>
         </div>
     </section>
@@ -184,12 +171,10 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-md-8">
-                    <h3 class="fw-bold mb-2">عروض خاصة لفترة محدودة!</h3>
-                    <p class="mb-0">خصومات تصل إلى 80% على مجموعة مختارة من المنتجات</p>
+                    <h3 class="fw-bold mb-2" data-key="index.offer.name">عروض خاصة لفترة محدودة!</h3>
+                    <p class="mb-0" data-key="index.offer.text">خصومات تصل إلى 80% على مجموعة مختارة من المنتجات</p>
                 </div>
-                <div class="col-md-4 text-end">
-                    <a href="products.html" class="btn btn-dark btn-lg">تسوق الآن</a>
-                </div>
+                <div class="col-md-4 text-end"> <a href="products.html" class="btn btn-dark btn-lg" data-key="index.offer.btn">تسوق الآن</a> </div>
             </div>
         </div>
     </section>
@@ -199,31 +184,35 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-4">
-                    <h5 class="fw-bold mb-3">المتجر الإلكتروني</h5>
-                    <p>نوفر أفضل المنتجات بأسعار تنافسية مع ضمان الجودة وسرعة التوصيل.</p>
+                    <h5 class="fw-bold mb-3" data-key="footer.store.name">متجري</h5>
+                    <p data-key="footer.store.text">نوفر أفضل المنتجات بأسعار تنافسية مع ضمان الجودة وسرعة التوصيل.</p>
                 </div>
                 <div class="col-md-4">
-                    <h5 class="fw-bold mb-3">روابط مفيدة</h5>
+                    <h5 class="fw-bold mb-3" data-key="footer.links.name">روابط مفيدة</h5>
                     <ul class="list-unstyled">
-                        <li><a href="index.html" class="text-white-50">الرئيسية</a></li>
-                        <li><a href="products.html" class="text-white-50">المنتجات</a></li>
-                        <li><a href="about.html" class="text-white-50">من نحن</a></li>
-                        <li><a href="contact.html" class="text-white-50">اتصل بنا</a></li>
-                        <li><a href="privacy-policy.html" class="text-white-50">سياسة الخصوصية</a></li>
-                        <li><a href="terms-of-use.html" class="text-white-50">شروط الاستخدام</a></li>
+                        <li><a href="index.html" class="text-white-50" data-key="footer.links.home">الرئيسية</a></li>
+                        <li><a href="products.html" class="text-white-50" data-key="footer.links.products">المنتجات</a>
+                        </li>
+                        <li><a href="about.html" class="text-white-50" data-key="footer.links.about">من نحن</a></li>
+                        <li><a href="contact.html" class="text-white-50" data-key="footer.links.contact">اتصل بنا</a>
+                        </li>
+                        <li><a href="privacy-policy.html" class="text-white-50" data-key="footer.links.privacy">سياسة
+                                الخصوصية</a></li>
+                        <li><a href="terms-of-use.html" class="text-white-50" data-key="footer.links.terms">شروط
+                                الاستخدام</a></li>
                     </ul>
                 </div>
                 <div class="col-md-4" id="contact">
-                    <h5 class="fw-bold mb-3">اتصل بنا</h5>
+                    <h5 class="fw-bold mb-3" data-key="footer.contacts.name">اتصل بنا</h5>
                     <p><i class="fas fa-phone me-2"></i> +212666666666</p>
                     <p><i class="fas fa-envelope me-2"></i> our@store.com</p>
-                    <p><i class="fas fa-map-marker-alt me-2"></i>الدار البيضاء، المملكة المغربية</p>
+                    <p><i class="fas fa-map-marker-alt me-2"></i><span  data-key="footer.contacts.gps">الدار البيضاء، المملكة المغربية</span></p>
                 </div>
             </div>
             <hr class="my-4">
             <div class="row">
                 <div class="col-12 text-center">
-                    <p>&copy; 2025 المتجر الإلكتروني. جميع الحقوق محفوظة.</p>
+                    <p><span data-key="footer.copyright">المتجر الإلكتروني. جميع الحقوق محفوظة. 2025</span> &copy;</p>
                 </div>
             </div>
         </div>
@@ -234,16 +223,15 @@
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">سلة المشتريات</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    <h5 class="modal-title" data-key="cart.title">سلة المشتريات</h5> <button type="button" class="btn-close"
+                        data-bs-dismiss="modal"></button>
                 </div>
                 <div class="modal-body" id="cartModalBody">
                     <!-- Cart items will be displayed here -->
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">إغلاق</button>
-                    <button id="checkoutBtn" class="btn btn-primary">إتمام الطلب</button>
-                </div>
+                <div class="modal-footer"> <button type="button" class="btn btn-secondary"
+                        data-bs-dismiss="modal" data-key="cart.close">إغلاق</button> <button id="checkoutBtn" class="btn btn-primary"  data-key="cart.confirm">إتمام
+                        الطلب</button> </div>
             </div>
         </div>
     </div>
@@ -256,8 +244,9 @@
 
     <!-- Custom JS -->
     <script defer src="JS/data.js"></script>
+    <script defer src="JS/lang.js"></script>
     <script defer src="JS/cart.js"></script>
-    <script defer src="JS/main.js"></script>
+    <script src="JS/main.js"></script>
 </body>
 
 </html>

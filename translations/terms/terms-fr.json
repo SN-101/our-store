@@ -1,0 +1,56 @@
+{
+  "terms": {
+    "title": "Conditions d'utilisation",
+    "breadcrumb": {
+      "home": "Accueil",
+      "active": "Conditions d'utilisation"
+    },
+    "intro": "Veuillez lire attentivement ces conditions avant d'utiliser notre boutique en ligne.",
+    "section1": {
+      "title": "1. Utilisation du site",
+      "all_ages": "L'utilisation du site est autorisée pour tous les âges.",
+      "correct_info": "Vous devez fournir des informations correctes lors de la commande."
+    },
+    "section2": {
+      "title": "2. Commande et paiement",
+      "important": "Important :",
+      "confirmation": "Toutes les commandes sont confirmées par e-mail ou par appel téléphonique.",
+      "payment_methods": "Le paiement s'effectue à la livraison, ou vous pouvez facilement payer via PayPal.",
+      "right_to_refuse": "Nous nous réservons le droit de refuser toute commande si des informations incorrectes sont fournies."
+    },
+    "section3": {
+      "title": "3. Expédition et livraison",
+      "delivery_area": {
+        "title": "Zone de livraison",
+        "description": "L'expédition est disponible uniquement au Maroc."
+      },
+      "confirmation": {
+        "title": "Confirmation",
+        "description": "Nous vous contacterons pour confirmer l'adresse et la date de livraison."
+      }
+    },
+    "section4": {
+      "title": "4. Politique de retour",
+      "return_policy_title": "Délai de retour :",
+      "return_policy": "Vous pouvez retourner le produit dans les 24 heures suivant la réception, à condition qu'il soit dans son état d'origine.",
+      "warning": "Avertissement :",
+      "no_damaged": "Les produits endommagés ou utilisés ne sont pas acceptés.",
+      "no_digital": "Les produits numériques ne sont pas acceptés du tout."
+    },
+    "section5": {
+      "title": "5. Propriété intellectuelle",
+      "description": "Toutes les images et contenus du magasin sont la propriété du propriétaire du magasin, et leur utilisation est interdite sans autorisation préalable."
+    },
+    "section6": {
+      "title": "6. Modifications",
+      "description": "Nous nous réservons le droit de modifier ces conditions et la politique de confidentialité à tout moment sans préavis."
+    },
+    "contact": {
+      "title": "Contactez-nous",
+      "description": "Si vous avez des questions concernant les conditions d'utilisation, veuillez nous contacter :"
+    },
+    "last_updated": "Dernière mise à jour : Janvier 2024",
+    "thanks": "Merci d'utiliser notre magasin !",
+    "agreement": "En utilisant ce site web, vous acceptez toutes les conditions mentionnées ci-dessus."
+  }
+}

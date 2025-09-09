@@ -27,34 +27,41 @@
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
             <div class="container">
                 <a class="navbar-brand fw-bold" href="index.html">
-                    <i class="fas fa-store me-2"></i>
-                    المتجر الإلكتروني
+                    <i class="fas fa-store me-2"></i> <span data-key="nav.logo">متجري</span>
                 </a>
-    
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-    
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav me-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="index.html">الرئيسية</a>
+                            <a class="nav-link" href="index.html" data-key="nav.home">الرئيسية</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="products.html">المنتجات</a>
+                            <a class="nav-link" href="products.html" data-key="nav.products">المنتجات</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="about.html">من نحن</a>
+                            <a class="nav-link" href="about.html" data-key="nav.about">من نحن</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="contact.html">اتصل بنا</a>
+                            <a class="nav-link" href="contact.html" data-key="nav.contact">اتصل بنا</a>
                         </li>
                     </ul>
-    
+                    <div class="dropdown p-1">
+                        <button class="btn btn-outline-light dropdown-toggle" type="button" id="languageDropdown"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fa-sharp fa-solid fa-language"></i> <span data-key="nav.language_btn">اللغة</span>
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="languageDropdown">
+                            <li><a class="dropdown-item" data-lang="ar" data-key="lang_ar">العربية</a></li>
+                            <li><a class="dropdown-item" data-lang="en" data-key="lang_en">English</a></li>
+                            <li><a class="dropdown-item" data-lang="fr" data-key="lang_fr">Français</a></li>
+                        </ul>
+                    </div>
                     <div class="d-flex align-items-center">
                         <div class="position-relative me-3">
                             <input type="text" class="form-control search-input" placeholder="البحث عن المنتجات..."
-                                id="searchInput">
+                                id="searchInput" data-key="nav.search_placeholder">
                             <button class="btn btn-outline-dark btn-search" type="button">
                                 <i class="fas fa-search"></i>
                             </button>
@@ -69,83 +76,94 @@
         </nav>
     </header>
 
-    <!-- Terms of Use Content -->
+        <!-- Terms of Use Content -->
     <section class="py-5">
         <div class="container">
             <div class="row">
                 <div class="col-12 mb-4">
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="index.html">الرئيسية</a></li>
-                            <li class="breadcrumb-item active">شروط الاستخدام</li>
+                            <li class="breadcrumb-item"><a href="index.html" data-key="terms.breadcrumb.home">الرئيسية</a>
+                            </li>
+                            <li class="breadcrumb-item active" data-key="terms.breadcrumb.active">شروط الاستخدام</li>
                         </ol>
                     </nav>
                 </div>
             </div>
-
+    
             <div class="row justify-content-center">
                 <div class="col-lg-8 col-md-10">
                     <div class="card">
                         <div class="card-header bg-primary text-white">
                             <h1 class="h3 mb-0">
                                 <i class="fas fa-file-contract me-2"></i>
-                                📄 شروط الاستخدام
+                                <span data-key="terms.title">شروط الاستخدام</span>
                             </h1>
                         </div>
                         <div class="card-body">
                             <div class="terms-content">
-                                <p class="lead">يرجى قراءة هذه الشروط بعناية قبل استخدام متجرنا الإلكتروني.</p>
-
+                                <p class="lead" data-key="terms.intro">يرجى قراءة هذه الشروط بعناية قبل استخدام متجرنا
+                                    الإلكتروني.</p>
+    
                                 <div class="section mb-4">
                                     <h3 class="h5 fw-bold text-primary mb-3">
                                         <i class="fas fa-globe me-2"></i>
-                                        1. استخدام الموقع
+                                        <span data-key="terms.section1.title">1. استخدام الموقع</span>
                                     </h3>
                                     <ul class="list-unstyled">
                                         <li class="mb-2">
                                             <i class="fas fa-check-circle text-success me-2"></i>
-                                            يسمح باستخدام الموقع لجميع الأعمار.
+                                            <span data-key="terms.section1.all_ages">يسمح باستخدام الموقع لجميع
+                                                الأعمار.</span>
                                         </li>
                                         <li class="mb-2">
                                             <i class="fas fa-check-circle text-success me-2"></i>
-                                            يجب تقديم معلومات صحيحة عند الطلب.
+                                            <span data-key="terms.section1.correct_info">يجب تقديم معلومات صحيحة عند
+                                                الطلب.</span>
                                         </li>
                                     </ul>
                                 </div>
-
+    
                                 <div class="section mb-4">
                                     <h3 class="h5 fw-bold text-primary mb-3">
                                         <i class="fas fa-shopping-cart me-2"></i>
-                                        2. الطلب والدفع
+                                        <span data-key="terms.section2.title">2. الطلب والدفع</span>
                                     </h3>
                                     <div class="alert alert-info mb-3">
                                         <i class="fas fa-info-circle me-2"></i>
-                                        <strong>مهم:</strong> جميع الطلبات يتم تأكيدها عبر البريد الإلكتروني أو مكالة هاتفية.
+                                        <strong data-key="terms.section2.important">مهم:</strong>
+                                        <span data-key="terms.section2.confirmation">جميع الطلبات يتم تأكيدها عبر البريد
+                                            الإلكتروني أو مكالة هاتفية.</span>
                                     </div>
                                     <ul class="list-unstyled">
                                         <li class="mb-2">
                                             <i class="fas fa-money-bill-wave text-success me-2"></i>
-                                            الدفع يتم عند التسليم, أو يمكنك الدفع بسهولة عن طريق PayPal.
+                                            <span data-key="terms.section2.payment_methods">الدفع يتم عند التسليم, أو يمكنك
+                                                الدفع بسهولة عن طريق PayPal.</span>
                                         </li>
                                         <li class="mb-2">
                                             <i class="fas fa-times-circle text-warning me-2"></i>
-                                            نحتفظ بالحق في رفض أي طلب في حال وجود معلومات غير صحيحة.
+                                            <span data-key="terms.section2.right_to_refuse">نحتفظ بالحق في رفض أي طلب في حال
+                                                وجود معلومات غير صحيحة.</span>
                                         </li>
                                     </ul>
                                 </div>
-
+    
                                 <div class="section mb-4">
                                     <h3 class="h5 fw-bold text-primary mb-3">
                                         <i class="fas fa-truck me-2"></i>
-                                        3. الشحن والتوصيل
+                                        <span data-key="terms.section3.title">3. الشحن والتوصيل</span>
                                     </h3>
                                     <div class="row">
                                         <div class="col-md-6">
                                             <div class="card border-success">
                                                 <div class="card-body text-center">
                                                     <i class="fas fa-map-marker-alt text-success fa-2x mb-2"></i>
-                                                    <h6 class="card-title">منطقة التوصيل</h6>
-                                                    <p class="card-text">الشحن متاح فقط داخل المغرب.</p>
+                                                    <h6 class="card-title" data-key="terms.section3.delivery_area.title">
+                                                        منطقة التوصيل</h6>
+                                                    <p class="card-text"
+                                                        data-key="terms.section3.delivery_area.description">الشحن متاح فقط
+                                                        داخل المغرب.</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -153,82 +171,90 @@
                                             <div class="card border-info">
                                                 <div class="card-body text-center">
                                                     <i class="fas fa-phone text-info fa-2x mb-2"></i>
-                                                    <h6 class="card-title">التأكيد</h6>
-                                                    <p class="card-text">سيتم التواصل معك لتأكيد العنوان وتاريخ التوصيل.
-                                                    </p>
+                                                    <h6 class="card-title" data-key="terms.section3.confirmation.title">
+                                                        التأكيد</h6>
+                                                    <p class="card-text" data-key="terms.section3.confirmation.description">
+                                                        سيتم التواصل معك لتأكيد العنوان وتاريخ التوصيل.</p>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-
+    
                                 <div class="section mb-4">
                                     <h3 class="h5 fw-bold text-primary mb-3">
                                         <i class="fas fa-undo me-2"></i>
-                                        4. سياسة الإرجاع
+                                        <span data-key="terms.section4.title">4. سياسة الإرجاع</span>
                                     </h3>
                                     <div class="alert alert-warning">
                                         <i class="fas fa-clock me-2"></i>
-                                        <strong>مهلة الإرجاع:</strong> يمكنك إرجاع المنتج خلال 24 ساعة من استلامه، بشرط
-                                        أن يكون في حالته الأصلية.
+                                        <strong data-key="terms.section4.return_policy_title">مهلة الإرجاع:</strong>
+                                        <span data-key="terms.section4.return_policy">يمكنك إرجاع المنتج خلال 24 ساعة من
+                                            استلامه، بشرط أن يكون في حالته الأصلية.</span>
                                     </div>
                                     <div class="alert alert-danger">
                                         <i class="fas fa-exclamation-triangle me-2"></i>
-                                        <strong>تنبيه:</strong> لا تُقبل المنتجات المتضررة أو المستخدمة.
+                                        <strong data-key="terms.section4.warning">تنبيه:</strong>
+                                        <span data-key="terms.section4.no_damaged">لا تُقبل المنتجات المتضررة أو
+                                            المستخدمة.</span>
                                         <br>
                                         <i class="fas fa-warning me-2"></i>
-                                        <strong>تنبيه:</strong> لا تُقبل المنتجات الرقمية نهائيا.
+                                        <strong data-key="terms.section4.warning">تنبيه:</strong>
+                                        <span data-key="terms.section4.no_digital">لا تُقبل المنتجات الرقمية نهائياً.</span>
                                     </div>
                                 </div>
-
+    
                                 <div class="section mb-4">
                                     <h3 class="h5 fw-bold text-primary mb-3">
                                         <i class="fas fa-copyright me-2"></i>
-                                        5. الملكية الفكرية
+                                        <span data-key="terms.section5.title">5. الملكية الفكرية</span>
                                     </h3>
                                     <div class="alert alert-secondary">
                                         <i class="fas fa-shield-alt me-2"></i>
-                                        جميع الصور والمحتويات الموجودة في المتجر هي ملك لصاحب المتجر، ويُمنع استخدامها
-                                        دون إذن مسبق.
+                                        <span data-key="terms.section5.description">جميع الصور والمحتويات الموجودة في المتجر
+                                            هي ملك لصاحب المتجر، ويُمنع استخدامها دون إذن مسبق.</span>
                                     </div>
                                 </div>
-
+    
                                 <div class="section mb-4">
                                     <h3 class="h5 fw-bold text-primary mb-3">
                                         <i class="fas fa-edit me-2"></i>
-                                        6. التعديلات
+                                        <span data-key="terms.section6.title">6. التعديلات</span>
                                     </h3>
                                     <div class="alert alert-info">
                                         <i class="fas fa-info-circle me-2"></i>
-                                        نحتفظ بالحق في تعديل هذه الشروط وسياسة الخصوصية في أي وقت دون إشعار مسبق.
+                                        <span data-key="terms.section6.description">نحتفظ بالحق في تعديل هذه الشروط وسياسة
+                                            الخصوصية في أي وقت دون إشعار مسبق.</span>
                                     </div>
                                 </div>
-
+    
                                 <div class="section">
                                     <h3 class="h5 fw-bold text-primary mb-3">
                                         <i class="fas fa-phone-alt me-2"></i>
-                                        تواصل معنا
+                                        <span data-key="terms.contact.title">تواصل معنا</span>
                                     </h3>
-                                    <p>إذا كان لديك أي استفسارات حول شروط الاستخدام، يرجى التواصل معنا:</p>
+                                    <p data-key="terms.contact.description">إذا كان لديك أي استفسارات حول شروط الاستخدام،
+                                        يرجى التواصل معنا:</p>
                                     <div class="contact-info">
                                         <p><i class="fas fa-envelope text-primary me-2"></i> info@store.com</p>
                                         <p><i class="fas fa-phone text-primary me-2"></i> +966 50 123 4567</p>
                                     </div>
                                 </div>
-
+    
                                 <hr class="my-4">
                                 <div class="text-center">
                                     <small class="text-muted">
                                         <i class="fas fa-calendar-alt me-1"></i>
-                                        آخر تحديث: يناير 2024
+                                        <span data-key="terms.last_updated">آخر تحديث: يناير 2024</span>
                                     </small>
                                 </div>
-
+    
                                 <div class="text-center mt-4">
                                     <div class="alert alert-success">
                                         <i class="fas fa-handshake me-2"></i>
-                                        <strong>شكراً لك على استخدام متجرنا!</strong><br>
-                                        باستخدامك لهذا الموقع، فإنك توافق على جميع الشروط المذكورة أعلاه.
+                                        <strong data-key="terms.thanks">شكراً لك على استخدام متجرنا!</strong><br>
+                                        <span data-key="terms.agreement">باستخدامك لهذا الموقع، فإنك توافق على جميع الشروط
+                                            المذكورة أعلاه.</span>
                                     </div>
                                 </div>
                             </div>
@@ -244,31 +270,36 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-4">
-                    <h5 class="fw-bold mb-3">المتجر الإلكتروني</h5>
-                    <p>نوفر أفضل المنتجات بأسعار تنافسية مع ضمان الجودة وسرعة التوصيل.</p>
+                    <h5 class="fw-bold mb-3" data-key="footer.store.name">متجري</h5>
+                    <p data-key="footer.store.text">نوفر أفضل المنتجات بأسعار تنافسية مع ضمان الجودة وسرعة التوصيل.</p>
                 </div>
                 <div class="col-md-4">
-                    <h5 class="fw-bold mb-3">روابط مفيدة</h5>
+                    <h5 class="fw-bold mb-3" data-key="footer.links.name">روابط مفيدة</h5>
                     <ul class="list-unstyled">
-                        <li><a href="index.html" class="text-white-50">الرئيسية</a></li>
-                        <li><a href="products.html" class="text-white-50">المنتجات</a></li>
-                        <li><a href="about.html" class="text-white-50">من نحن</a></li>
-                        <li><a href="contact.html" class="text-white-50">اتصل بنا</a></li>
-                        <li><a href="privacy-policy.html" class="text-white-50">سياسة الخصوصية</a></li>
-                        <li><a href="terms-of-use.html" class="text-white-50">شروط الاستخدام</a></li>
+                        <li><a href="index.html" class="text-white-50" data-key="footer.links.home">الرئيسية</a></li>
+                        <li><a href="products.html" class="text-white-50" data-key="footer.links.products">المنتجات</a>
+                        </li>
+                        <li><a href="about.html" class="text-white-50" data-key="footer.links.about">من نحن</a></li>
+                        <li><a href="contact.html" class="text-white-50" data-key="footer.links.contact">اتصل بنا</a>
+                        </li>
+                        <li><a href="privacy-policy.html" class="text-white-50" data-key="footer.links.privacy">سياسة
+                                الخصوصية</a></li>
+                        <li><a href="terms-of-use.html" class="text-white-50" data-key="footer.links.terms">شروط
+                                الاستخدام</a></li>
                     </ul>
                 </div>
                 <div class="col-md-4" id="contact">
-                    <h5 class="fw-bold mb-3">اتصل بنا</h5>
+                    <h5 class="fw-bold mb-3" data-key="footer.contacts.name">اتصل بنا</h5>
                     <p><i class="fas fa-phone me-2"></i> +212666666666</p>
                     <p><i class="fas fa-envelope me-2"></i> our@store.com</p>
-                    <p><i class="fas fa-map-marker-alt me-2"></i>الدار البيضاء، المملكة المغربية</p>
+                    <p><i class="fas fa-map-marker-alt me-2"></i><span data-key="footer.contacts.gps">الدار البيضاء، المملكة
+                            المغربية</span></p>
                 </div>
             </div>
             <hr class="my-4">
             <div class="row">
                 <div class="col-12 text-center">
-                    <p>&copy; 2025 المتجر الإلكتروني. جميع الحقوق محفوظة.</p>
+                    <p><span data-key="footer.copyright">المتجر الإلكتروني. جميع الحقوق محفوظة. 2025</span> &copy;</p>
                 </div>
             </div>
         </div>
@@ -279,16 +310,16 @@
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">سلة المشتريات</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    <h5 class="modal-title" data-key="cart.title">سلة المشتريات</h5> <button type="button" class="btn-close"
+                        data-bs-dismiss="modal"></button>
                 </div>
                 <div class="modal-body" id="cartModalBody">
                     <!-- Cart items will be displayed here -->
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">إغلاق</button>
-                    <button id="checkoutBtn" class="btn btn-primary">إتمام الطلب</button>
-                </div>
+                <div class="modal-footer"> <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
+                        data-key="cart.close">إغلاق</button> <button id="checkoutBtn" class="btn btn-primary"
+                        data-key="cart.confirm">إتمام
+                        الطلب</button> </div>
             </div>
         </div>
     </div>
@@ -301,6 +332,7 @@
 
     <!-- Custom JS -->
     <script defer src="JS/data.js"></script>
+    <script defer src="JS/lang.js"></script>
     <script defer src="JS/cart.js"></script>
     <script defer src="JS/privacy-terms.js"></script>
 </body>

@@ -1,0 +1,25 @@
+{
+  "products": {
+    "big-title": "My Store - Products",
+    "all_products_title": "All Products",
+    "breadcrumb_home": "Home",
+    "breadcrumb_products": "Products",
+    "filter_title": "Search Filters",
+    "filter_category": "Category",
+    "filter_price": "Price",
+    "price_from": "From",
+    "price_to": "To",
+    "filter_rating": "Rating",
+    "rating_and_above": "and above",
+    "apply_filters": "Apply Filters",
+    "reset_filters": "Reset",
+    "show_products": "Showing",
+    "products": "products",
+    "sort_by": "Sort by:",
+    "sort_default": "Default",
+    "sort_price_low": "Price: Low to High",
+    "sort_price_high": "Price: High to Low",
+    "sort_rating": "Rating",
+    "sort_newest": "Newest"
+  }
+}

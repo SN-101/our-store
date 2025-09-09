@@ -1,0 +1,25 @@
+{
+  "products": {
+    "big-title": "Ma Boutique - Produits",
+    "all_products_title": "Tous les produits",
+    "breadcrumb_home": "Accueil",
+    "breadcrumb_products": "Produits",
+    "filter_title": "Filtres de recherche",
+    "filter_category": "Catégorie",
+    "filter_price": "Prix",
+    "price_from": "De",
+    "price_to": "À",
+    "filter_rating": "Évaluation",
+    "rating_and_above": "et plus",
+    "apply_filters": "Appliquer les filtres",
+    "reset_filters": "Réinitialiser",
+    "show_products": "Afficher",
+    "products": "produits",
+    "sort_by": "Trier par:",
+    "sort_default": "Par défaut",
+    "sort_price_low": "Prix : du moins cher au plus cher",
+    "sort_price_high": "Prix : du plus cher au moins cher",
+    "sort_rating": "Évaluation",
+    "sort_newest": "Nouveautés"
+  }
+}

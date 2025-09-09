@@ -5,7 +5,12 @@ document.addEventListener('DOMContentLoaded', function () {
     initializeSearch();
 
     // Load cart count
-    cart.updateCartDisplay();
+    if (typeof cart !== 'undefined' && cart.updateCartDisplay) {
+        cart.updateCartDisplay();
+    }
+
+    // Update WhatsApp contact information based on current language
+    updateWhatsAppContactInfo();
 });
 
 // Initialize contact form
@@ -103,7 +108,7 @@ function validatePhoneNumber(input) {
 
     if (input.value && !isValid) {
         input.classList.add('is-invalid');
-        showFieldError(input, 'يرجى إدخال رقم هاتف صحيح (05xxxxxxxx)');
+        showFieldError(input, 'يرجى إدخال رقم هاتف صحيح (06xxxxxxxx)');
     } else {
         input.classList.remove('is-invalid');
         hideFieldError(input);
@@ -139,10 +144,27 @@ function hideFieldError(field) {
 // Submit contact form
 function submitContactForm() {
     const submitBtn = document.querySelector('#contactForm button[type="submit"]');
+    
+    // الحصول على اللغة الحالية بشكل آمن
+    const getSafeCurrentLang = () => {
+        return window.currentLang || 
+               (typeof LanguageManager !== 'undefined' && LanguageManager.currentLang) || 
+               localStorage.getItem('preferredLang') || 
+               'ar';
+    };
 
-    // Show loading state
+    // التأكد من أن اللغة تم تحميلها بشكل صحيح
+    const lang = getSafeCurrentLang();
+
+    // Show loading state with dynamic translation
     if (submitBtn) {
-        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i>جاري الإرسال...';
+        const loadingText = {
+            ar: 'جاري الإرسال...',
+            en: 'Sending...',
+            fr: 'Envoi en cours...'
+        };
+        
+        submitBtn.innerHTML = `<i class="fas fa-spinner fa-spin me-2"></i>${loadingText[lang] || loadingText.ar}`;
         submitBtn.disabled = true;
     }
 
@@ -154,7 +176,7 @@ function submitContactForm() {
         // Save message to localStorage
         saveContactMessage(contactMessage);
 
-        // Show success modal
+        // Show success modal (translation handled by data-key in HTML)
         showSuccessModal();
 
         // Reset form
@@ -162,10 +184,38 @@ function submitContactForm() {
 
         // Reset button
         if (submitBtn) {
-            submitBtn.innerHTML = '<i class="fas fa-paper-plane me-2"></i>إرسال الرسالة';
+            const lang = getSafeCurrentLang();
+            const buttonText = {
+                ar: 'إرسال الرسالة',
+                en: 'Send Message',
+                fr: 'Envoyer le message'
+            };
+            
+            submitBtn.innerHTML = `<i class="fas fa-paper-plane me-2"></i>${buttonText[lang] || buttonText.ar}`;
             submitBtn.disabled = false;
         }
     }, 2000);
+}
+
+function getSafeCurrentLang() {
+    // 1. حاول استخدام window.currentLang أولاً
+    if (window.currentLang) {
+        return window.currentLang;
+    }
+
+    // 2. إذا كان LanguageManager موجودًا، استخدمه
+    if (typeof LanguageManager !== 'undefined' && LanguageManager.currentLang) {
+        return LanguageManager.currentLang;
+    }
+
+    // 3. إذا لم تكن موجودة، استخدم localStorage
+    const langFromStorage = localStorage.getItem('preferredLang');
+    if (langFromStorage) {
+        return langFromStorage;
+    }
+
+    // 4. إذا لم تكن أي من هذه موجودة، استخدم العربية كافتراضي
+    return 'ar';
 }
 
 // Create contact message object

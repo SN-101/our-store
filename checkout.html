@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>إتمام الطلب - المتجر الإلكتروني</title>
+    <title data-key="checkout.big_title">إتمام الطلب - المتجري</title>
 
-    <!-- Bootstrap 5 RTL -->
+    <!-- Bootstrap 5 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Font Awesome -->
@@ -20,10 +20,8 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css">
 
-    <!-- Email.js -->
-    <!-- EmailJS SDK v4 -->
-    <script defer src="https://cdn.emailjs.com/dist/email.min.js"></script>
-
+    <!-- SweetAlert -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
 </head>
 
 <body>
@@ -32,34 +30,41 @@
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
             <div class="container">
                 <a class="navbar-brand fw-bold" href="index.html">
-                    <i class="fas fa-store me-2"></i>
-                    المتجر الإلكتروني
+                    <i class="fas fa-store me-2"></i> <span data-key="nav.logo">متجري</span>
                 </a>
-
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav me-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="index.html">الرئيسية</a>
+                            <a class="nav-link" href="index.html" data-key="nav.home">الرئيسية</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="products.html">المنتجات</a>
+                            <a class="nav-link" href="products.html" data-key="nav.products">المنتجات</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="about.html">من نحن</a>
+                            <a class="nav-link" href="about.html" data-key="nav.about">من نحن</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="contact.html">اتصل بنا</a>
+                            <a class="nav-link" href="contact.html" data-key="nav.contact">اتصل بنا</a>
                         </li>
                     </ul>
-
+                    <div class="dropdown p-1">
+                        <button class="btn btn-outline-light dropdown-toggle" type="button" id="languageDropdown" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            <i class="fa-sharp fa-solid fa-language"></i> <span data-key="nav.language_btn">اللغة</span>
+                        </button>
+                        <ul class="dropdown-menu text-center" aria-labelledby="languageDropdown">
+                            <li><a class="dropdown-item " data-lang="ar" data-key="lang_ar">العربية</a></li>
+                            <li><a class="dropdown-item " data-lang="en" data-key="lang_en">English</a></li>
+                            <li><a class="dropdown-item " data-lang="fr" data-key="lang_fr">Français</a></li>
+                        </ul>
+                    </div>
                     <div class="d-flex align-items-center">
                         <div class="position-relative me-3">
                             <input type="text" class="form-control search-input" placeholder="البحث عن المنتجات..."
-                                id="searchInput">
+                                id="searchInput" data-key="nav.search_placeholder">
                             <button class="btn btn-outline-dark btn-search" type="button">
                                 <i class="fas fa-search"></i>
                             </button>
@@ -80,11 +85,12 @@
         <div class="container">
             <div class="row">
                 <div class="col-12 mb-4">
-                    <h1 class="h2 fw-bold">إتمام الطلب</h1>
+                    <h1 class="h2 fw-bold" data-key="checkout.title">إتمام الطلب</h1>
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="index.html">الرئيسية</a></li>
-                            <li class="breadcrumb-item active">إتمام الطلب</li>
+                            <li class="breadcrumb-item"><a href="index.html" data-key="checkout.home">الرئيسية</a></li>
+                            <li class="breadcrumb-item active" aria-current="page" data-key="checkout.active">إتمام
+                                الطلب</li>
                         </ol>
                     </nav>
                 </div>
@@ -95,84 +101,87 @@
                 <div class="col-lg-7 col-md-8 mb-4">
                     <div class="card">
                         <div class="card-header">
-                            <h5 class="card-title mb-0">معلومات التوصيل</h5>
+                            <h5 class="card-title mb-0" data-key="checkout.delivery_info">معلومات التوصيل</h5>
                         </div>
                         <div class="card-body">
                             <form id="checkoutForm">
                                 <div class="row">
                                     <div class="col-md-6 mb-3">
-                                        <label for="firstName" class="form-label">الاسم الأول *</label>
+                                        <label for="firstName" class="form-label" data-key="checkout.first_name">الاسم
+                                            الأول *</label>
                                         <input type="text" class="form-control" id="firstName" name="firstName"
                                             required>
                                     </div>
                                     <div class="col-md-6 mb-3">
-                                        <label for="lastName" class="form-label">الاسم الأخير *</label>
+                                        <label for="lastName" class="form-label" data-key="checkout.last_name">الاسم
+                                            الأخير *</label>
                                         <input type="text" class="form-control" id="lastName" name="lastName" required>
                                     </div>
                                 </div>
 
                                 <div class="mb-3">
-                                    <label for="phone" class="form-label">رقم الهاتف *</label>
+                                    <label for="phone" class="form-label" data-key="checkout.phone">رقم الهاتف *</label>
                                     <input type="tel" class="form-control" id="phone" name="phone"
                                         placeholder="06xxxxxxxx" required>
                                 </div>
 
                                 <div class="mb-3">
-                                    <label for="email" class="form-label">البريد الإلكتروني</label>
+                                    <label for="email" class="form-label" data-key="checkout.email">البريد
+                                        الإلكتروني</label>
                                     <input type="email" class="form-control" id="email" name="email"
                                         placeholder="example@email.com">
                                 </div>
 
                                 <div class="mb-3">
-                                    <label for="city" class="form-label">المدينة *</label>
+                                    <label for="city" class="form-label" data-key="checkout.city">المدينة *</label>
                                     <select class="form-select" name="city" id="city" required>
-                                        <option value="">اختر المدينة</option>
-                                        <option value="casablanca">الدار البيضاء</option>
-                                        <option value="rabat">الرباط</option>
-                                        <option value="marrakech">مراكش</option>
-                                        <option value="fes">فاس</option>
-                                        <option value="meknes">مكناس</option>
-                                        <option value="tangier">طنجة</option>
-                                        <option value="agadir">أكادير</option>
-                                        <option value="oujda">وجدة</option>
-                                        <option value="kenitra">القنيطرة</option>
-                                        <option value="tetouan">تطوان</option>
-                                        <option value="safi">آسفي</option>
-                                        <option value="eljadida">الجديدة</option>
-                                        <option value="nador">الناظور</option>
-                                        <option value="khouribga">خريبكة</option>
-                                        <option value="beni_mellal">بني ملال</option>
-                                        <option value="taourirt">تاوريرت</option>
-                                        <option value="larache">العرائش</option>
-                                        <option value="khemisset">الخميسات</option>
-                                        <option value="berkane">بركان</option>
-                                        <option value="khenifra">خنيفرة</option>
-                                        <option value="guelmim">كلميم</option>
-                                        <option value="settat">سطات</option>
-                                        <option value="taza">تازة</option>
-                                        <option value="errachidia">الرشيدية</option>
-                                        <option value="laayoune">العيون</option>
-                                        <option value="dakhla">الداخلة</option>
-                                        <option value="taroudant">تارودانت</option>
-                                        <option value="azrou">أزرو</option>
-                                        <option value="ifrane">إفران</option>
-                                        <option value="sidi_ifni">سيدي إفني</option>
-                                        <option value="zagora">زاكورة</option>
-
+                                        <option value="" data-key="cities.select_city">اختر المدينة</option>
+                                        <option value="casablanca" data-key="cities.casablanca">الدار البيضاء</option>
+                                        <option value="rabat" data-key="cities.rabat">الرباط</option>
+                                        <option value="marrakech" data-key="cities.marrakech">مراكش</option>
+                                        <option value="fes" data-key="cities.fes">فاس</option>
+                                        <option value="meknes" data-key="cities.meknes">مكناس</option>
+                                        <option value="tangier" data-key="cities.tangier">طنجة</option>
+                                        <option value="agadir" data-key="cities.agadir">أكادير</option>
+                                        <option value="oujda" data-key="cities.oujda">وجدة</option>
+                                        <option value="kenitra" data-key="cities.kenitra">القنيطرة</option>
+                                        <option value="tetouan" data-key="cities.tetouan">تطوان</option>
+                                        <option value="safi" data-key="cities.safi">آسفي</option>
+                                        <option value="eljadida" data-key="cities.eljadida">الجديدة</option>
+                                        <option value="nador" data-key="cities.nador">الناظور</option>
+                                        <option value="khouribga" data-key="cities.khouribga">خريبكة</option>
+                                        <option value="beni_mellal" data-key="cities.beni_mellal">بني ملال</option>
+                                        <option value="taourirt" data-key="cities.taourirt">تاوريرت</option>
+                                        <option value="larache" data-key="cities.larache">العرائش</option>
+                                        <option value="khemisset" data-key="cities.khemisset">الخميسات</option>
+                                        <option value="berkane" data-key="cities.berkane">بركان</option>
+                                        <option value="khenifra" data-key="cities.khenifra">خنيفرة</option>
+                                        <option value="guelmim" data-key="cities.guelmim">كلميم</option>
+                                        <option value="settat" data-key="cities.settat">سطات</option>
+                                        <option value="taza" data-key="cities.taza">تازة</option>
+                                        <option value="errachidia" data-key="cities.errachidia">الرشيدية</option>
+                                        <option value="laayoune" data-key="cities.laayoune">العيون</option>
+                                        <option value="dakhla" data-key="cities.dakhla">الداخلة</option>
+                                        <option value="taroudant" data-key="cities.taroudant">تارودانت</option>
+                                        <option value="azrou" data-key="cities.azrou">أزرو</option>
+                                        <option value="ifrane" data-key="cities.ifrane">إفران</option>
+                                        <option value="sidi_ifni" data-key="cities.sidi_ifni">سيدي إفني</option>
+                                        <option value="zagora" data-key="cities.zagora">زاكورة</option>
                                     </select>
                                 </div>
 
                                 <div class="mb-3">
-                                    <label for="address" class="form-label">العنوان التفصيلي *</label>
+                                    <label for="address" class="form-label" data-key="checkout.address">العنوان التفصيلي
+                                        *</label>
                                     <textarea class="form-control" id="address" name="address" rows="3"
-                                        placeholder="اكتب العنوان التفصيلي (الحي، الشارع، رقم المبنى)"
-                                        required></textarea>
+                                        placeholder="اكتب العنوان التفصيلي (الحي، الشارع، رقم المبنى)" data-key="checkout.address_placeholder" required></textarea>
                                 </div>
 
                                 <div class="mb-3">
-                                    <label for="notes" class="form-label">ملاحظات إضافية</label>
+                                    <label for="notes" class="form-label" data-key="checkout.notes">ملاحظات
+                                        إضافية</label>
                                     <textarea class="form-control" name="notes" id="notes" rows="2"
-                                        placeholder="أي ملاحظات خاصة للتوصيل (اختياري)"></textarea>
+                                        placeholder="أي ملاحظات خاصة للتوصيل (اختياري)" data-key="checkout.address_notes"></textarea>
                                 </div>
                             </form>
                         </div>
@@ -181,17 +190,18 @@
                     <!-- Payment Method -->
                     <div class="card mt-4">
                         <div class="card-header">
-                            <h5 class="card-title mb-0">طريقة الدفع</h5>
+                            <h5 class="card-title mb-0" data-key="checkout.payment_method">طريقة الدفع</h5>
                         </div>
                         <div id="wayToPay" class="card-body">
                             <div class="mb-3 d-flex justify-content-around w-100">
                                 <button id="paypalPay" type="button" class="btn btn-outline-success"><i
-                                        class="fa-brands fa-paypal"></i> بايبال</button>
+                                        class="fa-brands fa-paypal"></i> <span
+                                        data-key="checkout.paypal">بايبال</span></button>
                                 <button id="cashPay" type="button" class="btn btn-outline-success"><i
-                                        class="fas fa-money-bill-wave"></i>نقداً</button>
+                                        class="fas fa-money-bill-wave"></i> <span
+                                        data-key="checkout.cash">نقداً</span></button>
                             </div>
-                            <div id="alertInfo" class="alert alert-info">
-                            </div>
+                            <div id="alertInfo" class="alert alert-info"></div>
 
                             <div class="d-flex align-items-center p-3 border rounded">
                                 <i id="iconPaying" class=""></i>
@@ -209,7 +219,7 @@
                 <div class="col-lg-5 col-md-4">
                     <div class="card">
                         <div class="card-header">
-                            <h5 class="card-title mb-0">ملخص الطلب</h5>
+                            <h5 class="card-title mb-0" data-key="checkout.order_summary">ملخص الطلب</h5>
                         </div>
                         <div class="card-body">
                             <div id="orderSummary">
@@ -219,25 +229,25 @@
                             <hr>
 
                             <div class="d-flex justify-content-between mb-2">
-                                <span>المجموع الفرعي:</span>
+                                <span data-key="checkout.subtotal">المجموع الفرعي:</span>
                                 <span id="subtotal">0</span>
                             </div>
 
                             <div class="d-flex justify-content-between mb-2">
-                                <span>رسوم التوصيل:</span>
-                                <span id="shippingCost">مجاني</span>
+                                <span data-key="checkout.shipping">رسوم التوصيل:</span>
+                                <span id="shippingCost">0</span>
                             </div>
 
                             <hr>
 
                             <div class="d-flex justify-content-between fw-bold fs-5">
-                                <span>المجموع الكلي:</span>
+                                <span data-key="checkout.total">المجموع الكلي:</span>
                                 <span id="totalAmount">0 درهم</span>
                             </div>
 
                             <button class="btn btn-primary w-100 mt-3" type="button" id="confirmOrder">
-                                <i class="fas fa-check me-2"></i>
-                                تأكيد الطلب
+                                <i class="fas fa-check me-2"></i> <span data-key="checkout.confirm_order">تأكيد
+                                    الطلب</span>
                             </button>
                         </div>
                     </div>
@@ -251,31 +261,36 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-4">
-                    <h5 class="fw-bold mb-3">المتجر الإلكتروني</h5>
-                    <p>نوفر أفضل المنتجات بأسعار تنافسية مع ضمان الجودة وسرعة التوصيل.</p>
+                    <h5 class="fw-bold mb-3" data-key="footer.store.name">متجري</h5>
+                    <p data-key="footer.store.text">نوفر أفضل المنتجات بأسعار تنافسية مع ضمان الجودة وسرعة التوصيل.</p>
                 </div>
                 <div class="col-md-4">
-                    <h5 class="fw-bold mb-3">روابط مفيدة</h5>
+                    <h5 class="fw-bold mb-3" data-key="footer.links.name">روابط مفيدة</h5>
                     <ul class="list-unstyled">
-                        <li><a href="index.html" class="text-white-50">الرئيسية</a></li>
-                        <li><a href="products.html" class="text-white-50">المنتجات</a></li>
-                        <li><a href="about.html" class="text-white-50">من نحن</a></li>
-                        <li><a href="contact.html" class="text-white-50">اتصل بنا</a></li>
-                        <li><a href="privacy-policy.html" class="text-white-50">سياسة الخصوصية</a></li>
-                        <li><a href="terms-of-use.html" class="text-white-50">شروط الاستخدام</a></li>
+                        <li><a href="index.html" class="text-white-50" data-key="footer.links.home">الرئيسية</a></li>
+                        <li><a href="products.html" class="text-white-50" data-key="footer.links.products">المنتجات</a>
+                        </li>
+                        <li><a href="about.html" class="text-white-50" data-key="footer.links.about">من نحن</a></li>
+                        <li><a href="contact.html" class="text-white-50" data-key="footer.links.contact">اتصل بنا</a>
+                        </li>
+                        <li><a href="privacy-policy.html" class="text-white-50" data-key="footer.links.privacy">سياسة
+                                الخصوصية</a></li>
+                        <li><a href="terms-of-use.html" class="text-white-50" data-key="footer.links.terms">شروط
+                                الاستخدام</a></li>
                     </ul>
                 </div>
                 <div class="col-md-4" id="contact">
-                    <h5 class="fw-bold mb-3">اتصل بنا</h5>
+                    <h5 class="fw-bold mb-3" data-key="footer.contacts.name">اتصل بنا</h5>
                     <p><i class="fas fa-phone me-2"></i> +212666666666</p>
                     <p><i class="fas fa-envelope me-2"></i> our@store.com</p>
-                    <p><i class="fas fa-map-marker-alt me-2"></i>الدار البيضاء، المملكة المغربية</p>
+                    <p><i class="fas fa-map-marker-alt me-2"></i><span data-key="footer.contacts.gps">الدار البيضاء،
+                            المملكة المغربية</span></p>
                 </div>
             </div>
             <hr class="my-4">
             <div class="row">
                 <div class="col-12 text-center">
-                    <p>&copy; 2025 المتجر الإلكتروني. جميع الحقوق محفوظة.</p>
+                    <p><span data-key="footer.copyright">المتجر الإلكتروني. جميع الحقوق محفوظة. 2025</span> &copy;</p>
                 </div>
             </div>
         </div>
@@ -287,21 +302,22 @@
             <div class="modal-content">
                 <div class="modal-header bg-success text-white">
                     <h5 class="modal-title">
-                        <i class="fas fa-check-circle me-2"></i>
-                        تم تأكيد الطلب بنجاح
+                        <i class="fas fa-check-circle me-2"></i> <span data-key="checkout.confirmation_title">تم تأكيد
+                            الطلب بنجاح</span>
                     </h5>
                     <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
                 </div>
                 <div class="modal-body">
                     <div class="text-center mb-4">
                         <i class="fas fa-check-circle text-success fa-3x mb-3"></i>
-                        <h4>شكراً لك!</h4>
-                        <p class="text-muted">تم استلام طلبك وسيتم التواصل معك قريباً لتأكيد التفاصيل</p>
+                        <h4 data-key="checkout.thank_you">شكراً لك!</h4>
+                        <p class="text-muted" data-key="checkout.order_received">تم استلام طلبك وسيتم التواصل معك قريباً
+                            لتأكيد التفاصيل</p>
                     </div>
 
                     <div class="card">
                         <div class="card-body">
-                            <h6 class="card-title">تفاصيل الطلب:</h6>
+                            <h6 class="card-title" data-key="checkout.order_details">تفاصيل الطلب:</h6>
                             <div id="orderDetails">
                                 <!-- Order details will be shown here -->
                             </div>
@@ -309,24 +325,31 @@
                     </div>
 
                     <div class="alert alert-info mt-3">
-                        <i class="fas fa-info-circle me-2"></i>
-                        سيتم الاتصال بك خلال 24 ساعة لتأكيد الطلب وترتيب موعد التوصيل
+                        <i class="fas fa-info-circle me-2"></i> <span data-key="checkout.contact_info">سيتم الاتصال بك
+                            خلال 24 ساعة لتأكيد الطلب وترتيب موعد التوصيل</span>
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <a href="index.html" class="btn btn-primary">العودة للصفحة الرئيسية</a>
+                    <a href="index.html" class="btn btn-primary" data-key="checkout.home_btn">العودة للصفحة الرئيسية</a>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- PayPal -->
-<script src="https://www.paypal.com/sdk/js?client-id=AfeyzZmy4zvSj3PrLqUaaIvDYjAfKRb_oQ26nTgGRrAVd4tZbNqgkyrU4gYrftm813U7if03GcFmxkYl&currency=USD&locale=ar_MA"></script>
+    <!-- PayPal SDK -->
+    <!-- <script src="https://www.paypal.com/sdk/js?client-id=AfeyzZmy4zvSj3PrLqUaaIvDYjAfKRb_oQ26nTgGRrAVd4tZbNqgkyrU4gYrftm813U7if03GcFmxkYl&currency=USD&locale=ar_MA"></script> -->
+
+    <!-- SweetAlert -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
     <!-- Custom JS -->
     <script defer src="JS/data.js"></script>
+    <script defer src="JS/lang.js"></script>
     <script defer src="JS/cart.js"></script>
-    <script defer src="JS/checkout.js"></script>
+    <script src="JS/checkout.js"></script>
 </body>
 
 </html>

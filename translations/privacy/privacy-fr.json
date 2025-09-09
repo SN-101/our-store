@@ -1,0 +1,42 @@
+{
+  "privacy": {
+    "title": "Politique de Confidentialité",
+    "breadcrumb": {
+      "home": "Accueil",
+      "active": "Politique de Confidentialité"
+    },
+    "intro": "Nous respectons votre vie privée et nous nous engageons à protéger vos données personnelles.",
+    "section1": {
+      "title": "1. Données que nous collectons",
+      "description": "Lorsque vous utilisez notre boutique, nous pouvons collecter les données suivantes :",
+      "full_name": "Nom complet",
+      "email": "Adresse e-mail",
+      "phone": "Numéro de téléphone",
+      "address": "Adresse"
+    },
+    "section2": {
+      "title": "2. Comment nous utilisons les données",
+      "description": "Nous utilisons vos données pour :",
+      "process_orders": "Traiter les commandes et communiquer avec vous à leur sujet.",
+      "send_offers": "Envoyer des offres et des mises à jour par e-mail (vous pouvez vous désabonner à tout moment).",
+      "improve_experience": "Améliorer l'expérience utilisateur à l'aide d'outils d'analyse (comme Google Analytics)."
+    },
+    "section3": {
+      "title": "3. Protection des données",
+      "description": "Nous nous engageons à garder vos données confidentielles et à ne pas les vendre ou les partager avec un tiers, sauf si requis par la loi."
+    },
+    "section4": {
+      "title": "4. Cookies",
+      "description": "Notre site web utilise des cookies pour améliorer l'expérience utilisateur et analyser les performances via Google Analytics."
+    },
+    "section5": {
+      "title": "5. Vos droits",
+      "description": "Vous avez le droit de demander l'accès à vos données, de les modifier, de les supprimer ou de vous désabonner de notre liste de diffusion à tout moment."
+    },
+    "contact": {
+      "title": "Contactez-nous",
+      "description": "Si vous avez des questions sur notre politique de confidentialité, veuillez nous contacter :"
+    },
+    "last_updated": "Dernière mise à jour : Janvier 2024"
+  }
+}

@@ -8,7 +8,7 @@
 
     <!-- Bootstrap 5 RTL -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
-    
+
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
 
@@ -27,41 +27,49 @@
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
             <div class="container">
                 <a class="navbar-brand fw-bold" href="index.html">
-                    <i class="fas fa-store me-2"></i>
-                    المتجر الإلكتروني
+                    <i class="fas fa-store me-2"></i> <span data-key="nav.logo">متجري</span>
                 </a>
-    
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-    
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav me-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="index.html">الرئيسية</a>
+                            <a class="nav-link" href="index.html" data-key="nav.home">الرئيسية</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="products.html">المنتجات</a>
+                            <a class="nav-link" href="products.html" data-key="nav.products">المنتجات</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="about.html">من نحن</a>
+                            <a class="nav-link" href="about.html" data-key="nav.about">من نحن</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="contact.html">اتصل بنا</a>
+                            <a class="nav-link" href="contact.html" data-key="nav.contact">اتصل بنا</a>
                         </li>
                     </ul>
-    
+                    <div class="dropdown p-1">
+                        <button class="btn btn-outline-light dropdown-toggle" type="button" id="languageDropdown"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fa-sharp fa-solid fa-language"></i> <span data-key="nav.language_btn">اللغة</span>
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="languageDropdown">
+                            <li><a class="dropdown-item" data-lang="ar" data-key="lang_ar">العربية</a></li>
+                            <li><a class="dropdown-item" data-lang="en" data-key="lang_en">English</a></li>
+                            <li><a class="dropdown-item" data-lang="fr" data-key="lang_fr">Français</a></li>
+                        </ul>
+                    </div>
                     <div class="d-flex align-items-center">
                         <div class="position-relative me-3">
                             <input type="text" class="form-control search-input" placeholder="البحث عن المنتجات..."
-                                id="searchInput">
+                                id="searchInput" data-key="nav.search_placeholder">
                             <button class="btn btn-outline-dark btn-search" type="button">
                                 <i class="fas fa-search"></i>
                             </button>
                         </div>
                         <button class="btn btn-outline-light position-relative me-3" id="cartBtn">
                             <i class="fas fa-shopping-cart"></i>
-                            <span class="cart-count badge bg-warning text-dark position-absolute" id="cartCount">0</span>
+                            <span class="cart-count badge bg-warning text-dark position-absolute"
+                                id="cartCount">0</span>
                         </button>
                     </div>
                 </div>
@@ -76,124 +84,131 @@
                 <div class="col-12 mb-4">
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="index.html">الرئيسية</a></li>
-                            <li class="breadcrumb-item active">سياسة الخصوصية</li>
+                            <li class="breadcrumb-item"><a href="index.html" data-key="privacy.breadcrumb.home">الرئيسية</a>
+                            </li>
+                            <li class="breadcrumb-item active" data-key="privacy.breadcrumb.active">سياسة الخصوصية</li>
                         </ol>
                     </nav>
                 </div>
             </div>
-
+    
             <div class="row justify-content-center">
                 <div class="col-lg-8 col-md-10">
                     <div class="card">
                         <div class="card-header bg-primary text-white">
                             <h1 class="h3 mb-0">
                                 <i class="fas fa-shield-alt me-2"></i>
-                                📜 سياسة الخصوصية
+                                <span data-key="privacy.title">سياسة الخصوصية</span>
                             </h1>
                         </div>
                         <div class="card-body">
                             <div class="privacy-content">
-                                <p class="lead">نحن نحترم خصوصيتك ونلتزم بحماية بياناتك الشخصية.</p>
-
+                                <p class="lead" data-key="privacy.intro">نحن نحترم خصوصيتك ونلتزم بحماية بياناتك الشخصية.
+                                </p>
+    
                                 <div class="section mb-4">
                                     <h3 class="h5 fw-bold text-primary mb-3">
                                         <i class="fas fa-database me-2"></i>
-                                        1. البيانات التي نجمعها
+                                        <span data-key="privacy.section1.title">1. البيانات التي نجمعها</span>
                                     </h3>
-                                    <p>عند استخدامك لمتجرنا، قد نجمع البيانات التالية:</p>
+                                    <p data-key="privacy.section1.description">عند استخدامك لمتجرنا، قد نجمع البيانات
+                                        التالية:</p>
                                     <ul class="list-group list-group-flush">
                                         <li class="list-group-item d-flex align-items-center">
                                             <i class="fas fa-user text-success me-2"></i>
-                                            الاسم الكامل
+                                            <span data-key="privacy.section1.full_name">الاسم الكامل</span>
                                         </li>
                                         <li class="list-group-item d-flex align-items-center">
                                             <i class="fas fa-envelope text-success me-2"></i>
-                                            البريد الإلكتروني
+                                            <span data-key="privacy.section1.email">البريد الإلكتروني</span>
                                         </li>
                                         <li class="list-group-item d-flex align-items-center">
                                             <i class="fas fa-phone text-success me-2"></i>
-                                            رقم الهاتف
+                                            <span data-key="privacy.section1.phone">رقم الهاتف</span>
                                         </li>
                                         <li class="list-group-item d-flex align-items-center">
                                             <i class="fas fa-map-marker-alt text-success me-2"></i>
-                                            العنوان
+                                            <span data-key="privacy.section1.address">العنوان</span>
                                         </li>
                                     </ul>
                                 </div>
-
+    
                                 <div class="section mb-4">
                                     <h3 class="h5 fw-bold text-primary mb-3">
                                         <i class="fas fa-cogs me-2"></i>
-                                        2. كيفية استخدام البيانات
+                                        <span data-key="privacy.section2.title">2. كيفية استخدام البيانات</span>
                                     </h3>
-                                    <p>نستخدم بياناتك من أجل:</p>
+                                    <p data-key="privacy.section2.description">نستخدم بياناتك من أجل:</p>
                                     <ul class="list-unstyled">
                                         <li class="mb-2">
                                             <i class="fas fa-check-circle text-success me-2"></i>
-                                            معالجة الطلبات والتواصل معك بخصوصها.
+                                            <span data-key="privacy.section2.process_orders">معالجة الطلبات والتواصل معك
+                                                بخصوصها.</span>
                                         </li>
                                         <li class="mb-2">
                                             <i class="fas fa-check-circle text-success me-2"></i>
-                                            إرسال عروض وتحديثات عبر البريد الإلكتروني (يمكنك إلغاء الاشتراك في أي وقت).
+                                            <span data-key="privacy.section2.send_offers">إرسال عروض وتحديثات عبر البريد
+                                                الإلكتروني (يمكنك إلغاء الاشتراك في أي وقت).</span>
                                         </li>
                                         <li class="mb-2">
                                             <i class="fas fa-check-circle text-success me-2"></i>
-                                            تحسين تجربة المستخدم باستخدام أدوات التحليل (مثل Google Analytics).
+                                            <span data-key="privacy.section2.improve_experience">تحسين تجربة المستخدم
+                                                باستخدام أدوات التحليل (مثل Google Analytics).</span>
                                         </li>
                                     </ul>
                                 </div>
-
+    
                                 <div class="section mb-4">
                                     <h3 class="h5 fw-bold text-primary mb-3">
                                         <i class="fas fa-lock me-2"></i>
-                                        3. حماية البيانات
+                                        <span data-key="privacy.section3.title">3. حماية البيانات</span>
                                     </h3>
                                     <div class="alert alert-info">
                                         <i class="fas fa-info-circle me-2"></i>
-                                        نلتزم بالحفاظ على سرية بياناتك، ولن نقوم ببيعها أو مشاركتها مع أي طرف ثالث، إلا
-                                        إذا تطلب الأمر قانونيًا.
+                                        <span data-key="privacy.section3.description">نلتزم بالحفاظ على سرية بياناتك، ولن
+                                            نقوم ببيعها أو مشاركتها مع أي طرف ثالث، إلا إذا تطلب الأمر قانونيًا.</span>
                                     </div>
                                 </div>
-
+    
                                 <div class="section mb-4">
                                     <h3 class="h5 fw-bold text-primary mb-3">
                                         <i class="fas fa-cookie-bite me-2"></i>
-                                        4. الكوكيز (Cookies)
+                                        <span data-key="privacy.section4.title">4. الكوكيز (Cookies)</span>
                                     </h3>
-                                    <p>يستخدم موقعنا ملفات تعريف الارتباط (كوكيز) لتحسين تجربة المستخدم وتحليل الأداء
-                                        عبر Google Analytics.</p>
+                                    <p data-key="privacy.section4.description">يستخدم موقعنا ملفات تعريف الارتباط (كوكيز)
+                                        لتحسين تجربة المستخدم وتحليل الأداء عبر Google Analytics.</p>
                                 </div>
-
+    
                                 <div class="section mb-4">
                                     <h3 class="h5 fw-bold text-primary mb-3">
                                         <i class="fas fa-user-shield me-2"></i>
-                                        5. حقوقك
+                                        <span data-key="privacy.section5.title">5. حقوقك</span>
                                     </h3>
                                     <div class="alert alert-success">
                                         <i class="fas fa-check-circle me-2"></i>
-                                        يحق لك طلب الوصول إلى بياناتك، أو تعديلها، أو حذفها، أو إلغاء الاشتراك من
-                                        قائمتنا البريدية في أي وقت.
+                                        <span data-key="privacy.section5.description">يحق لك طلب الوصول إلى بياناتك، أو
+                                            تعديلها، أو حذفها، أو إلغاء الاشتراك من قائمتنا البريدية في أي وقت.</span>
                                     </div>
                                 </div>
-
+    
                                 <div class="section">
                                     <h3 class="h5 fw-bold text-primary mb-3">
                                         <i class="fas fa-phone-alt me-2"></i>
-                                        تواصل معنا
+                                        <span data-key="privacy.contact.title">تواصل معنا</span>
                                     </h3>
-                                    <p>إذا كان لديك أي استفسارات حول سياسة الخصوصية، يرجى التواصل معنا:</p>
+                                    <p data-key="privacy.contact.description">إذا كان لديك أي استفسارات حول سياسة الخصوصية،
+                                        يرجى التواصل معنا:</p>
                                     <div class="contact-info">
                                         <p><i class="fas fa-envelope text-primary me-2"></i> info@store.com</p>
                                         <p><i class="fas fa-phone text-primary me-2"></i> +966 50 123 4567</p>
                                     </div>
                                 </div>
-
+    
                                 <hr class="my-4">
                                 <div class="text-center">
                                     <small class="text-muted">
                                         <i class="fas fa-calendar-alt me-1"></i>
-                                        آخر تحديث: يناير 2024
+                                        <span data-key="privacy.last_updated">آخر تحديث: يناير 2024</span>
                                     </small>
                                 </div>
                             </div>
@@ -204,36 +219,43 @@
         </div>
     </section>
 
+
     <!-- Footer -->
     <footer class="bg-dark text-white py-5">
         <div class="container">
             <div class="row">
                 <div class="col-md-4">
-                    <h5 class="fw-bold mb-3">المتجر الإلكتروني</h5>
-                    <p>نوفر أفضل المنتجات بأسعار تنافسية مع ضمان الجودة وسرعة التوصيل.</p>
+                    <h5 class="fw-bold mb-3" data-key="footer.store.name">متجري</h5>
+                    <p data-key="footer.store.text">نوفر أفضل المنتجات بأسعار تنافسية مع ضمان الجودة وسرعة التوصيل.</p>
                 </div>
                 <div class="col-md-4">
-                    <h5 class="fw-bold mb-3">روابط مفيدة</h5>
+                    <h5 class="fw-bold mb-3" data-key="footer.links.name">روابط مفيدة</h5>
                     <ul class="list-unstyled">
-                        <li><a href="index.html" class="text-white-50">الرئيسية</a></li>
-                        <li><a href="products.html" class="text-white-50">المنتجات</a></li>
-                        <li><a href="about.html" class="text-white-50">من نحن</a></li>
-                        <li><a href="contact.html" class="text-white-50">اتصل بنا</a></li>
-                        <li><a href="privacy-policy.html" class="text-white-50">سياسة الخصوصية</a></li>
-                        <li><a href="terms-of-use.html" class="text-white-50">شروط الاستخدام</a></li>
+                        <li><a href="index.html" class="text-white-50" data-key="footer.links.home">الرئيسية</a></li>
+                        <li><a href="products.html" class="text-white-50" data-key="footer.links.products">المنتجات</a>
+                        </li>
+                        <li><a href="about.html" class="text-white-50" data-key="footer.links.about">من نحن</a></li>
+                        <li><a href="contact.html" class="text-white-50" data-key="footer.links.contact">اتصل بنا</a>
+                        </li>
+                        <li><a href="privacy-policy.html" class="text-white-50" data-key="footer.links.privacy">سياسة
+                                الخصوصية</a></li>
+                        <li><a href="terms-of-use.html" class="text-white-50" data-key="footer.links.terms">شروط
+                                الاستخدام</a></li>
                     </ul>
                 </div>
                 <div class="col-md-4" id="contact">
-                    <h5 class="fw-bold mb-3">اتصل بنا</h5>
+                    <h5 class="fw-bold mb-3" data-key="footer.contacts.name">اتصل بنا</h5>
                     <p><i class="fas fa-phone me-2"></i> +212666666666</p>
                     <p><i class="fas fa-envelope me-2"></i> our@store.com</p>
-                    <p><i class="fas fa-map-marker-alt me-2"></i>الدار البيضاء، المملكة المغربية</p>
+                    <p><i class="fas fa-map-marker-alt me-2"></i><span data-key="footer.contacts.gps">الدار البيضاء،
+                            المملكة
+                            المغربية</span></p>
                 </div>
             </div>
             <hr class="my-4">
             <div class="row">
                 <div class="col-12 text-center">
-                    <p>&copy; 2025 المتجر الإلكتروني. جميع الحقوق محفوظة.</p>
+                    <p><span data-key="footer.copyright">المتجر الإلكتروني. جميع الحقوق محفوظة. 2025</span> &copy;</p>
                 </div>
             </div>
         </div>
@@ -244,16 +266,16 @@
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">سلة المشتريات</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    <h5 class="modal-title" data-key="cart.title">سلة المشتريات</h5> <button type="button"
+                        class="btn-close" data-bs-dismiss="modal"></button>
                 </div>
                 <div class="modal-body" id="cartModalBody">
                     <!-- Cart items will be displayed here -->
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">إغلاق</button>
-                    <button id="checkoutBtn" class="btn btn-primary">إتمام الطلب</button>
-                </div>
+                <div class="modal-footer"> <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
+                        data-key="cart.close">إغلاق</button> <button id="checkoutBtn" class="btn btn-primary"
+                        data-key="cart.confirm">إتمام
+                        الطلب</button> </div>
             </div>
         </div>
     </div>
@@ -266,6 +288,7 @@
 
     <!-- Custom JS -->
     <script defer src="js/data.js"></script>
+    <script defer src="JS/lang.js"></script>
     <script defer src="js/cart.js"></script>
     <script defer src="JS/privacy-terms.js"></script>
 </body>

@@ -1,0 +1,105 @@
+{
+  "contact": {
+    "contact_title": "Contactez-nous - Boutique en ligne",
+    "breadcrumb": {
+      "home": "Accueil",
+      "active": "Contactez-nous"
+    },
+    "info": {
+      "title": "Informations de Contact",
+      "address": {
+        "title": "Adresse",
+        "text": "Riyadh, Arabie Saoudite\nQuartier du Roi Fahd, Rue du Roi Abdelaziz"
+      },
+      "phone": {
+        "title": "Téléphone"
+      },
+      "email": {
+        "title": "Email"
+      },
+      "hours": {
+        "title": "Heures de Travail",
+        "text": "Samedi - Jeudi: 9h00 - 22h00\nVendredi: 14h00 - 22h00"
+      },
+      "whatsapp": {
+        "title": "WhatsApp",
+        "text": "Vous pouvez nous contacter via WhatsApp",
+        "btn": "WhatsApp"
+      }
+    },
+    "social": {
+      "title": "Suivez-nous"
+    },
+    "form": {
+      "title": "Envoyez un Message",
+      "first_name": "Prénom *",
+      "last_name": "Nom de famille *",
+      "email": "Email *",
+      "phone": "Numéro de téléphone",
+      "subject": "Sujet *",
+      "subject_placeholder": "Sélectionnez le sujet",
+      "subject_general": "Demande générale",
+      "subject_order": "Demande concernant une commande",
+      "subject_product": "Demande concernant un produit",
+      "subject_complaint": "Réclamation",
+      "subject_suggestion": "Suggestion",
+      "subject_technical": "Problème technique",
+      "message": "Message *",
+      "message_placeholder": "Votre message ici...",
+      "agree_terms": "J'accepte les",
+      "terms_link": "Conditions d'utilisation",
+      "and": "et",
+      "policy_link": "Politique de confidentialité",
+      "submit_btn": "Envoyer le message"
+    },
+    "faq": {
+      "title": "Questions Fréquemment Posées",
+      "q1": "Comment puis-je suivre ma commande?",
+      "a1": "Après confirmation de votre commande, un numéro de suivi vous sera envoyé par SMS ou par e-mail. Vous pouvez utiliser ce numéro pour suivre l'état de votre commande.",
+      "q2": "Quels sont les modes de paiement disponibles?",
+      "a2": "Nous n'acceptons que le paiement à la livraison. Vous paierez votre commande en espèces lors de la réception des produits par l'agent de livraison.",
+      "q3": "Combien de temps prend la livraison?",
+      "a3": "La livraison prend généralement 2 à 5 jours ouvrables dans les grandes villes et 5 à 7 jours ouvrables pour les autres zones.",
+      "q4": "Puis-je retourner ou échanger le produit?",
+      "a4": "Oui, vous pouvez retourner ou échanger le produit dans les 7 jours suivant la réception, à condition que le produit soit dans son état d'origine et non utilisé.",
+      "q5": "La livraison est-elle gratuite?",
+      "a5": "Oui, la livraison est gratuite pour toutes les commandes au Maroc sans montant minimum.",
+      "q6": "Comment puis-je annuler ma commande?",
+      "a6": "Vous pouvez annuler votre commande dans les deux heures suivant la confirmation en contactant le service client ou en envoyant un message via le formulaire de contact.",
+      "q7": "Le service client est-il disponible 24/7?",
+      "a7": "Le service client est disponible du samedi au jeudi de 9h00 à 22h00 et le vendredi de 14h00 à 22h00."
+    },
+    "map": {
+      "title": "Notre Emplacement sur la Carte"
+    },
+    "quick": {
+      "title": "Méthodes de Contact Rapide",
+      "phone": {
+        "title": "Appelez-nous",
+        "desc": "Pour des demandes urgentes",
+        "btn": "Appelez maintenant"
+      },
+      "whatsapp": {
+        "title": "WhatsApp",
+        "desc": "Communication rapide et directe",
+        "btn": "Envoyez-nous un message"
+      },
+      "email": {
+        "title": "Email",
+        "desc": "Pour des demandes détaillées",
+        "btn": "Envoyer un Email"
+      },
+      "support": {
+        "title": "Support Technique",
+        "desc": "Assistance technique spécialisée",
+        "btn": "Demander un Support"
+      }
+    },
+    "modal": {
+      "title": "Message Envoyé avec Succès",
+      "header": "Merci",
+      "message": "Votre message a été envoyé avec succès. Nous vous contacterons dès que possible.",
+      "btn": "Continuer"
+    }
+  }
+}

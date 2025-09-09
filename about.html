@@ -4,11 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>من نحن - المتجر الإلكتروني</title>
+    <title data-key="about.about_title">من نحن - المتجر الإلكتروني</title>
 
     <!-- Bootstrap 5 RTL -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
-    
+
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
 
@@ -27,34 +27,41 @@
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
             <div class="container">
                 <a class="navbar-brand fw-bold" href="index.html">
-                    <i class="fas fa-store me-2"></i>
-                    المتجر الإلكتروني
+                    <i class="fas fa-store me-2"></i> <span data-key="nav.logo">متجري</span>
                 </a>
-
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav me-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="index.html">الرئيسية</a>
+                            <a class="nav-link" href="index.html" data-key="nav.home">الرئيسية</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="products.html">المنتجات</a>
+                            <a class="nav-link" href="products.html" data-key="nav.products">المنتجات</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" href="about.html">من نحن</a>
+                            <a class="nav-link active" href="about.html" data-key="nav.about">من نحن</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="contact.html">اتصل بنا</a>
+                            <a class="nav-link" href="contact.html" data-key="nav.contact">اتصل بنا</a>
                         </li>
                     </ul>
-
+                    <div class="dropdown p-1">
+                        <button class="btn btn-outline-light dropdown-toggle" type="button" id="languageDropdown"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fa-sharp fa-solid fa-language"></i> <span data-key="nav.language_btn">اللغة</span>
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="languageDropdown">
+                            <li><a class="dropdown-item" data-lang="ar" data-key="lang_ar">العربية</a></li>
+                            <li><a class="dropdown-item" data-lang="en" data-key="lang_en">English</a></li>
+                            <li><a class="dropdown-item" data-lang="fr" data-key="lang_fr">Français</a></li>
+                        </ul>
+                    </div>
                     <div class="d-flex align-items-center">
                         <div class="position-relative me-3">
                             <input type="text" class="form-control search-input" placeholder="البحث عن المنتجات..."
-                                id="searchInput">
+                                id="searchInput" data-key="nav.search_placeholder">
                             <button class="btn btn-outline-dark btn-search" type="button">
                                 <i class="fas fa-search"></i>
                             </button>
@@ -75,13 +82,14 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-6">
-                    <h1 class="display-4 fw-bold text-white mb-4">من نحن</h1>
-                    <p class="lead text-white mb-4">نحن متجر إلكتروني رائد نهدف إلى تقديم أفضل المنتجات بأسعار تنافسية
-                        مع ضمان الجودة وسرعة التوصيل</p>
+                    <h1 class="display-4 fw-bold text-white mb-4" data-key="about.hero.title">من نحن</h1>
+                    <p class="lead text-white mb-4" data-key="about.hero.description">نحن متجر إلكتروني رائد نهدف إلى
+                        تقديم
+                        أفضل المنتجات بأسعار تنافسية مع ضمان الجودة وسرعة التوصيل</p>
                 </div>
                 <div class="col-lg-6">
                     <img src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=800"
-                        class="img-fluid rounded shadow" alt="فريق العمل">
+                        class="img-fluid rounded shadow" alt="فريق العمل" data-key="about.hero.img_alt">
                 </div>
             </div>
         </div>
@@ -94,8 +102,10 @@
                 <div class="col-12 mb-4">
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="index.html">الرئيسية</a></li>
-                            <li class="breadcrumb-item active">من نحن</li>
+                            <li class="breadcrumb-item"><a href="index.html"
+                                    data-key="about.breadcrumb.home">الرئيسية</a>
+                            </li>
+                            <li class="breadcrumb-item active" data-key="about.breadcrumb.active">من نحن</li>
                         </ol>
                     </nav>
                 </div>
@@ -104,17 +114,18 @@
             <!-- Our Story -->
             <div class="row mb-5">
                 <div class="col-lg-6 mb-4">
-                    <h2 class="section-title">قصتنا</h2>
-                    <p class="lead">بدأت رحلتنا في عام 2020 برؤية واضحة: تقديم تجربة تسوق إلكترونية استثنائية للعملاء في
-                        المنطقة العربية.</p>
-                    <p>نحن نؤمن بأن التسوق الإلكتروني يجب أن يكون سهلاً وآمناً وممتعاً. لذلك، نعمل باستمرار على تطوير
-                        خدماتنا وتحسين تجربة عملائنا.</p>
-                    <p>اليوم، نفخر بخدمة آلاف العملاء الراضين وتقديم مجموعة واسعة من المنتجات عالية الجودة بأسعار
-                        تنافسية.</p>
+                    <h2 class="section-title" data-key="about.story.title">قصتنا</h2>
+                    <p class="lead" data-key="about.story.lead">بدأت رحلتنا في عام 2020 برؤية واضحة: تقديم تجربة تسوق
+                        إلكترونية استثنائية للعملاء في المنطقة العربية.</p>
+                    <p data-key="about.story.p1">نحن نؤمن بأن التسوق الإلكتروني يجب أن يكون سهلاً وآمناً وممتعاً. لذلك،
+                        نعمل
+                        باستمرار على تطوير خدماتنا وتحسين تجربة عملائنا.</p>
+                    <p data-key="about.story.p2">اليوم، نفخر بخدمة آلاف العملاء الراضين وتقديم مجموعة واسعة من المنتجات
+                        عالية الجودة بأسعار تنافسية.</p>
                 </div>
                 <div class="col-lg-6">
                     <img src="https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg?auto=compress&cs=tinysrgb&w=800"
-                        class="img-fluid rounded shadow" alt="قصتنا">
+                        class="img-fluid rounded shadow" alt="قصتنا" data-key="about.story.img_alt">
                 </div>
             </div>
 
@@ -124,9 +135,10 @@
                     <div class="card h-100 border-primary">
                         <div class="card-body text-center">
                             <i class="fas fa-bullseye fa-3x text-primary mb-3"></i>
-                            <h4 class="card-title">رسالتنا</h4>
-                            <p class="card-text">تقديم أفضل المنتجات بأسعار تنافسية مع ضمان الجودة وسرعة التوصيل، وبناء
-                                علاقات طويلة الأمد مع عملائنا من خلال الثقة والشفافية.</p>
+                            <h4 class="card-title" data-key="about.mission.title">رسالتنا</h4>
+                            <p class="card-text" data-key="about.mission.text">تقديم أفضل المنتجات بأسعار تنافسية مع
+                                ضمان
+                                الجودة وسرعة التوصيل، وبناء علاقات طويلة الأمد مع عملائنا من خلال الثقة والشفافية.</p>
                         </div>
                     </div>
                 </div>
@@ -134,9 +146,9 @@
                     <div class="card h-100 border-success">
                         <div class="card-body text-center">
                             <i class="fas fa-eye fa-3x text-success mb-3"></i>
-                            <h4 class="card-title">رؤيتنا</h4>
-                            <p class="card-text">أن نكون المتجر الإلكتروني الأول في المنطقة العربية، ونقطة الانطلاق
-                                المفضلة للعملاء الباحثين عن الجودة والخدمة المتميزة.</p>
+                            <h4 class="card-title" data-key="about.vision.title">رؤيتنا</h4>
+                            <p class="card-text" data-key="about.vision.text">أن نكون المتجر الإلكتروني الأول في المنطقة
+                                العربية، ونقطة الانطلاق المفضلة للعملاء الباحثين عن الجودة والخدمة المتميزة.</p>
                         </div>
                     </div>
                 </div>
@@ -145,14 +157,16 @@
             <!-- Our Values -->
             <div class="row mb-5">
                 <div class="col-12">
-                    <h2 class="section-title text-center mb-5">قيمنا</h2>
+                    <h2 class="section-title text-center mb-5" data-key="about.values.title">قيمنا</h2>
                 </div>
                 <div class="col-lg-3 col-md-6 mb-4">
                     <div class="card text-center h-100">
                         <div class="card-body">
                             <i class="fas fa-shield-alt fa-2x text-primary mb-3"></i>
-                            <h5 class="card-title">الثقة</h5>
-                            <p class="card-text">نبني الثقة مع عملائنا من خلال الشفافية والصدق في جميع تعاملاتنا.</p>
+                            <h5 class="card-title" data-key="about.values.trust.title">الثقة</h5>
+                            <p class="card-text" data-key="about.values.trust.desc">نبني الثقة مع عملائنا من خلال
+                                الشفافية
+                                والصدق في جميع تعاملاتنا.</p>
                         </div>
                     </div>
                 </div>
@@ -160,8 +174,10 @@
                     <div class="card text-center h-100">
                         <div class="card-body">
                             <i class="fas fa-gem fa-2x text-success mb-3"></i>
-                            <h5 class="card-title">الجودة</h5>
-                            <p class="card-text">نختار منتجاتنا بعناية فائقة لضمان حصول عملائنا على أفضل جودة ممكنة.</p>
+                            <h5 class="card-title" data-key="about.values.quality.title">الجودة</h5>
+                            <p class="card-text" data-key="about.values.quality.desc">نختار منتجاتنا بعناية فائقة لضمان
+                                حصول
+                                عملائنا على أفضل جودة ممكنة.</p>
                         </div>
                     </div>
                 </div>
@@ -169,8 +185,9 @@
                     <div class="card text-center h-100">
                         <div class="card-body">
                             <i class="fas fa-rocket fa-2x text-warning mb-3"></i>
-                            <h5 class="card-title">السرعة</h5>
-                            <p class="card-text">نلتزم بسرعة التوصيل ومعالجة الطلبات لتوفير تجربة سلسة لعملائنا.</p>
+                            <h5 class="card-title" data-key="about.values.speed.title">السرعة</h5>
+                            <p class="card-text" data-key="about.values.speed.desc">نلتزم بسرعة التوصيل ومعالجة الطلبات
+                                لتوفير تجربة سلسة لعملائنا.</p>
                         </div>
                     </div>
                 </div>
@@ -178,8 +195,10 @@
                     <div class="card text-center h-100">
                         <div class="card-body">
                             <i class="fas fa-heart fa-2x text-danger mb-3"></i>
-                            <h5 class="card-title">الاهتمام</h5>
-                            <p class="card-text">نهتم بكل تفصيلة في رحلة العميل معنا من البداية حتى ما بعد البيع.</p>
+                            <h5 class="card-title" data-key="about.values.care.title">الاهتمام</h5>
+                            <p class="card-text" data-key="about.values.care.desc">نهتم بكل تفصيلة في رحلة العميل معنا
+                                من
+                                البداية حتى ما بعد البيع.</p>
                         </div>
                     </div>
                 </div>
@@ -188,14 +207,16 @@
             <!-- Statistics -->
             <div class="row d-flex justify-content-center mb-5">
                 <div class="col-12">
-                    <h2 class="section-title text-center mb-5">إنجازاتنا بالأرقام</h2>
+                    <h2 class="section-title text-center mb-5" data-key="about.stats.title">إنجازاتنا بالأرقام</h2>
                 </div>
                 <div class="col-lg-6 col-md-6 mb-4">
                     <div class="card bg-primary text-white text-center">
                         <div class="card-body">
                             <i class="fas fa-user fa-3x mb-3"></i>
-                            <h3 class="card-title">+8,200 عميل فعّال خلال آخر 12 شهر</h3>
-                            <p class="card-text">ثقة تزداد يومًا بعد يوم.</p>
+                            <h3 class="card-title" data-key="about.stats.customers.title">+8,200 عميل فعّال خلال آخر 12
+                                شهر
+                            </h3>
+                            <p class="card-text" data-key="about.stats.customers.desc">ثقة تزداد يومًا بعد يوم.</p>
                         </div>
                     </div>
                 </div>
@@ -203,8 +224,10 @@
                     <div class="card bg-success text-white text-center">
                         <div class="card-body">
                             <i class="fas fa-box fa-3x mb-3"></i>
-                            <h3 class="card-title">+340 منتج متنوع عبر 12 فئة رئيسية</h3>
-                            <p class="card-text">خيارات تناسب جميع الأذواق.</p>
+                            <h3 class="card-title" data-key="about.stats.products.title">+340 منتج متنوع عبر 12 فئة
+                                رئيسية
+                            </h3>
+                            <p class="card-text" data-key="about.stats.products.desc">خيارات تناسب جميع الأذواق.</p>
                         </div>
                     </div>
                 </div>
@@ -212,8 +235,10 @@
                     <div class="card bg-warning text-white text-center">
                         <div class="card-body">
                             <i class="fas fa-shipping-fast fa-3x mb-3"></i>
-                            <h3 class="card-title">+21,500 طلب تم توصيله بنجاح</h3>
-                            <p class="card-text">96% من الطلبات تصل خلال 48 ساعة بأمان.</p>
+                            <h3 class="card-title" data-key="about.stats.orders.title">+21,500 طلب تم توصيله بنجاح</h3>
+                            <p class="card-text" data-key="about.stats.orders.desc">96% من الطلبات تصل خلال 48 ساعة
+                                بأمان.
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -221,8 +246,9 @@
                     <div class="card bg-info text-white text-center">
                         <div class="card-body">
                             <i class="fas fa-star fa-3x mb-3"></i>
-                            <h3 class="card-title">4.6/5 عبر 1,400+ مراجعة موثوقة</h3>
-                            <p class="card-text">جودة نحرص على استمرارها.</p>
+                            <h3 class="card-title" data-key="about.stats.reviews.title">4.6/5 عبر 1,400+ مراجعة موثوقة
+                            </h3>
+                            <p class="card-text" data-key="about.stats.reviews.desc">جودة نحرص على استمرارها.</p>
                         </div>
                     </div>
                 </div>
@@ -231,7 +257,7 @@
             <!-- Why Choose Us -->
             <div class="row mb-5">
                 <div class="col-12">
-                    <h2 class="section-title text-center mb-5">لماذا تختارنا؟</h2>
+                    <h2 class="section-title text-center mb-5" data-key="about.why.title">لماذا تختارنا؟</h2>
                 </div>
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="d-flex">
@@ -239,8 +265,8 @@
                             <i class="fas fa-check-circle fa-2x text-success"></i>
                         </div>
                         <div class="flex-grow-1 ms-3">
-                            <h5>منتجات أصلية 100%</h5>
-                            <p>جميع منتجاتنا أصلية ومضمونة من الموردين المعتمدين.</p>
+                            <h5 data-key="about.why.original.title">منتجات أصلية 100%</h5>
+                            <p data-key="about.why.original.desc">جميع منتجاتنا أصلية ومضمونة من الموردين المعتمدين.</p>
                         </div>
                     </div>
                 </div>
@@ -250,8 +276,8 @@
                             <i class="fas fa-truck fa-2x text-primary"></i>
                         </div>
                         <div class="flex-grow-1 ms-3">
-                            <h5>توصيل سريع ومجاني</h5>
-                            <p>نوصل طلباتك في أسرع وقت ممكن مجاناً إلى باب منزلك.</p>
+                            <h5 data-key="about.why.delivery.title">توصيل سريع ومجاني</h5>
+                            <p data-key="about.why.delivery.desc">نوصل طلباتك في أسرع وقت ممكن مجاناً إلى باب منزلك.</p>
                         </div>
                     </div>
                 </div>
@@ -261,8 +287,8 @@
                             <i class="fas fa-headset fa-2x text-warning"></i>
                         </div>
                         <div class="flex-grow-1 ms-3">
-                            <h5>دعم عملاء متميز</h5>
-                            <p>فريق دعم العملاء متاح لمساعدتك في أي وقت.</p>
+                            <h5 data-key="about.why.support.title">دعم عملاء متميز</h5>
+                            <p data-key="about.why.support.desc">فريق دعم العملاء متاح لمساعدتك في أي وقت.</p>
                         </div>
                     </div>
                 </div>
@@ -272,8 +298,8 @@
                             <i class="fas fa-undo fa-2x text-info"></i>
                         </div>
                         <div class="flex-grow-1 ms-3">
-                            <h5>سياسة إرجاع مرنة</h5>
-                            <p>يمكنك إرجاع أو استبدال المنتجات بسهولة خلال 24 ساعة.</p>
+                            <h5 data-key="about.why.return.title">سياسة إرجاع مرنة</h5>
+                            <p data-key="about.why.return.desc">يمكنك إرجاع أو استبدال المنتجات بسهولة خلال 24 ساعة.</p>
                         </div>
                     </div>
                 </div>
@@ -283,8 +309,8 @@
                             <i class="fas fa-lock fa-2x text-danger"></i>
                         </div>
                         <div class="flex-grow-1 ms-3">
-                            <h5>أمان وخصوصية</h5>
-                            <p>نحمي بياناتك الشخصية ونضمن أمان معاملاتك.</p>
+                            <h5 data-key="about.why.security.title">أمان وخصوصية</h5>
+                            <p data-key="about.why.security.desc">نحمي بياناتك الشخصية ونضمن أمان معاملاتك.</p>
                         </div>
                     </div>
                 </div>
@@ -294,8 +320,8 @@
                             <i class="fas fa-tags fa-2x text-success"></i>
                         </div>
                         <div class="flex-grow-1 ms-3">
-                            <h5>أسعار تنافسية</h5>
-                            <p>نقدم أفضل الأسعار مع عروض وخصومات مستمرة.</p>
+                            <h5 data-key="about.why.price.title">أسعار تنافسية</h5>
+                            <p data-key="about.why.price.desc">نقدم أفضل الأسعار مع عروض وخصومات مستمرة.</p>
                         </div>
                     </div>
                 </div>
@@ -304,16 +330,18 @@
             <!-- Team Section -->
             <div class="row mb-5">
                 <div class="col-12">
-                    <h2 class="section-title text-center mb-5">فريق العمل</h2>
+                    <h2 class="section-title text-center mb-5" data-key="about.team.title">فريق العمل</h2>
                 </div>
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="card text-center">
                         <img src="https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg?auto=compress&cs=tinysrgb&w=400"
-                            class="card-img-top" alt="المدير العام" style="height: 250px; object-fit: cover;">
+                            class="card-img-top" alt="المدير العام" style="height: 250px; object-fit: cover;"
+                            data-key="about.team.ceo.img_alt">
                         <div class="card-body">
-                            <h5 class="card-title">أحمد محمد</h5>
-                            <p class="card-text text-muted">المدير العام</p>
-                            <p class="card-text">خبرة أكثر من 10 سنوات في مجال التجارة الإلكترونية</p>
+                            <h5 class="card-title" data-key="about.team.ceo.name">أحمد محمد</h5>
+                            <p class="card-text text-muted" data-key="about.team.ceo.role">المدير العام</p>
+                            <p class="card-text" data-key="about.team.ceo.desc">خبرة أكثر من 10 سنوات في مجال التجارة
+                                الإلكترونية</p>
                             <div class="social-links">
                                 <a href="#" class="btn btn-outline-primary btn-sm me-2">
                                     <i class="fab fa-linkedin"></i>
@@ -328,11 +356,13 @@
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="card text-center">
                         <img src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=400"
-                            class="card-img-top" alt="مدير التسويق" style="height: 250px; object-fit: cover;">
+                            class="card-img-top" alt="مدير التسويق" style="height: 250px; object-fit: cover;"
+                            data-key="about.team.marketing.img_alt">
                         <div class="card-body">
-                            <h5 class="card-title">فاطمة علي</h5>
-                            <p class="card-text text-muted">مدير التسويق</p>
-                            <p class="card-text">متخصصة في التسويق الرقمي وإدارة العلاقات مع العملاء</p>
+                            <h5 class="card-title" data-key="about.team.marketing.name">فاطمة علي</h5>
+                            <p class="card-text text-muted" data-key="about.team.marketing.role">مدير التسويق</p>
+                            <p class="card-text" data-key="about.team.marketing.desc">متخصصة في التسويق الرقمي وإدارة
+                                العلاقات مع العملاء</p>
                             <div class="social-links">
                                 <a href="#" class="btn btn-outline-primary btn-sm me-2">
                                     <i class="fab fa-linkedin"></i>
@@ -347,11 +377,14 @@
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="card text-center">
                         <img src="https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg?auto=compress&cs=tinysrgb&w=400"
-                            class="card-img-top" alt="مدير التقنية" style="height: 250px; object-fit: cover;">
+                            class="card-img-top" alt="مدير التقنية" style="height: 250px; object-fit: cover;"
+                            data-key="about.team.tech.img_alt">
                         <div class="card-body">
-                            <h5 class="card-title">محمد سالم</h5>
-                            <p class="card-text text-muted">مدير التقنية</p>
-                            <p class="card-text">مطور ومهندس برمجيات متخصص في تطوير المواقع الإلكترونية</p>
+                            <h5 class="card-title" data-key="about.team.tech.name">محمد سالم</h5>
+                            <p class="card-text text-muted" data-key="about.team.tech.role">مدير التقنية</p>
+                            <p class="card-text" data-key="about.team.tech.desc">مطور ومهندس برمجيات متخصص في تطوير
+                                المواقع
+                                الإلكترونية</p>
                             <div class="social-links">
                                 <a href="#" class="btn btn-outline-primary btn-sm me-2">
                                     <i class="fab fa-github"></i>
@@ -370,14 +403,17 @@
                 <div class="col-12">
                     <div class="card bg-gradient-primary text-white text-center">
                         <div class="card-body py-5">
-                            <h3 class="card-title mb-4">انضم إلى عائلة عملائنا الراضين</h3>
-                            <p class="card-text lead mb-4">ابدأ رحلة التسوق معنا واكتشف الفرق في الجودة والخدمة</p>
+                            <h3 class="card-title mb-4" data-key="about.cta.title">انضم إلى عائلة عملائنا الراضين</h3>
+                            <p class="card-text lead mb-4" data-key="about.cta.desc">ابدأ رحلة التسوق معنا واكتشف الفرق
+                                في
+                                الجودة والخدمة</p>
                             <div class="d-flex justify-content-center gap-3">
-                                <a href="products.html" class="btn btn-warning btn-lg">
+                                <a href="products.html" class="btn btn-warning btn-lg" data-key="about.cta.shop">
                                     <i class="fas fa-shopping-bag me-2"></i>
                                     تسوق الآن
                                 </a>
-                                <a href="contact.html" class="btn btn-outline-light btn-lg">
+                                <a href="contact.html" class="btn btn-outline-light btn-lg"
+                                    data-key="about.cta.contact">
                                     <i class="fas fa-phone me-2"></i>
                                     اتصل بنا
                                 </a>
@@ -394,31 +430,37 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-4">
-                    <h5 class="fw-bold mb-3">المتجر الإلكتروني</h5>
-                    <p>نوفر أفضل المنتجات بأسعار تنافسية مع ضمان الجودة وسرعة التوصيل.</p>
+                    <h5 class="fw-bold mb-3" data-key="footer.store.name">متجري</h5>
+                    <p data-key="footer.store.text">نوفر أفضل المنتجات بأسعار تنافسية مع ضمان الجودة وسرعة التوصيل.</p>
                 </div>
                 <div class="col-md-4">
-                    <h5 class="fw-bold mb-3">روابط مفيدة</h5>
+                    <h5 class="fw-bold mb-3" data-key="footer.links.name">روابط مفيدة</h5>
                     <ul class="list-unstyled">
-                        <li><a href="index.html" class="text-white-50">الرئيسية</a></li>
-                        <li><a href="products.html" class="text-white-50">المنتجات</a></li>
-                        <li><a href="about.html" class="text-white-50">من نحن</a></li>
-                        <li><a href="contact.html" class="text-white-50">اتصل بنا</a></li>
-                        <li><a href="privacy-policy.html" class="text-white-50">سياسة الخصوصية</a></li>
-                        <li><a href="terms-of-use.html" class="text-white-50">شروط الاستخدام</a></li>
+                        <li><a href="index.html" class="text-white-50" data-key="footer.links.home">الرئيسية</a></li>
+                        <li><a href="products.html" class="text-white-50" data-key="footer.links.products">المنتجات</a>
+                        </li>
+                        <li><a href="about.html" class="text-white-50" data-key="footer.links.about">من نحن</a></li>
+                        <li><a href="contact.html" class="text-white-50" data-key="footer.links.contact">اتصل بنا</a>
+                        </li>
+                        <li><a href="privacy-policy.html" class="text-white-50" data-key="footer.links.privacy">سياسة
+                                الخصوصية</a></li>
+                        <li><a href="terms-of-use.html" class="text-white-50" data-key="footer.links.terms">شروط
+                                الاستخدام</a></li>
                     </ul>
                 </div>
                 <div class="col-md-4" id="contact">
-                    <h5 class="fw-bold mb-3">اتصل بنا</h5>
+                    <h5 class="fw-bold mb-3" data-key="footer.contacts.name">اتصل بنا</h5>
                     <p><i class="fas fa-phone me-2"></i> +212666666666</p>
                     <p><i class="fas fa-envelope me-2"></i> our@store.com</p>
-                    <p><i class="fas fa-map-marker-alt me-2"></i>الدار البيضاء، المملكة المغربية</p>
+                    <p><i class="fas fa-map-marker-alt me-2"></i><span data-key="footer.contacts.gps">الدار البيضاء،
+                            المملكة
+                            المغربية</span></p>
                 </div>
             </div>
             <hr class="my-4">
             <div class="row">
                 <div class="col-12 text-center">
-                    <p>&copy; 2025 المتجر الإلكتروني. جميع الحقوق محفوظة.</p>
+                    <p><span data-key="footer.copyright">المتجر الإلكتروني. جميع الحقوق محفوظة. 2025</span> &copy;</p>
                 </div>
             </div>
         </div>
@@ -429,16 +471,16 @@
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">سلة المشتريات</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    <h5 class="modal-title" data-key="cart.title">سلة المشتريات</h5> <button type="button"
+                        class="btn-close" data-bs-dismiss="modal"></button>
                 </div>
                 <div class="modal-body" id="cartModalBody">
                     <!-- Cart items will be displayed here -->
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">إغلاق</button>
-                    <button id="checkoutBtn" class="btn btn-primary">إتمام الطلب</button>
-                </div>
+                <div class="modal-footer"> <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
+                        data-key="cart.close">إغلاق</button> <button id="checkoutBtn" class="btn btn-primary"
+                        data-key="cart.confirm">إتمام
+                        الطلب</button> </div>
             </div>
         </div>
     </div>
@@ -451,8 +493,9 @@
 
     <!-- Custom JS -->
     <script defer src="JS/data.js"></script>
+    <script defer src="JS/lang.js"></script>
     <script defer src="JS/cart.js"></script>
-    <script defer src="JS/about.js"></script>
+    <script src="JS/about.js"></script>
 </body>
 
 </html>

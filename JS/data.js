@@ -2,14 +2,17 @@ let sports = 0
 let books = 0
 let home = 0
 let electronics = 0
-// let beauty = 0
 let fashion = 0
 let courses = 0
 
 const products = [
     {
         id: '1',
-        name: 'هاتف ذكي متطور',
+        name: {
+            ar: 'هاتف ذكي متطور',
+            fr: 'Smartphone Avancé',
+            en: 'Advanced Smartphone'
+        },
         price: 2500,
         originalPrice: 3000,
         image: 'https://images.pexels.com/photos/404280/pexels-photo-404280.jpeg?auto=compress&cs=tinysrgb&w=800',
@@ -19,15 +22,37 @@ const products = [
             'https://images.pexels.com/photos/699122/pexels-photo-699122.jpeg?auto=compress&cs=tinysrgb&w=800'
         ],
         category: 'electronics',
-        description: 'هاتف ذكي بتقنية متطورة، شاشة عالية الوضوح، كاميرا ممتازة، وبطارية تدوم طويلاً. مثالي للاستخدام اليومي والعمل.',
-        specifications: [
-            'شاشة 6.5 بوصة AMOLED',
-            'ذاكرة 128 جيجابايت',
-            'كاميرا 48 ميجابكسل',
-            'بطارية 4000 مللي أمبير',
-            'مقاوم للماء IP68',
-            'معالج ثماني النواة'
-        ],
+        description: {
+            ar: 'هاتف ذكي بتقنية متطورة، شاشة عالية الوضوح، كاميرا ممتازة، وبطارية تدوم طويلاً. مثالي للاستخدام اليومي والعمل.',
+            fr: 'Smartphone doté d’une technologie avancée, écran haute définition, excellent appareil photo et batterie longue durée. Idéal pour un usage quotidien et professionnel.',
+            en: 'Smartphone with advanced technology, high-definition display, excellent camera, and long-lasting battery. Perfect for daily use and work.'
+        },
+        specifications: {
+            ar: [
+                'ستانلس ستيل 18/10',
+                'مناسب لجميع أنواع المواقد',
+                'سهل التنظيف',
+                'ضمان 5 سنوات',
+                'مقاوم للصدأ',
+                'تصميم عملي وأنيق'
+            ],
+            en: [
+                '18/10 Stainless Steel',
+                'Suitable for all types of stoves',
+                'Easy to clean',
+                '5-year warranty',
+                'Rust-resistant',
+                'Practical and elegant design'
+            ],
+            fr: [
+                'Acier inoxydable 18/10',
+                'Convient à tous types de cuisinières',
+                'Facile à nettoyer',
+                'Garantie 5 ans',
+                'Résistant à la rouille',
+                'Design pratique et élégant'
+            ]
+        },
         rating: 4.5,
         reviews: 150,
         inStock: true,
@@ -36,7 +61,11 @@ const products = [
     },
     {
         id: '2',
-        name: 'حقيبة يد أنيقة',
+        name: {
+            ar: 'حقيبة يد أنيقة',
+            en: 'Elegant Handbag',
+            fr: 'Sac à main élégant'
+        },
         price: 450,
         originalPrice: 600,
         image: 'https://images.pexels.com/photos/932401/pexels-photo-932401.jpeg',
@@ -45,15 +74,37 @@ const products = [
             'https://images.pexels.com/photos/1040945/pexels-photo-1040945.jpeg?auto=compress&cs=tinysrgb&w=800'
         ],
         category: 'fashion',
-        description: 'حقيبة يد عصرية مصنوعة من الجلد الطبيعي، مثالية للاستخدام اليومي والمناسبات الخاصة.',
-        specifications: [
-            'جلد طبيعي عالي الجودة',
-            'مقاس متوسط مناسب للاستخدام اليومي',
-            'متوفر بألوان متعددة',
-            'ضمان لمدة سنة',
-            'جيوب داخلية متعددة',
-            'مقبض مريح'
-        ],
+        description: {
+            ar: 'حقيبة يد عصرية مصنوعة من الجلد الطبيعي، مثالية للاستخدام اليومي والمناسبات الخاصة.',
+            en: 'A modern handbag made from genuine leather, perfect for daily use and special occasions.',
+            fr: 'Un sac à main moderne en cuir véritable, parfait pour un usage quotidien et les occasions spéciales.'
+        },
+        specifications: {
+            ar: [
+                'ستانلس ستيل 18/10',
+                'مناسب لجميع أنواع المواقد',
+                'سهل التنظيف',
+                'ضمان 5 سنوات',
+                'مقاوم للصدأ',
+                'تصميم عملي وأنيق'
+            ],
+            en: [
+                '18/10 Stainless Steel',
+                'Suitable for all types of stoves',
+                'Easy to clean',
+                '5-year warranty',
+                'Rust-resistant',
+                'Practical and elegant design'
+            ],
+            fr: [
+                'Acier inoxydable 18/10',
+                'Convient à tous types de cuisinières',
+                'Facile à nettoyer',
+                'Garantie 5 ans',
+                'Résistant à la rouille',
+                'Design pratique et élégant'
+            ]
+        },
         rating: 4.2,
         reviews: 85,
         inStock: true,
@@ -62,7 +113,11 @@ const products = [
     },
     {
         id: '3',
-        name: 'فن اللامبالاة',
+        name: {
+            ar: 'فن اللامبالاة',
+            en: 'The Subtle Art of Not Giving a F*ck',
+            fr: 'L\'art subtil de s\'en foutre'
+        },
         price: 25,
         image: 'files/id3/img1.webp',
         images: [
@@ -71,14 +126,37 @@ const products = [
             'files/id3/img3.webp'
         ],
         category: 'books',
-        description: 'كتاب فن اللامبالاة للكاتب الأمريكي مارك مانسون هو دليل فلسفي نفسي يساعد القارئ على فهم الحياة بواقعية وتجاوز الضغوط العاطفية. يركز على مبدأ بسيط: لا يمكننا أن نعطي اهتمامًا لكل شيء، لذلك يجب أن نختار بعناية ما نهتم به فعلًا.',
-        specifications: [
-            'بجودة عالية pdf',
-            'حجم الكتاب 3.4 ميجا بايت',
-            'عدد الصفحات 272',
-            'باللغة العربية',
-            'الكاتب الأمريكي مارك مانسون'
-        ],
+        description: {
+            ar: 'كتاب فن اللامبالاة للكاتب الأمريكي مارك مانسون هو دليل فلسفي نفسي يساعد القارئ على فهم الحياة بواقعية وتجاوز الضغوط العاطفية. يركز على مبدأ بسيط: لا يمكننا أن نعطي اهتمامًا لكل شيء، لذلك يجب أن نختار بعناية ما نهتم به فعلًا.',
+            en: 'The Subtle Art of Not Giving a F*ck by Mark Manson is a philosophical self-help guide that helps readers understand life realistically and overcome emotional pressures. It emphasizes a simple principle: we cannot care about everything, so we must carefully choose what really matters.',
+            fr: 'L\'art subtil de s\'en foutre de Mark Manson est un guide philosophique et psychologique qui aide le lecteur à comprendre la vie de manière réaliste et à surmonter les pressions émotionnelles. Il met l\'accent sur un principe simple : on ne peut pas se soucier de tout, il faut donc choisir attentivement ce qui compte vraiment.'
+        },
+        specifications: {
+            ar: [
+                'ستانلس ستيل 18/10',
+                'مناسب لجميع أنواع المواقد',
+                'سهل التنظيف',
+                'ضمان 5 سنوات',
+                'مقاوم للصدأ',
+                'تصميم عملي وأنيق'
+            ],
+            en: [
+                '18/10 Stainless Steel',
+                'Suitable for all types of stoves',
+                'Easy to clean',
+                '5-year warranty',
+                'Rust-resistant',
+                'Practical and elegant design'
+            ],
+            fr: [
+                'Acier inoxydable 18/10',
+                'Convient à tous types de cuisinières',
+                'Facile à nettoyer',
+                'Garantie 5 ans',
+                'Résistant à la rouille',
+                'Design pratique et élégant'
+            ]
+        },
         rating: 4.4,
         reviews: 150,
         inStock: true,
@@ -86,7 +164,11 @@ const products = [
     },
     {
         id: '4',
-        name: 'سماعة لاسلكية',
+        name: {
+            ar: 'سماعة لاسلكية',
+            en: 'Wireless Headphones',
+            fr: 'Casque sans fil'
+        },
         price: 180,
         originalPrice: 250,
         image: 'https://images.pexels.com/photos/1649771/pexels-photo-1649771.jpeg?auto=compress&cs=tinysrgb&w=800',
@@ -95,24 +177,46 @@ const products = [
             'https://images.pexels.com/photos/3394650/pexels-photo-3394650.jpeg?auto=compress&cs=tinysrgb&w=800'
         ],
         category: 'electronics',
-        description: 'سماعة لاسلكية عالية الجودة مع تقنية إلغاء الضوضاء، مثالية للموسيقى والمكالمات.',
-        specifications: [
-            'تقنية بلوتوث 5.0',
-            'بطارية تدوم 24 ساعة',
-            'مقاومة للماء IPX4',
-            'صوت عالي الجودة',
-            'إلغاء الضوضاء النشط',
-            'تصميم مريح للأذن'
-        ],
+        description: {
+            ar: 'سماعة لاسلكية عالية الجودة مع تقنية إلغاء الضوضاء، مثالية للموسيقى والمكالمات.',
+            en: 'High-quality wireless headphones with noise cancellation technology, perfect for music and calls.',
+            fr: 'Casque sans fil de haute qualité avec technologie de réduction du bruit, parfait pour la musique et les appels.'
+        },
+        specifications: {
+            ar: [
+                'ستانلس ستيل 18/10',
+                'مناسب لجميع أنواع المواقد',
+                'سهل التنظيف',
+                'ضمان 5 سنوات',
+                'مقاوم للصدأ',
+                'تصميم عملي وأنيق'
+            ],
+            en: [
+                '18/10 Stainless Steel',
+                'Suitable for all types of stoves',
+                'Easy to clean',
+                '5-year warranty',
+                'Rust-resistant',
+                'Practical and elegant design'
+            ],
+            fr: [
+                'Acier inoxydable 18/10',
+                'Convient à tous types de cuisinières',
+                'Facile à nettoyer',
+                'Garantie 5 ans',
+                'Résistant à la rouille',
+                'Design pratique et élégant'
+            ]
+        },
         rating: 4.3,
         reviews: 120,
         inStock: true,
-        featured: true,
+        featured: false,
         discount: 28
     },
     {
         id: '5',
-        name: 'طقم أواني مطبخ',
+        name: { ar: 'طقم أواني مطبخ', en: 'Kitchen Cookware Set', fr: 'Ensemble d\'ustensiles de cuisine' },
         price: 350,
         image: 'https://images.pexels.com/photos/4226881/pexels-photo-4226881.jpeg?auto=compress&cs=tinysrgb&w=800',
         images: [
@@ -120,15 +224,37 @@ const products = [
             'https://images.pexels.com/photos/4226796/pexels-photo-4226796.jpeg?auto=compress&cs=tinysrgb&w=800'
         ],
         category: 'home',
-        description: 'طقم أواني مطبخ كامل مصنوع من الستانلس ستيل عالي الجودة، مناسب لجميع أنواع الطبخ.',
-        specifications: [
-            'ستانلس ستيل 18/10',
-            'مناسب لجميع أنواع المواقد',
-            'سهل التنظيف',
-            'ضمان 5 سنوات',
-            'مقاوم للصدأ',
-            'تصميم عملي وأنيق'
-        ],
+        description: {
+            ar: 'طقم أواني مطبخ كامل مصنوع من الستانلس ستيل عالي الجودة، مناسب لجميع أنواع الطبخ.',
+            en: 'Complete kitchen cookware set made of high-quality stainless steel, suitable for all types of cooking.',
+            fr: 'Ensemble complet d\'ustensiles de cuisine en acier inoxydable de haute qualité, adapté à tous les types de cuisson.'
+        },
+        specifications: {
+            ar: [
+                'ستانلس ستيل 18/10',
+                'مناسب لجميع أنواع المواقد',
+                'سهل التنظيف',
+                'ضمان 5 سنوات',
+                'مقاوم للصدأ',
+                'تصميم عملي وأنيق'
+            ],
+            en: [
+                '18/10 Stainless Steel',
+                'Suitable for all types of stoves',
+                'Easy to clean',
+                '5-year warranty',
+                'Rust-resistant',
+                'Practical and elegant design'
+            ],
+            fr: [
+                'Acier inoxydable 18/10',
+                'Convient à tous types de cuisinières',
+                'Facile à nettoyer',
+                'Garantie 5 ans',
+                'Résistant à la rouille',
+                'Design pratique et élégant'
+            ]
+        },
         rating: 4.6,
         reviews: 95,
         inStock: true,
@@ -136,7 +262,7 @@ const products = [
     },
     {
         id: '6',
-        name: 'حذاء رياضي مريح',
+        name: { ar: 'حذاء رياضي مريح', en: 'Comfortable Sports Shoes', fr: 'Chaussures de sport confortables' },
         price: 280,
         originalPrice: 350,
         image: 'https://images.pexels.com/photos/1478442/pexels-photo-1478442.jpeg?auto=compress&cs=tinysrgb&w=800',
@@ -145,50 +271,46 @@ const products = [
             'https://images.pexels.com/photos/1456706/pexels-photo-1456706.jpeg?auto=compress&cs=tinysrgb&w=800'
         ],
         category: 'sports',
-        description: 'حذاء رياضي مريح مناسب للجري والأنشطة الرياضية المختلفة، مصنوع من مواد عالية الجودة.',
-        specifications: [
-            'نعل مطاطي عالي الجودة',
-            'خامة تسمح بالتهوية',
-            'تصميم مريح للقدم',
-            'متوفر بمقاسات مختلفة',
-            'مقاوم للانزلاق',
-            'مناسب للاستخدام اليومي'
-        ],
+        description: {
+            ar: 'حذاء رياضي مريح مناسب للجري والأنشطة الرياضية المختلفة، مصنوع من مواد عالية الجودة.',
+            en: 'Comfortable sports shoes suitable for running and various sports activities, made from high-quality materials.',
+            fr: 'Chaussures de sport confortables adaptées à la course et aux diverses activités sportives, fabriquées à partir de matériaux de haute qualité.'
+        },
+        specifications: {
+            ar: [
+                'ستانلس ستيل 18/10',
+                'مناسب لجميع أنواع المواقد',
+                'سهل التنظيف',
+                'ضمان 5 سنوات',
+                'مقاوم للصدأ',
+                'تصميم عملي وأنيق'
+            ],
+            en: [
+                '18/10 Stainless Steel',
+                'Suitable for all types of stoves',
+                'Easy to clean',
+                '5-year warranty',
+                'Rust-resistant',
+                'Practical and elegant design'
+            ],
+            fr: [
+                'Acier inoxydable 18/10',
+                'Convient à tous types de cuisinières',
+                'Facile à nettoyer',
+                'Garantie 5 ans',
+                'Résistant à la rouille',
+                'Design pratique et élégant'
+            ]
+        },
         rating: 4.4,
         reviews: 180,
         inStock: true,
-        featured: true,
+        featured: false,
         discount: 20
     },
-    // {
-    //     id: '7',
-    //     name: 'كريم مرطب للبشرة',
-    //     price: 95,
-    //     originalPrice: 120,
-    //     image: 'https://images.pexels.com/photos/3373736/pexels-photo-3373736.jpeg?auto=compress&cs=tinysrgb&w=800',
-    //     images: [
-    //         'https://images.pexels.com/photos/3373736/pexels-photo-3373736.jpeg?auto=compress&cs=tinysrgb&w=800',
-    //         'https://images.pexels.com/photos/3762879/pexels-photo-3762879.jpeg?auto=compress&cs=tinysrgb&w=800'
-    //     ],
-    //     category: 'beauty',
-    //     description: 'كريم مرطب طبيعي للبشرة، يحتوي على مكونات طبيعية مغذية ومرطبة.',
-    //     specifications: [
-    //         'مكونات طبيعية 100%',
-    //         'مناسب لجميع أنواع البشرة',
-    //         'خالي من المواد الكيميائية الضارة',
-    //         'مرطب ومغذي',
-    //         'سريع الامتصاص',
-    //         'حجم 50 مل'
-    //     ],
-    //     rating: 4.7,
-    //     reviews: 75,
-    //     inStock: true,
-    //     featured: false,
-    //     discount: 21
-    // },
     {
-        id: '8',
-        name: 'لابتوب عالي الأداء',
+        id: '7',
+        name: { ar: 'لابتوب عالي الأداء', en: 'High-Performance Laptop', fr: 'Ordinateur portable haute performance' },
         price: 4550,
         originalPrice: 5200,
         image: 'https://images.pexels.com/photos/812264/pexels-photo-812264.jpeg?auto=compress&cs=tinysrgb&w=800',
@@ -197,15 +319,37 @@ const products = [
             'https://images.pexels.com/photos/1029757/pexels-photo-1029757.jpeg?auto=compress&cs=tinysrgb&w=800'
         ],
         category: 'electronics',
-        description: 'لابتوب عالي الأداء مناسب للعمل والدراسة والألعاب، مع مواصفات متقدمة.',
-        specifications: [
-            'معالج Intel Core i7',
-            'ذاكرة عشوائية 16 جيجابايت',
-            'قرص صلب SSD 512 جيجابايت',
-            'كارت رسوميات منفصل',
-            'شاشة 15.6 بوصة Full HD',
-            'نظام تشغيل Windows 11'
-        ],
+        description: {
+            ar: 'لابتوب عالي الأداء مناسب للعمل والدراسة والألعاب، مع مواصفات متقدمة.',
+            en: 'High-performance laptop suitable for work, study, and gaming, with advanced specifications.',
+            fr: 'Ordinateur portable haute performance adapté au travail, aux études et aux jeux, avec des spécifications avancées.'
+        },
+        specifications: {
+            ar: [
+                'ستانلس ستيل 18/10',
+                'مناسب لجميع أنواع المواقد',
+                'سهل التنظيف',
+                'ضمان 5 سنوات',
+                'مقاوم للصدأ',
+                'تصميم عملي وأنيق'
+            ],
+            en: [
+                '18/10 Stainless Steel',
+                'Suitable for all types of stoves',
+                'Easy to clean',
+                '5-year warranty',
+                'Rust-resistant',
+                'Practical and elegant design'
+            ],
+            fr: [
+                'Acier inoxydable 18/10',
+                'Convient à tous types de cuisinières',
+                'Facile à nettoyer',
+                'Garantie 5 ans',
+                'Résistant à la rouille',
+                'Design pratique et élégant'
+            ]
+        },
         rating: 4.6,
         reviews: 65,
         inStock: true,
@@ -213,8 +357,8 @@ const products = [
         discount: 13
     },
     {
-        id: '9',
-        name: 'فستان أنيق',
+        id: '8',
+        name: { ar: 'فستان أنيق', en: 'Elegant Dress', fr: 'Robe élégante' },
         price: 220,
         originalPrice: 280,
         image: 'https://images.pexels.com/photos/1926769/pexels-photo-1926769.jpeg?auto=compress&cs=tinysrgb&w=800',
@@ -223,15 +367,37 @@ const products = [
             'https://images.pexels.com/photos/1461974/pexels-photo-1461974.jpeg?auto=compress&cs=tinysrgb&w=800'
         ],
         category: 'fashion',
-        description: 'فستان أنيق مناسب للمناسبات الخاصة، مصنوع من أقمشة عالية الجودة.',
-        specifications: [
-            'قماش عالي الجودة',
-            'تصميم عصري وأنيق',
-            'متوفر بألوان متعددة',
-            'سهل الغسيل والعناية',
-            'مقاسات من S إلى XL',
-            'مناسب للمناسبات الخاصة'
-        ],
+        description: {
+            ar: 'فستان أنيق مناسب للمناسبات الخاصة، مصنوع من أقمشة عالية الجودة.',
+            en: 'Elegant dress suitable for special occasions, made from high-quality fabrics.',
+            fr: 'Robe élégante adaptée aux occasions spéciales, fabriquée à partir de tissus de haute qualité.'
+        },
+        specifications: {
+            ar: [
+                'ستانلس ستيل 18/10',
+                'مناسب لجميع أنواع المواقد',
+                'سهل التنظيف',
+                'ضمان 5 سنوات',
+                'مقاوم للصدأ',
+                'تصميم عملي وأنيق'
+            ],
+            en: [
+                '18/10 Stainless Steel',
+                'Suitable for all types of stoves',
+                'Easy to clean',
+                '5-year warranty',
+                'Rust-resistant',
+                'Practical and elegant design'
+            ],
+            fr: [
+                'Acier inoxydable 18/10',
+                'Convient à tous types de cuisinières',
+                'Facile à nettoyer',
+                'Garantie 5 ans',
+                'Résistant à la rouille',
+                'Design pratique et élégant'
+            ]
+        },
         rating: 4.3,
         reviews: 92,
         inStock: true,
@@ -239,8 +405,8 @@ const products = [
         discount: 21
     },
     {
-        id: '10',
-        name: 'مجموعة أدوات المطبخ',
+        id: '9',
+        name: { ar: 'مجموعة أدوات المطبخ', en: 'Kitchen Tool Set', fr: 'Ensemble d\'ustensiles de cuisine' },
         price: 180,
         image: 'https://images.pexels.com/photos/4226463/pexels-photo-4226463.jpeg?auto=compress&cs=tinysrgb&w=800',
         images: [
@@ -248,23 +414,45 @@ const products = [
             'https://images.pexels.com/photos/4226804/pexels-photo-4226804.jpeg?auto=compress&cs=tinysrgb&w=800'
         ],
         category: 'home',
-        description: 'مجموعة أدوات المطبخ الأساسية، تشمل جميع الأدوات اللازمة للطبخ اليومي.',
-        specifications: [
-            'مجموعة من 15 قطعة',
-            'مصنوعة من الستانلس ستيل',
-            'مقابض مريحة ومقاومة للحرارة',
-            'سهلة التنظيف',
-            'مناسبة للاستخدام اليومي',
-            'ضمان سنة واحدة'
-        ],
+        description: {
+            ar: 'مجموعة أدوات المطبخ الأساسية، تشمل جميع الأدوات اللازمة للطبخ اليومي.',
+            en: 'Essential kitchen tool set, including all utensils needed for daily cooking.',
+            fr: 'Ensemble d\'ustensiles de cuisine essentiels, comprenant tous les outils nécessaires à la cuisine quotidienne.'
+        },
+        specifications: {
+            ar: [
+                'ستانلس ستيل 18/10',
+                'مناسب لجميع أنواع المواقد',
+                'سهل التنظيف',
+                'ضمان 5 سنوات',
+                'مقاوم للصدأ',
+                'تصميم عملي وأنيق'
+            ],
+            en: [
+                '18/10 Stainless Steel',
+                'Suitable for all types of stoves',
+                'Easy to clean',
+                '5-year warranty',
+                'Rust-resistant',
+                'Practical and elegant design'
+            ],
+            fr: [
+                'Acier inoxydable 18/10',
+                'Convient à tous types de cuisinières',
+                'Facile à nettoyer',
+                'Garantie 5 ans',
+                'Résistant à la rouille',
+                'Design pratique et élégant'
+            ]
+        },
         rating: 4.4,
         reviews: 110,
         inStock: true,
         featured: false
     },
     {
-        id: '11',
-        name: 'لماذا ننام',
+        id: '10',
+        name: { ar: 'لماذا ننام', en: 'Why We Sleep', fr: 'Pourquoi nous dormons' },
         price: 25,
         image: 'files/id11/img3.webp',
         images: [
@@ -273,22 +461,45 @@ const products = [
             'files/id11/img1.webp'
         ],
         category: 'books',
-        description: 'كتاب لماذا ننام هو عمل علمي شهير من تأليف ماثيو ووكر، أستاذ علم الأعصاب وعلم النفس في جامعة كاليفورنيا. نُشر الكتاب لأول مرة في عام 2017، وهو يقدم تحليلًا علميًا شاملًا عن النوم وأثره العميق على حياتنا وصحتنا. يعتمد الكتاب على الأبحاث العلمية الحديثة ويجمع بين المعرفة العصبية والفسيولوجية والنفسية لتوضيح الأهمية الحيوية للنوم. يحاول ووكر في هذا الكتاب الإجابة على سؤال “لماذا ننام؟” ويكشف كيف أن النوم ليس مجرد حالة من السكون والراحة، بل عملية حيوية ومعقدة لها تأثيرات بالغة على صحة الدماغ والجسم.',
-        specifications: [
-            'جودة عالية pdf',
-            'حجم الكتاب 7 ميجا بايت',
-            'عدد الصفحات 511',
-            'باللغة العربية',
-            'الكاتب الأمريكي ماثيو ووكر'
-        ],
+        description: {
+            ar: 'كتاب لماذا ننام هو عمل علمي شهير من تأليف ماثيو ووكر، يشرح النوم وأثره على صحتنا.',
+            en: 'The book "Why We Sleep" by Matthew Walker is a famous scientific work explaining sleep and its impact on our health.',
+            fr: 'Le livre "Pourquoi nous dormons" de Matthew Walker est un ouvrage scientifique célèbre expliquant le sommeil et son impact sur notre santé.'
+        },
+        specifications: {
+            ar: [
+                'ستانلس ستيل 18/10',
+                'مناسب لجميع أنواع المواقد',
+                'سهل التنظيف',
+                'ضمان 5 سنوات',
+                'مقاوم للصدأ',
+                'تصميم عملي وأنيق'
+            ],
+            en: [
+                '18/10 Stainless Steel',
+                'Suitable for all types of stoves',
+                'Easy to clean',
+                '5-year warranty',
+                'Rust-resistant',
+                'Practical and elegant design'
+            ],
+            fr: [
+                'Acier inoxydable 18/10',
+                'Convient à tous types de cuisinières',
+                'Facile à nettoyer',
+                'Garantie 5 ans',
+                'Résistant à la rouille',
+                'Design pratique et élégant'
+            ]
+        },
         rating: 4.5,
         reviews: 147,
         inStock: true,
         featured: true
     },
     {
-        id: '12',
-        name: 'كرة قدم احترافية',
+        id: '11',
+        name: { ar: 'كرة قدم احترافية', en: 'Professional Football', fr: 'Ballon de football professionnel' },
         price: 150,
         originalPrice: 200,
         image: 'https://images.pexels.com/photos/274506/pexels-photo-274506.jpeg?auto=compress&cs=tinysrgb&w=800',
@@ -297,23 +508,45 @@ const products = [
             'https://images.pexels.com/photos/1171084/pexels-photo-1171084.jpeg?auto=compress&cs=tinysrgb&w=800'
         ],
         category: 'sports',
-        description: 'كرة قدم احترافية مصنوعة من الجلد الطبيعي، مناسبة للمباريات والتدريب.',
-        specifications: [
-            'جلد طبيعي عالي الجودة',
-            'مقاس رسمي FIFA',
-            'مناسبة للمباريات الرسمية',
-            'متينة ومقاومة للاهتراء',
-            'وزن قياسي',
-            'تصميم كلاسيكي'
-        ],
+        description: {
+            ar: 'كرة قدم احترافية مصنوعة من الجلد الطبيعي، مناسبة للمباريات والتدريب.',
+            en: 'Professional football made of natural leather, suitable for matches and training.',
+            fr: 'Ballon de football professionnel en cuir naturel, adapté aux matchs et à l\'entraînement.'
+        },
+        specifications: {
+            ar: [
+                'ستانلس ستيل 18/10',
+                'مناسب لجميع أنواع المواقد',
+                'سهل التنظيف',
+                'ضمان 5 سنوات',
+                'مقاوم للصدأ',
+                'تصميم عملي وأنيق'
+            ],
+            en: [
+                '18/10 Stainless Steel',
+                'Suitable for all types of stoves',
+                'Easy to clean',
+                '5-year warranty',
+                'Rust-resistant',
+                'Practical and elegant design'
+            ],
+            fr: [
+                'Acier inoxydable 18/10',
+                'Convient à tous types de cuisinières',
+                'Facile à nettoyer',
+                'Garantie 5 ans',
+                'Résistant à la rouille',
+                'Design pratique et élégant'
+            ]
+        },
         rating: 4.5,
         reviews: 88,
         inStock: true,
         featured: false
     },
     {
-        id: '13',
-        name: 'تعلم بايثون بالكامل بطريقة بسيطة',
+        id: '12',
+        name: { ar: 'تعلم بايثون بالكامل بطريقة بسيطة', en: 'Learn Python Completely', fr: 'Apprendre Python complètement' },
         price: 200,
         originalPrice: 650,
         image: 'files/id13/python.webp',
@@ -322,14 +555,37 @@ const products = [
             'files/id13/python2.webp'
         ],
         category: 'courses',
-        description: 'فيديوهات مباشرة للفصول الدراسية لشرح مفاهيم Python 3 بالتفصيل من مستوى المبتدئين إلى الخبراء.',
-        specifications: [
-            '114 ساعة من الفيديوهات عند الطلب',
-            '37 مصدرًا قابلًا للتنزيل',
-            'متاح على الهاتف المحمول والتلفزيون',
-            'تعلم لغة بايثون بالتفصيل',
-            'اللغة الإنجليزية'
-        ],
+        description: {
+            ar: 'فيديوهات مباشرة لشرح مفاهيم Python 3 بالتفصيل من المبتدئين إلى الخبراء.',
+            en: 'Live videos explaining Python 3 concepts in detail from beginners to experts.',
+            fr: 'Vidéos en direct expliquant les concepts de Python 3 en détail, des débutants aux experts.'
+        },
+        specifications: {
+            ar: [
+                'ستانلس ستيل 18/10',
+                'مناسب لجميع أنواع المواقد',
+                'سهل التنظيف',
+                'ضمان 5 سنوات',
+                'مقاوم للصدأ',
+                'تصميم عملي وأنيق'
+            ],
+            en: [
+                '18/10 Stainless Steel',
+                'Suitable for all types of stoves',
+                'Easy to clean',
+                '5-year warranty',
+                'Rust-resistant',
+                'Practical and elegant design'
+            ],
+            fr: [
+                'Acier inoxydable 18/10',
+                'Convient à tous types de cuisinières',
+                'Facile à nettoyer',
+                'Garantie 5 ans',
+                'Résistant à la rouille',
+                'Design pratique et élégant'
+            ]
+        },
         rating: 4.7,
         reviews: 600,
         inStock: true,
@@ -337,8 +593,8 @@ const products = [
         discount: 69
     },
     {
-        id: '14',
-        name: 'تعلم البرمجة الإبداعية باستخدام JavaScript الفانيليا',
+        id: '13',
+        name: { ar: 'تعلم البرمجة الإبداعية باستخدام JavaScript الفانيليا', en: 'Creative Coding with Vanilla JS', fr: 'Programmation créative avec JavaScript vanilla' },
         price: 150,
         originalPrice: 500,
         image: 'files/id14/js.webp',
@@ -347,14 +603,37 @@ const products = [
             'files/id14/jsdrawing.webp'
         ],
         category: 'courses',
-        description: 'دعونا نصنع الفن باستخدام الكود ونتعلم البرمجة الموجهة للكائنات باستخدام JavaScript البسيط في هذه العملية',
-        specifications: [,
-            'استكشف البرمجة الإبداعية باستخدام HTML وCSS وJavaScript',
-            'تعلم الرسم باستخدام البرمجة',
-            'اكتسب فهمًا عميقًا لتقنيات الرسم على لوحة HTML القماشية',
-            'أنشئ مشروعًا فنيًا توليديًا متكاملًا',
-            'اللغة الإنجليزية'
-        ],
+        description: {
+            ar: 'تعلم البرمجة الموجهة للكائنات والرسم باستخدام JavaScript الفانيليا.',
+            en: 'Learn object-oriented programming and drawing using vanilla JavaScript.',
+            fr: 'Apprenez la programmation orientée objet et le dessin avec JavaScript vanilla.'
+        },
+        specifications: {
+            ar: [
+                'ستانلس ستيل 18/10',
+                'مناسب لجميع أنواع المواقد',
+                'سهل التنظيف',
+                'ضمان 5 سنوات',
+                'مقاوم للصدأ',
+                'تصميم عملي وأنيق'
+            ],
+            en: [
+                '18/10 Stainless Steel',
+                'Suitable for all types of stoves',
+                'Easy to clean',
+                '5-year warranty',
+                'Rust-resistant',
+                'Practical and elegant design'
+            ],
+            fr: [
+                'Acier inoxydable 18/10',
+                'Convient à tous types de cuisinières',
+                'Facile à nettoyer',
+                'Garantie 5 ans',
+                'Résistant à la rouille',
+                'Design pratique et élégant'
+            ]
+        },
         rating: 4.7,
         reviews: 110,
         inStock: true,
@@ -362,8 +641,8 @@ const products = [
         discount: 70
     },
     {
-        id: '15',
-        name: 'دورة التسويق الرقمي',
+        id: '14',
+        name: { ar: 'دورة التسويق الرقمي', en: 'Digital Marketing Course', fr: 'Cours de marketing digital' },
         price: 45,
         image: 'files/id15/img1.webp',
         images: [
@@ -371,26 +650,45 @@ const products = [
             'files/id15/img2.webp'
         ],
         category: 'courses',
-        description: 'استراتيجية التسويق الرقمي، تسويق وسائل التواصل الاجتماعي، ووردبريس، تحسين محركات البحث، ChatGPT، البريد الإلكتروني، إنستغرام، فيسبوك، يوتيوب، الإعلانات',
-        specifications: [,
-            'تخطيط متقدم للتسويق الرقمي',
-            'ChatGPT للتسويق',
-            'هندسة فورية للتسويق',
-            'بناء مواقع إلكترونية ومتاجر إلكترونية - بدون برمجة',
-            'تكتيكات تسويقية نفسية',
-            'التسويق عبر البريد الإلكتروني + استراتيجيات احترافية باستخدام الذكاء الاصطناعي',
-            'كتابة محتوى إعلاني يحقق مبيعات عالية',
-            'زيادة هائلة في عدد الزيارات وترتيب محركات البحث',
-            'اللغة الإنجليزية'
-        ],
+        description: {
+            ar: 'استراتيجية التسويق الرقمي، التسويق عبر وسائل التواصل الاجتماعي، تحسين محركات البحث، ChatGPT.',
+            en: 'Digital marketing strategy, social media marketing, SEO, ChatGPT.',
+            fr: 'Stratégie de marketing digital, marketing sur les réseaux sociaux, SEO, ChatGPT.'
+        },
+        specifications: {
+            ar: [
+                'ستانلس ستيل 18/10',
+                'مناسب لجميع أنواع المواقد',
+                'سهل التنظيف',
+                'ضمان 5 سنوات',
+                'مقاوم للصدأ',
+                'تصميم عملي وأنيق'
+            ],
+            en: [
+                '18/10 Stainless Steel',
+                'Suitable for all types of stoves',
+                'Easy to clean',
+                '5-year warranty',
+                'Rust-resistant',
+                'Practical and elegant design'
+            ],
+            fr: [
+                'Acier inoxydable 18/10',
+                'Convient à tous types de cuisinières',
+                'Facile à nettoyer',
+                'Garantie 5 ans',
+                'Résistant à la rouille',
+                'Design pratique et élégant'
+            ]
+        },
         rating: 4.7,
         reviews: 310,
         inStock: true,
-        featured: false,
+        featured: false
     },
     {
-        id: '16',
-        name: 'دورة الماجستير في اللغة الإنجليزية',
+        id: '15',
+        name: { ar: 'دورة الماجستير في اللغة الإنجليزية', en: 'Master English Course', fr: 'Cours de maîtrise en anglais' },
         price: 24,
         originalPrice: 120,
         image: 'files/id16/img1.webp',
@@ -399,18 +697,43 @@ const products = [
             'files/id16/img2.webp'
         ],
         category: 'courses',
-        description: 'دورة لغة إنجليزية كاملة: قواعد اللغة الإنجليزية، التحدث، النطق، والكتابة. اللغة الإنجليزية البريطانية والأمريكية.',
-        specifications: [,
-            'تعلم كل شيء عن قواعد اللغة الإنجليزية، التحدث والكتابة والنطق.أتقن اللغة الإنجليزية',
-            'قسم شامل لقواعد اللغة الإنجليزية، يغطي أكثر من 90 موضوعًا في قواعد اللغة الإنجليزية.',
-            'قم بتحسين نتائجك في امتحانات اللغة الإنجليزية مثل A1، A2، B1، B2، C1، TOEFL، IELTS، وTOEIC.',
-        ],
+        description: {
+            ar: 'دورة لغة إنجليزية كاملة تشمل القواعد والتحدث والنطق والكتابة.',
+            en: 'Complete English course covering grammar, speaking, pronunciation, and writing.',
+            fr: 'Cours complet d\'anglais couvrant la grammaire, la conversation, la prononciation et l\'écriture.'
+        },
+        specifications: {
+            ar: [
+                'ستانلس ستيل 18/10',
+                'مناسب لجميع أنواع المواقد',
+                'سهل التنظيف',
+                'ضمان 5 سنوات',
+                'مقاوم للصدأ',
+                'تصميم عملي وأنيق'
+            ],
+            en: [
+                '18/10 Stainless Steel',
+                'Suitable for all types of stoves',
+                'Easy to clean',
+                '5-year warranty',
+                'Rust-resistant',
+                'Practical and elegant design'
+            ],
+            fr: [
+                'Acier inoxydable 18/10',
+                'Convient à tous types de cuisinières',
+                'Facile à nettoyer',
+                'Garantie 5 ans',
+                'Résistant à la rouille',
+                'Design pratique et élégant'
+            ]
+        },
         rating: 4.8,
         reviews: 450,
         inStock: true,
         featured: true,
         discount: 80
-    },
+    }
 ];
 
 products.forEach(product => {
@@ -427,9 +750,6 @@ products.forEach(product => {
         case "electronics":
             electronics++;
             break;
-        // case "beauty":
-        //     beauty++;
-        //     break;
         case "fashion":
             fashion++;
             break;
@@ -445,43 +765,37 @@ products.forEach(product => {
 const categories = [
     {
         id: 'electronics',
-        name: 'إلكترونيات',
+        name: { ar: 'إلكترونيات', en: 'Electronics', fr: 'Électronique' },
         icon: 'fas fa-laptop',
         count: electronics
     },
     {
         id: 'fashion',
-        name: 'أزياء',
+        name: { ar: 'أزياء', en: 'Fashion', fr: 'Mode' },
         icon: 'fas fa-tshirt',
         count: fashion
     },
     {
         id: 'home',
-        name: 'منزل ومطبخ',
+        name: { ar: 'منزل ومطبخ', en: 'Home & Kitchen', fr: 'Maison & Cuisine' },
         icon: 'fas fa-home',
         count: home
     },
     {
         id: 'books',
-        name: 'كتب PDF',
+        name: { ar: 'كتب PDF', en: 'PDF Books', fr: 'Livres PDF' },
         icon: 'fas fa-book',
         count: books
     },
     {
         id: 'sports',
-        name: 'رياضة',
+        name: { ar: 'رياضة', en: 'Sports', fr: 'Sports' },
         icon: 'fas fa-dumbbell',
         count: sports
     },
-    // {
-    //     id: 'beauty',
-    //     name: 'تجميل',
-    //     icon: 'fas fa-heart',
-    //     count: beauty
-    // },
     {
         id: 'courses',
-        name: 'دورات تدريبية',
+        name: { ar: 'دورات تدريبية', en: 'Courses', fr: 'Cours' },
         icon: 'fas fa-chalkboard-user',
         count: courses
     }
@@ -510,58 +824,10 @@ function searchProducts(query) {
     );
 }
 
-// Function to sort products
-// function filterProducts(filters) {
-//     console.log('minPrice:', filters.minPrice, 'maxPrice:', filters.maxPrice);
-//     let filteredProducts = [...products];
-
-//     // فلترة حسب التصنيف
-//     if (filters.category && filters.category !== 'all') {
-//         filteredProducts = filteredProducts.filter(product => product.category === filters.category);
-//     }
-
-//     // فلترة حسب السعر الأدنى
-//     if (filters.minPrice !== undefined && filters.minPrice !== '') {
-//         const min = Number(filters.minPrice.trim());
-//         if (!isNaN(min)) {
-//             filteredProducts = filteredProducts.filter(product => product.price >= min);
-//         }
-//     }
-
-//     // فلترة حسب السعر الأعلى
-//     if (filters.maxPrice !== undefined && filters.maxPrice !== '') {
-//         const max = Number(filters.maxPrice.trim());
-//         if (!isNaN(max)) {
-//             filteredProducts = filteredProducts.filter(product => product.price <= max);
-//         }
-//     }
-
-//     // فلترة حسب التقييم
-//     if (filters.rating) {
-//         filteredProducts = filteredProducts.filter(product => product.rating >= filters.rating);
-//     }
-
-//     // فلترة حسب توفر المنتج
-//     if (filters.inStock) {
-//         filteredProducts = filteredProducts.filter(product => product.inStock);
-//     }
-
-//     // فلترة حسب البحث بالكلمة المفتاحية
-//     if (filters.query) {
-//         filteredProducts = filteredProducts.filter(product =>
-//             product.name.toLowerCase().includes(filters.query.toLowerCase()) ||
-//             product.description.toLowerCase().includes(filters.query.toLowerCase())
-//         );
-//     }
-
-//     return filteredProducts;
-// }
-
-
 function filterProducts(filters) {
     let filteredProducts = [...products];
 
-    // فلترة حسب التصنيف
+    // التصنيف
     if (filters.category && filters.category !== 'all') {
         filteredProducts = filteredProducts.filter(product => product.category === filters.category);
     }
@@ -572,29 +838,44 @@ function filterProducts(filters) {
         filteredProducts = filteredProducts.filter(product => product.price >= min);
     }
 
-    // السعر الأعلى
+    // السعر الأقصى
     const max = parseFloat(filters.maxPrice);
     if (!isNaN(max)) {
         filteredProducts = filteredProducts.filter(product => product.price <= max);
     }
 
-
-    // فلترة حسب التقييم
+    // التقييم
     if (filters.rating) {
-        filteredProducts = filteredProducts.filter(product => product.rating >= filters.rating);
+        const rating = parseFloat(filters.rating);
+        if (!isNaN(rating)) {
+            filteredProducts = filteredProducts.filter(product => product.rating >= rating);
+        }
     }
 
-    // فلترة حسب توفر المنتج
+    // التوفر
     if (filters.inStock) {
         filteredProducts = filteredProducts.filter(product => product.inStock);
     }
 
-    // فلترة حسب البحث بالكلمة المفتاحية
+    // البحث النصي (يدعم ar, en, fr)
     if (filters.query) {
-        filteredProducts = filteredProducts.filter(product =>
-            product.name.toLowerCase().includes(filters.query.toLowerCase()) ||
-            product.description.toLowerCase().includes(filters.query.toLowerCase())
-        );
+        const query = filters.query.toLowerCase();
+        filteredProducts = filteredProducts.filter(product => {
+            // البحث في الاسم (جميع اللغات)
+            const name = product.name;
+            const nameMatch = typeof name === 'object'
+                ? Object.values(name).some(val => String(val).toLowerCase().includes(query))
+                : String(name).toLowerCase().includes(query);
+
+            // البحث في الوصف (جميع اللغات)
+            const description = product.description;
+            const descMatch = typeof description === 'object'
+                ? Object.values(description).some(val => String(val).toLowerCase().includes(query))
+                : String(description).toLowerCase().includes(query);
+
+            // يمكنك إضافة حقول أخرى مثل tags, categoryName...
+            return nameMatch || descMatch;
+        });
     }
 
     return filteredProducts;
@@ -654,7 +935,9 @@ function generateStarRating(rating) {
 
 // Function to format price
 function formatPrice(price) {
-    return new Intl.NumberFormat('ar-MA', {
+    const lang = languageManager.currentLang; // 'ar', 'en', 'fr'
+    const locale = lang === 'ar' ? 'ar-MA' : (lang === 'fr' ? 'fr-FR' : 'en-US');
+    return new Intl.NumberFormat(locale, {
         style: 'currency',
         currency: 'MAD',
         minimumFractionDigits: 0,
@@ -662,7 +945,11 @@ function formatPrice(price) {
     }).format(price);
 }
 
-// Function to format number to Arabic
 function formatNumberToArabic(number) {
-    return new Intl.NumberFormat('ar-MA').format(number);
+    const lang = languageManager.currentLang;
+    const locale = lang === 'ar' ? 'ar-MA' : (lang === 'fr' ? 'fr-FR' : 'en-US');
+    return new Intl.NumberFormat(locale).format(number);
 }
+
+window.products = products;
+window.categories = categories;

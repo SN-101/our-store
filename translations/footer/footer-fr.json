@@ -1,0 +1,22 @@
+{
+  "footer": {
+    "store": {
+      "name": "MaBoutique",
+      "text": "Nous proposons les meilleurs produits à des prix compétitifs avec une qualité garantie et une livraison rapide."
+    },
+    "links": {
+      "name": "Liens utiles",
+      "home": "Accueil",
+      "products": "Produits",
+      "about": "À propos de nous",
+      "contact": "Contactez-nous",
+      "privacy": "Politique de confidentialité",
+      "terms": "Conditions d’utilisation"
+    },
+    "contacts": {
+      "name": "Contactez-nous",
+      "gps": "Casablanca, Maroc"
+    },
+    "copyright":"Boutique en ligne. Tous droits réservés. 2025"
+  }
+}
