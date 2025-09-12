@@ -57,7 +57,7 @@ class LanguageManager {
         this._defaultsCaptured = true;
     }
 
-    async loadTranslations(modules = ['Header', 'Footer', 'Cart', 'Index', 'Products', 'product-details', 'checkout', 'about', 'contact', 'privacy', 'terms']) {
+    async loadTranslations(modules = ['header', 'footer', 'cart', 'index', 'products', 'product-details', 'checkout', 'about', 'contact', 'privacy', 'terms']) {
         this._captureArabicDefaults();
 
         const loadLangForModule = async (module, lang) => {
@@ -140,7 +140,7 @@ class LanguageManager {
 document.addEventListener('DOMContentLoaded', async () => {
     window.languageManager = new LanguageManager();
 
-    await languageManager.loadTranslations(['Header', 'Footer', 'Cart', 'Index', 'Products', 'product-details', 'checkout', 'about', 'contact', 'privacy', 'terms']);
+    await languageManager.loadTranslations(['header', 'footer', 'cart', 'index', 'products', 'product-details', 'checkout', 'about', 'contact', 'privacy', 'terms']);
 
     languageManager.applyDirection();
     languageManager.updateContent();
